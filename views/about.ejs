@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/reset_Style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/variables.css">
+        <link rel="stylesheet" href="/css/presentation.css">
+
+
+        <title>El-Bachir</title>
+    </head>
+    <body class="presentation-page">
+        
+        <%- include('partials/header') %>
+
+        <main>
+            <header class="main-header">
+                <div class="painting-title-container">
+                    <div class="title">
+                        <span class="sub-title">Jokkoo ak art bi Bachir</span>
+                        <span class="page-title">Bienvenue dans l'Univers d'El-Bachir</span>
+                    </div>
+                    <div class="presentation-img">
+                        <div class="blur-presentation-img"></div>
+                    </div>
+                </div>
+            </header>
+
+            <section id="first-section">
+                <div class="presentation-container">
+                    <div class="welcome-message-container">
+                        <h2 class="discover-artist">Découvrir l'artiste</h2>
+                    </div>
+
+                    <div class="presentation-intro-container">
+                        <div class="slides-discover-artist-container">
+                            <a class="slide exhibitions-slide" href="/exhibitions">
+                                <span>Exhibitions</span>
+                            </a>
+                            <a class="slide gallery-slide" href="/gallery"> 
+                                <span>Explorer les oeuvres</span>
+                            </a>
+                            <a class="slide about-slide" href="/about">
+                                <span>A propos</span>
+                            </a>  
+                            <a class="slide donation-slide" href="/donation">
+                                <span>Faire un don</span>
+                            </a>
+                            <a class="slide store-slide" href="/store">
+                                <span>Boutique</span>
+                            </a>                          
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="second-section">
+                <div class="second-section-container">
+                    <div class="intro-description-container">
+                        <div class="presentation-text-section">
+                            <h3><span class="bold">Origines</span></h3>
+                            <p class="presentation-text"><span class="bold">El Bachir</span> est un artiste Sénégalais qui au travers des années a entretenu un style et une technique unique, qui sont toujours plus <span class="bold">dévoués à sacraliser la place de l'art dans notre quotidien contemporain.</span></p> 
+                        </div>
+    
+                        <div class="presentation-text-section">
+                            <h3><span class="bold">Inspiration</span></h3>
+                            <p class="presentation-text">Innovant en remettant en perspective la place de l'humain au sein de notre société, comment celui-ci évoluera dans les prochains siècles. Autrement dit, <span class="bold">remettre en doute les perspectives de notre avenir</span>, un rapport étroit entre évolution et régression.</p> 
+                        </div>
+                        <div class="presentation-text-section2">
+                            <p class="presentation-text">À son arrivée à Montréal, il établit son atelier au centre Clark où il encre les traits de son style actuel. Une redéfinition personnelle et de son art.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="third-section">
+                <div class="scroll-movie-container">
+                    <div class="frame-viewer"></div>
+                </div> 
+            </section>
+
+            <section class="fourth-section"> 
+                <div class="fourth-section-container">
+                    <div class="senegal-container">
+                        <div class="senegal-text-section">
+                            <p class="senegal">Sen</p>
+                        </div>
+                        <div class="senegal-text-section">
+                            <p class="senegal">e</p>
+                        </div>
+                        <div class="senegal-text-section">
+                            <p class="senegal">gal</p>
+                        </div>
+
+                        <div class="senegal-explanation left-curly-bracket">
+                            <img class="curly-bracket" src="/img/curly_bracket.svg">
+                            <p>votre</p>
+                        </div>
+                        <div class="senegal-explanation right-curly-bracket">
+                            <img class="curly-bracket" src="/img/curly_bracket.svg">
+                            <p>pirogue</p>
+                        </div>
+
+                        
+                    </div>
+                    <div class="senegal-text-explanation-container">
+                        <p>En s”appuyant sur cette définition, j'ai utilisé Sunugal (notre pirogue) 
+                        </p>
+                        <p class="senegal-text-explanation">Bachir a créé une histoire d’un peuple qui avait une pirogue en commun avec lequelle il partait à la chasse tous les jours pour la pêche était fleurissante, c’était bien, jusqu’au jour où, par mauvaise conduite du capitaine décida de partager le butin en pleine mer
+                            En se chamaillant le butin, en se disputant, le bateau a chaviré, on est entré dans le monde de d’El-Bachir
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <%- include('partials/footer') %>
+
+        <script src="/js/index.js"></script>
+    </body>
+</html>
