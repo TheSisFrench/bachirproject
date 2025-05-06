@@ -1,0 +1,102 @@
+html    {
+    font-size: clamp(10px, 1vw + 0.4rem, 20px);
+    font-family: 'rokkit';
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+body    {
+    text-align: center;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face  {
+    font-family: 'rokkit';
+    src: url(/fonts/Rokkitt/Rokkitt-VariableFont_wght.ttf);
+}
+
+/* Mobile First */
+@media (max-width: 480px) {
+    /* Small mobile */
+    :root {
+      --title-font-size: 3.5rem;
+      --h1-font-size: 3rem;
+      --h2-font-size: 2rem;
+      --h3-font-size: 1.5rem;
+      --font-size: 0.9rem;
+      
+    }
+}
+  
+@media (max-width: 768px) {
+    /* Tablets and larger phones */
+    :root {
+        --title-font-size: 4rem;
+        --h1-font-size: 3.5rem;
+        --h2-font-size: 2.4rem;
+        --h3-font-size: 1.85rem;
+        --font-size: 1.1rem;
+    }
+
+}
+  
+@media (max-width: 1024px) {
+    /* Small laptops and landscape tablets */
+  
+}
+
+@media (min-width: 1025px) {
+  /* Laptops and desktops */
+
+}
+
+@media (min-width: 1440px) {
+  /* Large desktops */
+
+    :root   {
+        --title-font-size: 5.5rem;
+        --h1-font-size: 4.5rem;
+        --h2-font-size: 3.5rem;
+        --h3-font-size: 2.5rem;
+        --font-size: 1.5rem;
+    }
+}
+  
+
+nav, main, footer   {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+ul  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    line-height: 0.05rem;
+}
+
+
+button  {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+    font-family: senegal;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+h1, h2, h3  {
+    padding: 0;
+    margin: 0;
+}
+
+p   {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+

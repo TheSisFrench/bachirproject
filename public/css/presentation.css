@@ -1,0 +1,479 @@
+:root {
+    /* CSS variables specific for presentation */
+    --body-color: 255, 255, 255;
+    --zoom-scale: clamp(1, 0.8 + 0.005 * 1vw, 2);
+
+}
+
+body {
+    background-color: rgb(var(--body-color));
+}
+
+
+/* title presentation section */
+
+.main-header    {
+    
+}
+.painting-title-container {
+    width: 100%;
+    height: fit-content;
+}
+
+
+.title {
+    z-index: 200;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: var(--width-indentation);
+    max-width: var(--max-width);
+    height: fit-content;
+}
+
+.sub-title {
+    margin-top: var(--margin-out);
+    color: #000;
+    width: fit-content;
+    height: fit-content;
+    text-align: left;
+    font-size: var(--font-size);
+    font-weight: 500;
+    padding: 0;
+}
+
+.page-title {
+    color: #000;
+    width: fit-content;
+    text-align: left;
+    font-size: var(--h1-font-size);
+    padding: 0;
+    margin-bottom: var(--margin-box);
+}
+
+.presentation-img {
+    box-sizing: border-box;
+    position: relative;
+    width: 100vw;
+    max-width: calc(var(--max-width) + 8rem);
+    margin: 0 auto;
+    height: 80vh;
+    overflow: hidden;
+    background: no-repeat;
+    background-image: url(/img/centre_clark.png);
+    background-size: cover;
+    background-position: top center;
+    border: #fff solid 0;
+    border-radius: 0;
+}
+
+
+.blur-presentation-img {
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* start of presentation page content */
+#first-section {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--margin-out);
+    margin-bottom: var(--margin-out);
+}
+
+.presentation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* header of the first section*/
+
+.welcome-message-container  {
+    max-width: var(--max-width);
+    width: var(--width-indentation);
+    display: flex;
+    margin: auto auto 0 auto;
+}
+
+.discover-artist    {
+    padding: 0;
+    font-size: var(--h2-font-size);
+    font-weight: 500;
+}
+
+
+/* slides of different sections of website*/
+.presentation-intro-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-top: var(--margin-box);
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: auto;
+
+}
+
+.slides-discover-artist-container  {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    padding: calc(var(--section-container-size) * 0.03);
+    height: fit-content;
+}
+
+.slides-discover-artist-container::-webkit-scrollbar    {
+    display: none;
+}
+
+.slide  {
+    position: relative;
+    z-index: 1000;
+    background-color: rgb(200, 200, 200);
+    flex: 0 0 auto;
+    width: 1000px;
+    height: clamp(30rem, 60vh, 800px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-section);
+
+    transform-origin: center center;
+    transition: all 0.3s ease-in-out 0.1s;
+    background: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-decoration: none;
+}
+
+.slide span {
+    font-size: var(--h3-font-size);
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out 0.1s;
+}
+
+.exhibitions-slide:hover,
+.gallery-slide:hover,
+.about-slide:hover,
+.donation-slide:hover,
+.store-slide:hover    {
+    z-index: 100;
+    transform: scale(1.03);
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.exhibitions-slide:hover span,
+.gallery-slide:hover span,
+.about-slide:hover span,
+.donation-slide:hover span,
+.store-slide:hover span {
+    color: #f0c146;
+}
+
+.exhibitions-slide  {
+    background-image: url(/img/exhibition.png);
+}
+
+.gallery-slide  {
+    background-image: url(/img/les_visiteurs.png);
+}
+
+.about-slide  {
+    background-image: url(/img/le_systeme.png);  
+}
+
+.donation-slide {
+    background-image: url(/img/art_studio.png);
+}
+
+.store-slide    {
+    background-color: magenta;
+}
+
+
+
+/*second section presentation main */
+
+.second-section {
+    width: 100%;
+}
+
+.second-section-container   {
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-description-container  {
+    border-radius: var(--border-radius-section);
+    margin: auto;
+    width: var(--width-indentation);
+    max-width: var(--max-width);
+    min-height: var(--section-container-size);
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 700px));
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.presentation-text-section  {
+    padding: 2rem 4rem;
+    text-wrap: wrap;
+    display: grid;
+    grid-template-rows: 5rem auto;
+}
+
+.intro-description-container h3 {
+    font-weight: 600;
+    text-align: left;
+    font-size: var(--h3-font-size);
+    padding: var(--h3-padding);
+}
+
+.presentation-text  {
+    color: rgb(105, 105, 105);
+    font-weight: 600;
+    font-size: var(--font-size);
+    text-align: left;
+}
+
+.bold    {
+    font-weight: 600;
+    color: #000;
+}
+
+
+
+/* third section movie animation like */
+
+.third-section {
+    width: 100%;
+    height: fit-content; /* Adjust to control scroll range */
+  }
+  
+.scroll-movie-container {
+    position: relative;
+    width: 100vw;
+    height: 300vh;
+}
+
+.frame-viewer {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+  
+.svg-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    pointer-events: none;
+    object-fit: cover;
+}
+
+.svg-frame.appear    {
+    display: block;
+}
+  
+
+
+
+/* third section presentation main */
+
+.fourth-section {
+    background-color: rgb(13, 13, 13);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fourth-section-container   {
+    margin-bottom: var(--margin-out);
+    margin-top: var(--margin-out);
+    margin-left: auto;
+    margin-right: auto;
+    width: var(--width-indentation);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+
+.senegal-container {
+    width: fit-content;
+    max-width: var(--max-width);
+    margin-top: var(--margin-out);
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(min-content, max-content));
+    grid-template-rows: 50vh auto auto;
+    gap: 0;
+}
+
+.senegal    {
+    transform-origin: center center;
+    position: sticky;
+    top: 20vw;
+    display: inline-block;
+    color: #f0c146;
+    width: fit-content;
+    height: fit-content;
+    font-size: 15rem;
+    text-align: center;
+    padding: 0;
+}
+
+.left-curly-bracket {
+    grid-column: 1;
+}
+
+.right-curly-bracket    {
+    grid-column: 3;
+}
+
+.senegal-explanation    {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: auto;
+}
+
+
+.curly-bracket    {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: #f0c146;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 3rem;
+    align-self: baseline;
+
+}
+
+.senegal-explanation p  {
+    font-size: var(--h1-font-size);
+    color: #fff;
+}
+
+.senegal-text-explanation-container   {
+    opacity: 0;
+    visibility: hidden;
+    grid-column: 1 / span 3;
+    transition: all 0.3s ease-out;
+}
+
+.senegal-text-explanation-container p   {
+    padding: 3rem 0;
+    color: #fff;
+    font-size: var(--h2-font-size);
+}
+
+.senegal-text-explanation   {
+
+}
+
+
+/* Media Queries */
+
+@media (max-width: 760px) {
+    .page-title,
+    .sub-title {
+        font-weight: 400;
+    }
+
+    .presentation-img {
+        object-position: top;
+    }
+}
+
+@media (min-width: 760px) {
+    .page-title,
+    .sub-title {
+        font-weight: 450;
+    }
+
+    .title  {
+        font-size: var(--h3-font-size);
+    }
+}
+
+@media (max-width: 1080px)  {
+    .intro-description-container    {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 500px));
+    }
+
+    .slide  {
+        height: 30rem;
+        width: 40rem;
+    }
+}
+
+@media (max-width: 1260px) {
+    .presentation-container {
+        grid-template-rows: clamp(35rem, 2vw + 1rem, 45rem);
+    }
+    .page-title {
+        font-size: var(--h3-font-size);
+    }
+
+    .senegal    {
+        font-size: 12rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .presentation-container {
+        grid-template-rows: clamp(35rem, 2vw + 2rem, 100rem);
+    }
+
+    .presentation-img {
+        transform-origin: top center;
+        transform: scale(var(--zoom-scale));
+    }
+}
+
+@media (max-width: 1440px)  {
+    .page-title {
+        font-size: var(--h2-font-size);
+        font-weight: 400;
+    }
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/Bachir_project/Style/style.css">
+        <link rel="stylesheet" href="/Bachir_project/Style/reset_Style.css">
+        <link rel="stylesheet" href="/Bachir_project/Style/header.css">
+        <link rel="stylesheet" href="/Bachir_project/Style/bottom_section.css">
+        <link rel="stylesheet" href="/Bachir_project/Style/variables.css">
+
+    </head>
+
+    <body>
+        <div class="blur-effect"></div>
+        <nav id="nav">
+            <header class="nav-container">
+                <div class="nav-logo-container">
+                    <a id="nav-logo" href="/Bachir_project/index/presentation.html">
+                        <p class="bachir">BACHIR</p>
+                        <p class="project">EL-BACHIR PROJECT</p>
+                    </a>
+                </div>
+                
+                <div class="menu-container">
+                    <ul class="menu">
+                        <li value="gallery" class="menu-selection">
+                            <a class="to-source" data-target="gallery" href="/Bachir_project/index/gallery.html">Gallery</a>
+                        </li>
+                        <li value="about" class="menu-selection">
+                            <a class="to-source" data-target="about" href="/Bachir_project/index/about.html">About</a>
+                        </li>
+                        <li value="exhibitions" class="menu-selection">
+                            <a class="to-source" data-target="exhibitions" href="/Bachir_project/index/exhibitions.html">Exhibitions</a>
+                        </li>
+                        <li value="contact" class="menu-selection">
+                            <a class="to-source contact" data-target="contact" href="/Bachir_project/index/contact.html">Contact</a>
+                        </li>
+                        <li value="store" class="menu-selection">
+                            <a class="to-source store" data-target="store" href="/Bachir_project/index/store.html">Store</a>
+                         </li>
+                    </ul>
+                </div>
+            </header>
+        
+            <section id="gallery" class="nav-section">
+                <div class="selection-container">
+                    <ul class="painting-list">
+                        <li class="samba-alar gallery-selection">
+                            <a class="nav-menu-link painting-link" href="/Bachir_project/index/index.html">Samba Alar</a>
+                        </li>
+                        <li class="jamonoy-nuit-blanche gallery-selection">
+                            <a class="nav-menu-link painting-link" href="/Bachir_project/index/index.html">Jamonoy Nuit Blanche</a>
+                        <li class="la-loi-du-plus-fort gallery-selection">
+                            <a class="nav-menu-link painting-link" href="/Bachir_project/index/index.html">La loi du plus fort</a>
+                        </li>
+                        <li class="lien-generationnel gallery-selection">
+                            <a class="nav-menu-link painting-link" href="/Bachir_project/index/index.html">Lien générationnel</a>
+                        </li>
+                        <li class="le-petit-sidi gallery-selection">
+                            <a class="nav-menu-link painting-link" href="/Bachir_project/index/index.html">Le petit Sidi</a>
+                        </li>
+                        <li class="les-louas-du-maitre gallery-selection">
+                            <a class="nav-menu-link painting-link" href="/Bachir_project/index/index.html">Les louas du maître</a>
+                        </li>
+                        <li class="mor-talla-et-les-bouts-de-bois gallery-selection">
+                            <a class="nav-menu-link painting-link" href="/Bachir_project/index/index.html">Mor Talla et les bouts de bois</a>
+                        </li>
+                        <li class="le-tape-a-loeil gallery-selection">
+                            <a class="nav-menu-link painting-link" href="/Bachir_project/index/index.html">Le tape à l'oeil</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        
+            <section id="about" class="nav-section">
+                <div class="selection-container">
+                    <ul>
+                        <li class="presentation about-selection">
+                            <a class="nav-menu-link" href="/Bachir_project/index/presentation.html">Présentation</a>
+                        </li>
+                        <li class="vision about-selection">
+                            <a class="nav-menu-link" href="/Bachir_project/index/vision.html">La vision</a> 
+                        </li>
+                        <li class="realisations about-selection">
+                            <a class="nav-menu-link" href="/Bachir_project/index/realisations.html">Réalisations</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="exhibitions" class="nav-section">
+                <div class="selection-container">
+                    <ul>
+                        <li class="past exhibitions-selection">
+                            <a class="nav-menu-link" href="">Précédentes expositions</a>
+                        </li>
+                        <li class="upcoming exhibitions-selection">
+                            <a class="nav-menu-link" href="">Nouvelles expositions</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </nav>
+
+
+        <footer>
+
+            <a class="return-up-button" onclick="returnUp()">
+                <svg class="up-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 14L12 8L18 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>                
+                <span class="return-up-button-tooltip">Haut de page</span>
+            </a>
+
+            <div class="footer-container">
+
+                <section class="contact-footer">
+                    <div class="contact-footer-container">
+                        <h1 class="contact-footer-header">Contacter l'Artiste</h1>
+                        <div class="enter-email-container">
+                            <input 
+                            class="enter-email" 
+                            id="senderEmail"
+                            placeholder="Adresse courriel" 
+                            type="email" 
+                            required>
+                        </div>
+                    
+                        <div class="enter-message-container">
+                            <textarea 
+                            class="enter-message" 
+                            id="emailMessage"
+                            maxlength="1500" 
+                            placeholder="Message pour l'artiste" 
+                            required></textarea>
+                        </div>
+                        
+                        <div class="send-message-button-container">
+                            <button class="send-message-button" id="sendEmailBtn" type="button">
+                                <p class="send-message">Envoyer</p>
+                            </button>
+                        </div>
+
+                    </div>
+                </section>
+              
+
+                <section class="footer-link">
+                    <div class="foot-link-indent">
+                        <div class="footer-link-container">
+                            <ul class="website-sections">
+                                <li class="menu-selection-footer"><a class="menu-selection-footer-link" href="/Bachir_project/index/gallery.html">Gallery</a></li>
+                                <li class="menu-selection-footer"><a class="menu-selection-footer-link" href="/Bachir_project/index/about.html">About</a></li>
+                                <li class="menu-selection-footer"><a class="menu-selection-footer-link" href="/Bachir_project/index/exhibitions.html">Exhibitions</a></li>
+                                <li class="menu-selection-footer"><a class="menu-selection-footer-link" href="/Bachir_project/index/contact.html">Contact</a></li>
+                                <li class="menu-selection-footer"><a class="menu-selection-footer-link" href="/Bachir_project/index/store.html">Store</a></li>
+                            </ul>
+                            <div class="media">
+                                <img class="facebook media-icon" src="/Bachir_project/img/icons8-facebook.svg">
+                                <img class="linkedin media-icon" src="/Bachir_project/img/icons8-instagram.svg">
+                                <img class="instagram media-icon" src="/Bachir_project/img/icons8-linkedin.svg">
+                                <img class="x media-icon" src="/Bachir_project/img/icon_X.svg">
+                            </div>  
+                            <div class="credits">
+                                <div class="copyrights">Copyright &#64;2025 BachirProject.com - All rights reserved.</div>
+                            </div>  
+                        </div>
+                    </div>
+                    
+                </section>
+                
+            </div>
+        </footer>
+
+        <script src="/Bachir_project/JS/index.js"></script>
+    </body>
+</html>

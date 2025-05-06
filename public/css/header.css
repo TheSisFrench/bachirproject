@@ -1,0 +1,185 @@
+.blur-effect    {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(var(--body-color), 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    z-index: 10000;
+    background-color: #f0c146;
+    max-height: var(--nav-height);
+    transition: all 0.5s ease;
+}
+
+/* to make the main appear after the nav*/
+main    {
+    margin-top: var(--nav-height);
+}
+
+/* class added when hover menu-selection target: nav */
+.nav-menu-hover {
+    background-color: rgba(240, 193, 70, 0.99);
+}
+
+.nav-container  {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(100px, 50%) minmax(100px, 50%);
+    grid-template-rows: var(--nav-height) 1fr;
+}
+
+.nav-logo-container {
+    width: fill;
+    max-width: 50%;
+    height: 100%;
+}
+
+
+#nav-logo  {
+    margin-left: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: 100%;
+    max-width: 400px;
+    
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+
+.bachir {    
+    font-size: 2rem;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+}
+
+.project    {
+    font-size: 0.7rem;
+    text-wrap: nowrap;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu   {
+    height: 100%;
+    margin: 0 1.5rem 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    align-items: center;
+}
+
+.menu-selection {
+    display: inline-block;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-selection:hover   {
+    cursor: pointer;
+}
+
+.to-source  {
+    padding: 1rem;
+    font-weight: normal;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease 0.1s;
+}
+
+.to-source-active,
+.contact:hover,
+.store:hover,
+.buy:hover    {
+    font-weight: 200;
+    border-bottom: 0.06rem solid black;
+    margin-bottom: 0.5rem;
+    transition: all 0.1s ease-out;
+    color: #443614;
+}
+
+
+
+/*classes active when hovering each menu-selection*/
+
+.nav-section    {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.empty-nav-section  {
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.selection-container    {
+    padding: 4rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.painting-list  {
+
+}
+
+.gallery-selection,
+.about-selection,
+.exhibitions-selection  {
+    padding: 0.7rem;
+}
+
+.gallery-selection  {
+    text-align: center;
+}
+
+.gallery-selection:hover    {
+    cursor: pointer;
+}
+
+.nav-menu-link  {
+    display: inline-block;
+    font-weight: normal;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.5s ease 0.3s;
+}
+
+@media (max-width: 760px)   {
+    .menu-container {
+        display: none;
+    }
+
+    .menu-hamburger {
+        display: block;
+    }
+}
+

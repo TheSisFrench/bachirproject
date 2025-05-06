@@ -1,0 +1,40 @@
+:root   {
+
+    /* nav variables */
+    --nav-height: 7rem;
+    --artist-name-font-size: 5vh;
+    --artist-font-size: 3.5vh;
+
+    /* footer variables */
+
+    --footer-height: 70vh;
+
+    /* other variables */
+
+    --width-indentation: 85%;
+    --title-font-size: 6rem;
+    --h1-font-size: 4rem;
+    --h2-font-size: 3rem;
+    --h3-font-size: 2rem;
+    --font-size: 1.2rem;
+
+    --h1-padding: 3rem 0rem 2rem 0;
+    --h2-padding: 2rem 0 1.5rem 0;
+    --h3-padding: 2rem 0 1rem 0;
+    --p-padding: 0.5rem 0 0.5rem 0;
+    --button-padding: 1rem;
+
+    --margin-box: 5rem;
+    --margin-out: 10rem;
+
+    --sub-section-container-size: 20rem;
+    --section-container-size: 30rem;
+    --border-radius-section: 2rem;
+
+    /* content width */
+    --max-width: 1700px
+
+
+}
+
+

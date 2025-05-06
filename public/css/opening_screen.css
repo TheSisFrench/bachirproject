@@ -1,0 +1,75 @@
+body    {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/*window container and background color*/
+#opening-website-section  {
+    height: 100vh;
+    width: 100vw;
+    background: #f0c146;
+}
+
+
+/*painting animaiton*/
+#path   {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    fill: transparent;
+    stroke-width: 10rem;
+    stroke: #000;
+    stroke-dasharray: 8000; /* Length of the path */
+    stroke-dashoffset: 8000; /* Initially hide the stroke */
+    animation: draw 5s ease forwards; /* Animation for drawing */
+}
+
+@keyframes draw {
+    to {
+    stroke-dashoffset: 0; /* Animate to reveal the stroke */
+    }
+}
+
+/*signature svg*/
+#opening-screen-section {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    background-image: url(/img/BACHIR_signature.svg);
+    background-repeat: no-repeat;
+    background-position: 0,0,0,0;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.continue-div   {
+    z-index: 200;
+    position: absolute;
+    width: max-content;
+    left: 50%;
+    right: 50%;
+    top: 85%;
+    text-decoration: none;
+    color: #000;
+}
+
+#down-arrow {
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0.5rem;
+    width: 1rem;
+}
+
+#down-arrow-path    {
+    fill: transparent;
+    stroke-width: 1px;
+    transition: all 3s ease-in;
+}
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting Effect Reveal</title>
+
+    <style>
+        body    {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        #path   {
+            fill: transparent;
+            fill-opacity: 0;
+            stroke-width: 12vh;
+            stroke: #000;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+        }
+
+    </style>
+</head>
+<body>
+    <svg width="800px" height="4100px" xmlns="http://www.w3.org/2000/svg">
+        <path id="path" d="M-90 -10  C -90 -10 0 0 600 20 C 600 20 900 20 850 120 C 850 120 500 180 100 120 C 100 120 -300 150 40 220 C 40 220 400 240 700 260 C 700 260 900 280 870 300 C 870 300 700 350 400 350 C 400 350 100 360 4 365 C 4 375 500 400 850 410"/>
+    </svg>
+
+    <script>
+
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
