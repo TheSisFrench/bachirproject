@@ -15,63 +15,54 @@
     </head>
     <body>
 
-        <%- include('partials/header') %>
-
-
         <main>
-              
-              <!-- The inline SVG element -->
-              <!-- viewBox ensures it scales correctly, preserveAspectRatio="none" helps it fill any screen aspect ratio -->
-              <svg class="reveal-svg" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <!-- Define the mask -->
-                  <mask id="paintRevealMask">
-                    <!-- Start with a white background in the mask. White areas reveal the masked element. -->
-                    <rect x="0" y="0" width="100" height="100" fill="white"/>
-              
-                    <!-- The path that defines the drawing shape (a rectangle outline in this case) -->
-                    <!-- This path has a BLACK stroke. Black areas in the mask hide the masked element. -->
-                    <!-- As this black stroke draws over the white mask, it creates black areas, -->
-                    <!-- which make the underlying content visible. -->
-                    <path id="maskPath"
-                          d="M 0 0 L 100 0 L 100 100 L 0 100 Z" /* Defines a rectangle path (0,0 to 100,100) */
-                          fill="none" /* No fill for the path itself */
-                          stroke="black" /* The stroke color IN THE MASK (black hides) */
-                          stroke-width="50" /* Make the stroke thick enough to cover area as it draws */
-                          stroke-linecap="round" /* Optional: makes stroke ends rounded */
-                          stroke-linejoin="round"> /* Optional: makes corners rounded */
-              
-                      <!-- Animate the stroke-dashoffset property -->
-                      <!-- This creates the drawing/painting effect -->
-                      <!--
-                           1. Get the path length. For this simple rect (100x100 viewBox), length is 400.
-                           2. Set stroke-dasharray to the length (e.g., "400 400").
-                           3. Start stroke-dashoffset at the length (400). Stroke is hidden.
-                           4. Animate stroke-dashoffset to 0. Stroke is fully drawn.
-                      -->
-                      <animate attributeName="stroke-dashoffset"
-                               from="400" /* Start hidden */
-                               to="0"   /* End fully drawn */
-                               dur="3s" /* Duration of the animation (e.g., 3 seconds) */
-                               fill="freeze" /* Keep the final state after animation */
-                               begin="0s"/> /* Start immediately when SVG loads */
-              
-                    </path>
-                  </mask>
-                </defs>
-              
-                <!-- The element that initially covers the screen. -->
-                <!-- It's a rectangle with a solid fill (your "paint" color, e.g., white or black). -->
-                <!-- This rect is applied the mask defined above. -->
-                <rect x="0" y="0" width="100" height="100" fill="white" mask="url(#paintRevealMask)"/>
-                <!-- You could change fill="white" to fill="black" if you want a black starting screen -->
-              
-              </svg>
 
+
+
+<!-- The inline SVG element -->
+<!-- viewBox="0 0 100 100" sets up a coordinate system from 0 to 100 -->
+<!-- width/height 100% and preserveAspectRatio="none" ensure it covers the viewport -->
+<svg class="reveal-svg" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Define the mask -->
+    <mask id="diagonalRevealMask">
+      <!--
+        Start with a WHITE background rectangle in the mask.
+        In SVG masks, white areas make the masked element VISIBLE.
+        This initially keeps the 'coverRect' visible, hiding content below.
+      -->
+      <rect x="0" y="0" width="100" height="100" fill="white"/>
+
+      <!--
+        The path that defines the drawing shape - a diagonal line from top-left (0,0)
+        to bottom-right (100,100).
+      -->
+      <!--
+        This path has a BLACK stroke. Black areas in the mask make the masked element TRANSPARENT (hidden).
+        As this black stroke is drawn over the white mask background, it creates black areas,
+        which reveal the underlying HTML content.
+      -->
+      <path id="maskPath"
+            d="M 0 0 L 100 100" /* Defines a single diagonal line */
+            fill="none" /* The path itself has no fill */
+            stroke="black" /* The stroke color IN THE MASK (black hides, revealing content) */
+            stroke-width="150" /* Make the stroke *very* thick - wider than the viewport diagonal! */
+            stroke-linecap="round"/> /* Makes the ends rounded for smoother coverage */
+
+        <!-- The CSS animation handles the drawing, so no <animate> tag needed here -->
+
+    </mask>
+  </defs>
+
+  <!-- The element that initially covers the screen. -->
+  <!-- It's a rectangle covering the whole SVG (which covers the viewport). -->
+  <!-- It has a solid fill (your "paint" color, e.g., white or black). -->
+  <!-- This rect is applied the mask defined above. -->
+  <rect x="0" y="0" width="100" height="100" fill="white" mask="url(#diagonalRevealMask)"/>
+  <!-- You could change fill="white" to fill="black" if you want a black starting screen -->
+
+</svg>
         </main>
-
-
-        <%- include('partials/footer') %>
 
         <script src="/js/index.js"></script>
 
