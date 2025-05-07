@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 // Route to render your EJS file
 app.get('/', (req, res) => {
-  res.render('home-page')
+  res.render('home')
 });
 
 app.get('/gallery', (req, res) => {
