@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/reset_Style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/variables.css">
+        <link rel="stylesheet" href="/css/home">
+
+        <title>bachir</title>
+    </head>
+    <body>
+
+        <%- include('partials/header') %>
+
+
+        <main>
+              
+              <!-- The inline SVG element -->
+              <!-- viewBox ensures it scales correctly, preserveAspectRatio="none" helps it fill any screen aspect ratio -->
+              <svg class="reveal-svg" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <!-- Define the mask -->
+                  <mask id="paintRevealMask">
+                    <!-- Start with a white background in the mask. White areas reveal the masked element. -->
+                    <rect x="0" y="0" width="100" height="100" fill="white"/>
+              
+                    <!-- The path that defines the drawing shape (a rectangle outline in this case) -->
+                    <!-- This path has a BLACK stroke. Black areas in the mask hide the masked element. -->
+                    <!-- As this black stroke draws over the white mask, it creates black areas, -->
+                    <!-- which make the underlying content visible. -->
+                    <path id="maskPath"
+                          d="M 0 0 L 100 0 L 100 100 L 0 100 Z" /* Defines a rectangle path (0,0 to 100,100) */
+                          fill="none" /* No fill for the path itself */
+                          stroke="black" /* The stroke color IN THE MASK (black hides) */
+                          stroke-width="50" /* Make the stroke thick enough to cover area as it draws */
+                          stroke-linecap="round" /* Optional: makes stroke ends rounded */
+                          stroke-linejoin="round"> /* Optional: makes corners rounded */
+              
+                      <!-- Animate the stroke-dashoffset property -->
+                      <!-- This creates the drawing/painting effect -->
+                      <!--
+                           1. Get the path length. For this simple rect (100x100 viewBox), length is 400.
+                           2. Set stroke-dasharray to the length (e.g., "400 400").
+                           3. Start stroke-dashoffset at the length (400). Stroke is hidden.
+                           4. Animate stroke-dashoffset to 0. Stroke is fully drawn.
+                      -->
+                      <animate attributeName="stroke-dashoffset"
+                               from="400" /* Start hidden */
+                               to="0"   /* End fully drawn */
+                               dur="3s" /* Duration of the animation (e.g., 3 seconds) */
+                               fill="freeze" /* Keep the final state after animation */
+                               begin="0s"/> /* Start immediately when SVG loads */
+              
+                    </path>
+                  </mask>
+                </defs>
+              
+                <!-- The element that initially covers the screen. -->
+                <!-- It's a rectangle with a solid fill (your "paint" color, e.g., white or black). -->
+                <!-- This rect is applied the mask defined above. -->
+                <rect x="0" y="0" width="100" height="100" fill="white" mask="url(#paintRevealMask)"/>
+                <!-- You could change fill="white" to fill="black" if you want a black starting screen -->
+              
+              </svg>
+
+        </main>
+
+
+        <%- include('partials/footer') %>
+
+        <script src="/js/index.js"></script>
+
+    </body>
+</html>
