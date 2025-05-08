@@ -22,6 +22,7 @@ const rootStyles = getComputedStyle(document.documentElement);
 
 
 //code for the header
+if(true)   {
 
 const navHeight = rootStyles.getPropertyValue('--nav-height');
 let visibleSection = false;
@@ -137,6 +138,84 @@ function returnUp() {
     });
 
 }
+
+}
+
+
+
+// code for home page
+
+
+if(document.body.classList.contains('home'))    {const slides = document.querySelectorAll('.slideshow-container .slide');
+    let currentSlideIndex = 0;
+    const intervalTime = 5000; // 5000 milliseconds = 5 seconds (Time slide is visible)
+    const transitionDuration = 1000; // Match CSS transition duration (1000ms = 1 second)
+
+    // Function to move to the next slide
+    function nextSlide() {
+        // Get the currently visible slide element
+        const currentSlide = slides[currentSlideIndex];
+
+        // Calculate the index and element of the next slide (handles looping)
+        const nextSlideIndex = (currentSlideIndex + 1) % slides.length;
+        const nextSlide = slides[nextSlideIndex];
+        nextSlide.classList.remove('hidden');
+
+        // --- Initiate the transition ---
+
+        // 1. Add the 'leaving' class to the current slide.
+        // This starts its movement from translateX(0) to translateX(-101%).
+        // Use a small delay with requestAnimationFrame to ensure the browser
+        // registers this class change before the next steps.
+         requestAnimationFrame(() => {
+             currentSlide.classList.add('leaving');
+             nextSlide.classList.add('active');
+             currentSlide.classList.remove('active');
+
+         });
+
+        // --- Clean up the old slide after its exit transition ---
+        // Use setTimeout to wait for the 'leaving' transition to finish
+        setTimeout(() => {
+            // 1. Temporarily disable transition for the old slide
+            currentSlide.classList.add('no-transition');
+
+            // 2. Remove the 'leaving' class
+            // This causes its transform to fall back to the default
+            // translateX(101%). Because no-transition is active, this happens instantly.
+            currentSlide.classList.remove('leaving');
+
+            // 3. Re-enable transition for the old slide *after* the browser registers the transform change
+            // Use rAF or setTimeout(0) to push this to the next rendering tick.
+            requestAnimationFrame(() => {
+                 currentSlide.classList.remove('no-transition');
+            });
+
+            currentSlide.classList.add('hidden')
+
+        }, transitionDuration); // The timeout duration matches the CSS transition duration
+
+        // Update the current slide index for the next interval
+        currentSlideIndex = nextSlideIndex;
+    }
+
+    // Start the automatic slideshow interval
+    setInterval(nextSlide, intervalTime);
+
+    // Optional: Ensure pointer events are enabled only for the active slide initially
+     slides.forEach((slide, index) => {
+         if (index !== currentSlideIndex) {
+             slide.style.pointerEvents = 'none';
+         } else {
+             slide.style.pointerEvents = 'all';
+         }
+     });
+
+
+}
+
+
+
 
 
 
