@@ -37,11 +37,15 @@ app.get('/special-edition', (req, res) =>   {
 });
 
 app.get('/exhibitions', (req, res) =>   {
-    res.render('gallery/exhibitions')
+    res.render('exhibitions')
 });
 
 app.get('/about', (req, res) => {
     res.render('about')
+});
+
+app.get('/contact', (req, res) =>   {
+    res.render('contact')
 });
 
 app.get('/store', (req, res) => {
