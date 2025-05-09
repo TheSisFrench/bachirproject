@@ -2,7 +2,7 @@
 <nav id="nav">
   <header class="nav-container">
     <div class="nav-logo-container">
-      <a id="nav-logo" href="/home">
+      <a id="nav-logo" href="/">
         <p class="bachir">BACHIR</p>
         <p class="project">EL-BACHIR PROJECT</p>
       </a>
@@ -10,19 +10,19 @@
 
     <div class="menu-container">
       <ul class="menu">
-        <li value="gallery" class="menu-selection">
+        <li value="gallery <%= currentPage === 'gallery' ? 'active' : '' %>">" class="menu-selection">
           <a class="to-source" data-target="gallery" href="/gallery">Gallery</a>
         </li>
-        <li value="about" class="menu-selection">
+        <li value="about <%= currentPage === 'about' ? 'active' : '' %>">" class="menu-selection">
           <a class="to-source" data-target="about" href="/about">About</a>
         </li>
-        <li value="exhibitions" class="menu-selection">
+        <li value="exhibitions <%= currentPage === 'exhibitions' ? 'active' : '' %>">" class="menu-selection">
           <a class="to-source" data-target="exhibitions" href="/exhibitions">Exhibitions</a>
         </li>
-        <li value="contact" class="menu-selection">
+        <li value="contact <%= currentPage === 'contact' ? 'active' : '' %>"></li>" class="menu-selection">
           <a class="to-source contact" data-target="contact" href="/contact">Contact</a>
         </li>
-        <li value="store" class="menu-selection">
+        <li value="store <%= currentPage === 'store' ? 'active' : '' %>"> class="menu-selection">
           <a class="to-source store" data-target="store" href="/store">Store</a>
         </li>
       </ul>
@@ -32,30 +32,39 @@
   <section id="gallery" class="nav-section">
     <div class="selection-container">
       <ul class="painting-list">
-        <li class="samba-alar gallery-selection">
-          <a class="nav-menu-link painting-link" href="/">Samba Alar</a>
+        <li class="gallery-selection">
+            <a class="nav-menu-link-header" href="gallery/new-collection">Nouvelles collection</a>
+            <a class="nav-menu-link painting-link" href="/view-painting">Les dernières louas du maître</a>
+            <a class="nav-menu-link painting-link" href="/view-painting">Les visiteurs</a>
+            <a class="nav-menu-link painting-link" href="/view-painting">Perdure</a>
         </li>
-        <li class="jamonoy-nuit-blanche gallery-selection">
-          <a class="nav-menu-link painting-link" href="/">Jamonoy Nuit Blanche</a>
+
+        <li class="gallery-selection">
+          <a class="nav-menu-link-header" href="gallery/family">Famille</a>
+          <a class="nav-menu-link painting-link" href="/view-painting">Lien générationnel</a>
+          <a class="nav-menu-link painting-link" href="/view-painting">Photo de famille</a>
+          <a class="nav-menu-link painting-link" href="/view-painting">Le petit Sidi</a>
         </li>
-        <li class="la-loi-du-plus-fort gallery-selection">
-          <a class="nav-menu-link painting-link" href="/">La loi du plus fort</a>
+
+        <li class="gallery-selection">
+          <a class="nav-menu-link-header" href="gallery/special-edition">Hors série</a>
+          <a class="nav-menu-link painting-link" href="/view-painting">Samba Alar</a>
+          <a class="nav-menu-link painting-link" href="/view-painting">Jamonoy Nuit Blanche</a>
         </li>
-        <li class="lien-generationnel gallery-selection">
-          <a class="nav-menu-link painting-link" href="/">Lien générationnel</a>
+
+        <li class="gallery-selection">
+          <a class="nav-menu-link-header" href="gallery/mor-talla">Mor talla</a>
+          <a class="nav-menu-link painting-link" href="/view-painting">Mor Talla et les bouts de bois</a>
+          <a class="nav-menu-link painting-link" href="/view-painting">Le tape à l'œil</a>
+          <a class="nav-menu-link painting-link" href="/view-painting">La loi du plus fort</a>
+          <a class="nav-menu-link painting-link" href="/view-painting">For bi le ramassage</a>
         </li>
-        <li class="le-petit-sidi gallery-selection">
-          <a class="nav-menu-link painting-link" href="/">Le petit Sidi</a>
+
+        <li class="gallery-selection">
+          <a class="nav-menu-link-header" href="gallery/black-collection">Noire</a>
+          <a class="nav-menu-link painting-link" href="/view-painting">Le fauteuil</a>
         </li>
-        <li class="les-louas-du-maitre gallery-selection">
-          <a class="nav-menu-link painting-link" href="/">Les louas du maître</a>
-        </li>
-        <li class="mor-talla-et-les-bouts-de-bois gallery-selection">
-          <a class="nav-menu-link painting-link" href="/">Mor Talla et les bouts de bois</a>
-        </li>
-        <li class="le-tape-a-loeil gallery-selection">
-          <a class="nav-menu-link painting-link" href="/">Le tape à l'œil</a>
-        </li>
+        
       </ul>
     </div>
   </section>

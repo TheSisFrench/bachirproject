@@ -22,7 +22,7 @@ const rootStyles = getComputedStyle(document.documentElement);
 
 
 //code for the header
-if(true)   {
+
 
 const navHeight = rootStyles.getPropertyValue('--nav-height');
 let visibleSection = false;
@@ -109,18 +109,18 @@ function keepNavSelectionActive(target)  {
 
 
 
-
 //code for footer
 
 
 //send email button
 
 document.getElementById("sendEmailBtn").addEventListener("click", function () {
-    const email = document.getElementById("senderEmail").value.trim();
-    const message = document.getElementById("emailMessage").value.trim();
+    const email = 'lebachart@gmail.com';
+    const name = document.getElementById('name').value.trim();
+    const message = document.getElementById("message").value.trim();
 
     // Create the mailto link
-    const mailtoLink = `mailto:lebachart@gmail.com?subject=Message d'un amateur d'art&body=${encodeURIComponent(message)}`;
+    const mailtoLink = `mailto:${email}?subject=Message d'un amateur d'art - ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
 
     // Open the user's mail app
     window.location.href = mailtoLink;
@@ -139,7 +139,7 @@ function returnUp() {
 
 }
 
-}
+
 
 
 
@@ -225,18 +225,7 @@ if(document.body.classList.contains('home'))    {const slides = document.querySe
 
 window.addEventListener('DOMContentLoaded', () =>   {
     if (document.body.classList.contains('gallery-page'))   {
-        const toSource = document.querySelectorAll('.to-source');
-        const navMenuLink = document.querySelectorAll('.nav-menu-link');
-        nav.style.backgroundColor = "#000";
-        nav.style.color = "#f0c146";
         
-        toSource.forEach(source =>  {   
-            source.style.color = "#f0c146";
-            source.style.borderBottomColor = "#f0c146";
-        })
-        navMenuLink.forEach(link => {
-            link.style.color = "#f0c146";
-        })
 
         //skip to gallery button appears when hover firstSection of main section
         const skipToGalleryContainer = document.querySelector('.skip-to-gallery-container');
