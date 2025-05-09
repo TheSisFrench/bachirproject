@@ -10,19 +10,19 @@
 
     <div class="menu-container">
       <ul class="menu">
-        <li value="gallery <%= currentPage === 'gallery' ? 'active' : '' %>">" class="menu-selection">
+        <li value="gallery" class="menu-selection <%= currentPage === 'gallery' ? 'active' : '' %>">
           <a class="to-source" data-target="gallery" href="/gallery">Gallery</a>
         </li>
-        <li value="about <%= currentPage === 'about' ? 'active' : '' %>">" class="menu-selection">
+        <li value="about" class="menu-selection <%= currentPage === 'about' ? 'active' : '' %>">
           <a class="to-source" data-target="about" href="/about">About</a>
         </li>
-        <li value="exhibitions <%= currentPage === 'exhibitions' ? 'active' : '' %>">" class="menu-selection">
+        <li value="exhibitions" class="menu-selectio <%= currentPage === 'exhibitions' ? 'active' : '' %>">
           <a class="to-source" data-target="exhibitions" href="/exhibitions">Exhibitions</a>
         </li>
-        <li value="contact <%= currentPage === 'contact' ? 'active' : '' %>"></li>" class="menu-selection">
+        <li value="contact" class="menu-selection <%= currentPage === 'contact' ? 'active' : '' %>">
           <a class="to-source contact" data-target="contact" href="/contact">Contact</a>
         </li>
-        <li value="store <%= currentPage === 'store' ? 'active' : '' %>"> class="menu-selection">
+        <li value="store" class="menu-selection <%= currentPage === 'store' ? 'active' : '' %>">
           <a class="to-source store" data-target="store" href="/store">Store</a>
         </li>
       </ul>
