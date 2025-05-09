@@ -32,8 +32,15 @@
     --border-radius-section: 2rem;
 
     /* content width */
-    --max-width: 1700px
+    --max-width: 1700px;
 
+    /* main colors */
+    --color-dark: 13, 13, 13;
+    --color-bright: 240, 193, 70;
+    
+    --color-white-hover: 130, 130, 130;
+
+    --body-color: 13, 13, 13;
 
 }
 

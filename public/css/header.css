@@ -15,7 +15,7 @@ nav {
     position: absolute;
     top: 0;
     z-index: 1000;
-    background-color: #000;
+    background-color: rgb(var(--color-dark));
     color: #fff;
     max-height: var(--nav-height);
     transition: all 0.5s ease;
@@ -113,7 +113,7 @@ main    {
 }
 
 .active a   {
-    color: rgb(240, 193, 70);
+    color: rgb(var(--color-bright));
 }
 
 .to-source-active,
@@ -124,7 +124,7 @@ main    {
     border-bottom: 0.06rem solid #fff;
     margin-bottom: 0.5rem;
     transition: all 0.1s ease-out;
-    color: rgb(130, 130, 130);
+    color: rgb(var(--color-white-hover));
 }
 
 

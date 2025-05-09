@@ -19,8 +19,6 @@ const navLogo = document.getElementById('nav-logo');
 // root css variables
 const rootStyles = getComputedStyle(document.documentElement);
 
-
-
 //code for the header
 
 
