@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser'); // To parse form data
+const { title } = require('process');
 
 const PORT = process.env.PORT || 3000;
 
@@ -14,7 +15,11 @@ app.set('view engine', 'ejs');
 
 // Route to render your EJS file
 app.get('/', (req, res) => {
-  res.render('home')
+  res.render('index', {
+    currentPage: 'home',
+    title: 'home',
+    bodyPartialName: 'partials/home'
+  });
 });
 
 app.get('/gallery', (req, res) => {
