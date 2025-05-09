@@ -19,9 +19,10 @@
     </head>
 
     <body>
-        <&- include('partial/header') &>
+        <&- include('.partial/header', { currentPage: currentPage }) &>
 
+        <%- include('.partials/'+ bodyPartialName) %>
         
-        <&- include('partials/footer') &>
+        <% /* <&- include('.partials/footer') &> */ %>
     </body>
 </html>
