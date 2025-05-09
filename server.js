@@ -3,7 +3,6 @@ const path = require('path');
 const app = express();
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser'); // To parse form data
-const { title } = require('process');
 
 const PORT = process.env.PORT || 3000;
 
@@ -26,46 +25,109 @@ app.get('/', (req, res) => {
 app.get('/gallery', (req, res) => {
     res.render('index',  {
         currentPage: 'gallery',
-        title: 'gallery',
+        title: 'Gallery',
         bodyPartialName: 'gallery'
     });
 }); 
 
+app.get('/gallery/new-collection', (req, res) =>    {
+    res.render('index', {
+        currentPage: 'gallery',
+        title: {
+            fr: "Nouvelle collection",
+            en: "New collection"
+        },
+        bodyPartialName: 'new-collection'
+    })
+})
+
 //links to different collection of painting
 app.get('/gallery/black-collection', (req, res) =>  {
     res.render('index', {
-        currentPage: 'mor talla',
-        title: 'Mor talla',
-        bodyPartialName: 'mor-talla'
+        currentPage: 'gallery',
+        title: {
+            fr: "Collection noire",
+            en: "Black collection"
+        },
+        bodyPartialName: 'black-collection'
     })
 });
 
 app.get('/gallery/mor-talla-collection', (req, res) =>  {
-    res.render('index')
+    res.render('index', {
+        currentPage: 'gallery',
+        title: {
+            fr: "Collection Mor talla",
+            en: "Mor talla collection"
+        },
+        bodyPartialName: 'mor-talla'
+    })
 });
 
 app.get('/gallery/family', (req, res) =>    {
-    res.render('index')
+    res.render('index', {
+        currentPage: 'gallery',
+        title: {
+            fr: "Collection famille",
+            en:'Family Collection'
+        },
+        bodyPartialName: 'family'
+    })
 });
 
 app.get('/gallery/special-edition', (req, res) =>   {
-    res.render('index')
+    res.render('index', {
+        currentPage: 'gallery',
+        title: {
+            fr: "Hors série",
+            en: "Special collection"
+        },
+        bodyPartialName: 'special-edition'
+    })
 });
 
 app.get('/exhibitions', (req, res) =>   {
-    res.render('index')
+    res.render('index', {
+        currentPage: 'exhibitions',
+        title: {
+            fr: "Expositions",
+            en: "Exhibitions"
+        },
+        bodyPartialName: 'exhibitions'
+    })
 });
 
 app.get('/about', (req, res) => {
-    res.render('index')
+    res.render('index', {
+        currentPage: 'about',
+        title: {
+            fr: "À propos",
+            en: 'About'
+        },
+        bodyPartialName: 'about'
+    })
 });
 
 app.get('/contact', (req, res) =>   {
-    res.render('index')
+    res.render('index', {
+        currentPage: 'contact',
+        title: {
+            fr: 'Contact',
+            en: "Contact"
+        },
+        bodyPartialName: 'contact'
+    })
 });
 
 app.get('/store', (req, res) => {
-    res.render('index')
+    res.render('index', {
+        currentPage: 'store',
+        title: {
+            fr:"Boutique",
+            en: "Store"
+        },
+        bodyPartialName: 'store'
+    })
 });
 
 app.listen(PORT, () => {
