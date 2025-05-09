@@ -113,11 +113,7 @@ main    {
 }
 
 .active a   {
-    font-weight: normal;
-    border-bottom: 0.06rem solid #fff;
-    margin-bottom: 0.5rem;
-    transition: all 0.1s ease-out;
-    color: rgb(130, 130, 130);
+    color: rgb(240, 193, 70);
 }
 
 .to-source-active,
