@@ -14,7 +14,7 @@
 nav {
     position: absolute;
     top: 0;
-    z-index: 1000;
+    z-index: 10000;
     background-color: rgb(var(--color-dark));
     color: #fff;
     max-height: var(--nav-height);

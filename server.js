@@ -18,7 +18,8 @@ app.get('/', (req, res) => {
   res.render('index', {
     currentPage: 'home',
     title: 'home',
-    bodyPartialName: 'home'
+    bodyPartialName: 'home',
+    pageIdentifier: 'home-page'
   });
 });
 
@@ -26,7 +27,8 @@ app.get('/gallery', (req, res) => {
     res.render('index',  {
         currentPage: 'gallery',
         title: 'Gallery',
-        bodyPartialName: 'gallery'
+        bodyPartialName: 'gallery',
+        pageIdentifier: 'gallery-page'
     });
 }); 
 
@@ -37,7 +39,8 @@ app.get('/gallery/new-collection', (req, res) =>    {
             fr: "Nouvelle collection",
             en: "New collection"
         },
-        bodyPartialName: 'new-collection'
+        bodyPartialName: 'new-collection',
+        pageIdentifier: 'new-collection-page'
     })
 })
 
@@ -49,7 +52,8 @@ app.get('/gallery/black-collection', (req, res) =>  {
             fr: "Collection noire",
             en: "Black collection"
         },
-        bodyPartialName: 'black-collection'
+        bodyPartialName: 'black-collection-page',
+        pageIdentifier: 'black-collection-page'
     })
 });
 
@@ -60,7 +64,9 @@ app.get('/gallery/mor-talla-collection', (req, res) =>  {
             fr: "Collection Mor talla",
             en: "Mor talla collection"
         },
-        bodyPartialName: 'mor-talla'
+        bodyPartialName: 'mor-talla-collection',
+        pageIdentifier: 'mor-talla-collection-page'
+
     })
 });
 
@@ -71,7 +77,9 @@ app.get('/gallery/family', (req, res) =>    {
             fr: "Collection famille",
             en:'Family Collection'
         },
-        bodyPartialName: 'family'
+        bodyPartialName: 'family-collection',
+        pageIdentifier: 'family-collection-page'
+
     })
 });
 
@@ -82,7 +90,9 @@ app.get('/gallery/special-edition', (req, res) =>   {
             fr: "Hors série",
             en: "Special collection"
         },
-        bodyPartialName: 'special-edition'
+        bodyPartialName: 'special-edition',
+        pageIdentifier: 'special-edition-page'
+
     })
 });
 
@@ -93,7 +103,8 @@ app.get('/exhibitions', (req, res) =>   {
             fr: "Expositions",
             en: "Exhibitions"
         },
-        bodyPartialName: 'exhibitions'
+        bodyPartialName: 'exhibitions',
+        pageIdentifier: 'exhibitions-page'
     })
 });
 
@@ -104,7 +115,8 @@ app.get('/about', (req, res) => {
             fr: "À propos",
             en: 'About'
         },
-        bodyPartialName: 'about'
+        bodyPartialName: 'about',
+        pageIdentifier: 'about-page'
     })
 });
 
@@ -115,7 +127,8 @@ app.get('/contact', (req, res) =>   {
             fr: 'Contact',
             en: "Contact"
         },
-        bodyPartialName: 'contact'
+        bodyPartialName: 'contact',
+        pageIdentifier: 'contact-page'
     })
 });
 
@@ -126,7 +139,8 @@ app.get('/store', (req, res) => {
             fr:"Boutique",
             en: "Store"
         },
-        bodyPartialName: 'store'
+        bodyPartialName: 'store',
+        pageIdentifier: 'store-page'
     })
 });
 

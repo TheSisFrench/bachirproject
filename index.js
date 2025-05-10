@@ -19,6 +19,14 @@ const navLogo = document.getElementById('nav-logo');
 // root css variables
 const rootStyles = getComputedStyle(document.documentElement);
 
+
+//define the body color
+
+window.addEventListener('load', () =>   {
+    const bodyColor = rootStyles.getPropertyValue('--body-color')
+    document.body.style.backgroundColor = `rgb(${bodyColor})`;
+});
+
 //code for the header
 
 
@@ -138,13 +146,11 @@ function returnUp() {
 }
 
 
-
-
-
 // code for home page
 
 
-if(document.body.classList.contains('home'))    {const slides = document.querySelectorAll('.slideshow-container .slide');
+if(document.body.classList.contains('home'))    {
+    const slides = document.querySelectorAll('.slideshow-container .slide');
     let currentSlideIndex = 0;
     const intervalTime = 5000; // 5000 milliseconds = 5 seconds (Time slide is visible)
     const transitionDuration = 1000; // Match CSS transition duration (1000ms = 1 second)
@@ -217,69 +223,274 @@ if(document.body.classList.contains('home'))    {const slides = document.querySe
 
 
 
-// code use on main.html
+// code use on index.html
 
-//GALLERY
+document.addEventListener('DOMContentLoaded', () => {
+    const pageId = document.body.dataset.pageId; // Gets value of data-page-id
 
-window.addEventListener('DOMContentLoaded', () =>   {
-    if (document.body.classList.contains('gallery-page'))   {
-        
+    
+    if (pageId) {
+        console.log(`Client-side: Current page identifier is "${pageId}"`);
+    }
+    if(pageId === home) {
+        console.log('content for home-page')
+    } else if (pageId === 'gallery-page') {
 
-        //skip to gallery button appears when hover firstSection of main section
-        const skipToGalleryContainer = document.querySelector('.skip-to-gallery-container');
-        const firstSection = document.getElementById('first-section');
-        let firstSectionRect = firstSection.getBoundingClientRect();
+        // code for GALLERY-PAGE
 
-        if ((firstSectionRect.bottom - skipToGalleryContainer.offsetHeight) >= 0 && footer.getBoundingClientRect.bottom - skipToGalleryContainer.offsetHeight >=0) {
-            skipToGalleryContainer.style.opacity = "1";
-            skipToGalleryContainer.style.visibility = "visible";
+        window.addEventListener('DOMContentLoaded', () =>   {
+            if (document.body.classList.contains('gallery-page'))   {
+                
+
+                //skip to gallery button appears when hover firstSection of main section
+                const skipToGalleryContainer = document.querySelector('.skip-to-gallery-container');
+                const firstSection = document.getElementById('first-section');
+                let firstSectionRect = firstSection.getBoundingClientRect();
+
+                if ((firstSectionRect.bottom - skipToGalleryContainer.offsetHeight) >= 0 && footer.getBoundingClientRect.bottom - skipToGalleryContainer.offsetHeight >=0) {
+                    skipToGalleryContainer.style.opacity = "1";
+                    skipToGalleryContainer.style.visibility = "visible";
+                }
+            }  
+        });
+
+
+        if (document.body.classList.contains('gallery-page'))   {
+            const portfolioContainers = document.querySelectorAll('.portfolio-container');
+
+
+            window.addEventListener('load', function () {
+
+                portfolioContainers.forEach((portfolioContainer) => {
+                    const paintingName = portfolioContainer.querySelector('.painting-name');
+
+                    Object.keys(paintings).forEach((key) => {
+                        const painting = paintings[key];
+                        if(painting.title === paintingName.textContent) {
+                            //creer le <p> pour la taille
+                            const dimensions = document.createElement('p');
+                            dimensions.classList.add('painting-description');
+                            dimensions.textContent = painting.dimensions;
+
+                            //creer le <p> pour le medium
+                            const medium = document.createElement('p');
+                            medium.classList.add('painting-description');
+                            medium.textContent = painting.medium.fr;
+
+                            //creer le <p> pour year
+                            const year = document.createElement('p');
+                            year.classList.add('painting-description');
+                            year.textContent = painting.year;
+
+                            //add painting descriptions
+                            const paintingDescriptionSec = portfolioContainer.querySelector('.painting-description-section');
+                            paintingDescriptionSec.append(dimensions, medium, year)
+                            
+                            //set the painting image
+                            const paintingImg = portfolioContainer.querySelector('.painting-items');
+                            paintingImg.src = painting.image;
+                        }
+                    })
+                })
+
+                
+            })
+            
         }
-    }  
-});
+    } else if(pageId === 'new-collection-page') {
+        console.log('code for new-collection-page')
+    } else if (pageId === 'black-collection-page')  {
+        console.log('code for black-collection-page')
+    
+    } else if (pageId === 'mor-talla-collection-page') {
+        console.log('code for mor-talla-collection-page')
+    } else if (pageId === 'about-page') {
+        
+        //code for ABOUT-PAGE
+
+        if (document.body.classList.contains('presentation-page'))  {
 
 
-if (document.body.classList.contains('gallery-page'))   {
-    const portfolioContainers = document.querySelectorAll('.portfolio-container');
+            const welcomeMessageContainer = document.querySelector('.welcome-message-container');
+            const firstSlide = document.querySelector('.exhibitions-slide');
+            const slideDiscoverArtistContainer = document.querySelector('.slides-discover-artist-container')
 
-
-    window.addEventListener('load', function () {
-
-        portfolioContainers.forEach((portfolioContainer) => {
-            const paintingName = portfolioContainer.querySelector('.painting-name');
-
-            Object.keys(paintings).forEach((key) => {
-                const painting = paintings[key];
-                if(painting.title === paintingName.textContent) {
-                    //creer le <p> pour la taille
-                    const dimensions = document.createElement('p');
-                    dimensions.classList.add('painting-description');
-                    dimensions.textContent = painting.dimensions;
-
-                    //creer le <p> pour le medium
-                    const medium = document.createElement('p');
-                    medium.classList.add('painting-description');
-                    medium.textContent = painting.medium.fr;
-
-                    //creer le <p> pour year
-                    const year = document.createElement('p');
-                    year.classList.add('painting-description');
-                    year.textContent = painting.year;
-
-                    //add painting descriptions
-                    const paintingDescriptionSec = portfolioContainer.querySelector('.painting-description-section');
-                    paintingDescriptionSec.append(dimensions, medium, year)
-                    
-                    //set the painting image
-                    const paintingImg = portfolioContainer.querySelector('.painting-items');
-                    paintingImg.src = painting.image;
+            window.addEventListener('DOMContentLoaded', () =>  {
+                if(document.body.classList.contains('presentation.page'))    {
+                    console.log('prensentation-page')
                 }
             })
-        })
 
-        
-    })
-    
-}
+            //resize padding slides container
+
+            function resizePadding()    {
+                const indentation = rootStyles.getPropertyValue('--width-indentation');
+                const maxWidthPx = rootStyles.getPropertyValue('--max-width');
+                
+                if((window.innerWidth * (parseInt(indentation) / 100)) >= parseInt(maxWidthPx))    {
+                    slideDiscoverArtistContainer.style.padding = `0 ${(window.innerWidth - parseInt(maxWidthPx)) / 2}px`;
+                } else  {
+                    slideDiscoverArtistContainer.style.padding = `0 ${(100 - parseInt(indentation)) / 2}vw`
+                }
+            }
+
+            const presentationImg = document.querySelector('.presentation-img')
+            const containerHeight = presentationImg.offsetHeight; // The height of the container
+            const maxScroll = containerHeight; // Scroll equivalent to the height of the container
+
+            // Define base variables
+            const maxBorderWidth = 4; // Maximum border width in rem (base unit)
+            const maxBorderRadius = 6; // Maximum border-radius in rem (base unit)
+
+            let startSticky = null;
+
+            function resizeIntroImg() {
+                const scrollPosition = window.scrollY;
+                const presentationImgRect = presentationImg.getBoundingClientRect();
+
+                // Step 1: Check if the bottom of the element has reached the bottom of the viewport
+                if (presentationImgRect.bottom <= window.innerHeight && startSticky === null) {
+                    startSticky = scrollPosition; // Start the animation from this point
+                }
+
+                // Step 2: Calculate scroll progress (fraction of the element's height scrolled)
+                if (startSticky !== null) {
+                    const scrolledDistance = scrollPosition - startSticky; // Distance scrolled since the bottom reached the viewport
+                    const scrollFraction = Math.min(scrolledDistance / maxScroll, 1); // Ensure it doesn't exceed 1 (100%)
+
+                    // Gradually increase and decrease border and border-radius based on scrollFraction
+                    const borderWidth = scrollFraction * maxBorderWidth;  // Maximum border width of 5rem
+                    const borderRadius = scrollFraction * maxBorderRadius; // Maximum border-radius of 6rem
+
+                    // Apply the calculated styles
+                    presentationImg.style.border = `${borderWidth}rem solid #fff`;
+                    presentationImg.style.borderRadius = `${borderRadius}rem`;
+
+                    // Step 3: Reset once we scroll back to the top
+                    if (scrollPosition === 0) {
+                        startSticky = null; // Reset the start position
+                        presentationImg.style.border = '0rem solid #fff';
+                        presentationImg.style.borderRadius = '0px';
+                    }
+                }
+            }
+
+            window.addEventListener('resize', resizePadding);
+            window.addEventListener('DOMContentLoaded', resizePadding);
+            window.addEventListener('scroll', resizeIntroImg);
+            
+
+
+
+
+            const frameViewer = document.querySelector('.frame-viewer');
+            const totalFrames = 41;
+
+            // Dynamically create and append 40 image frames
+            for (let i = 0; i <= totalFrames; i++) {
+                const img = document.createElement('img');
+                const frameNumber = String(i).padStart(2, '0');
+                img.src = `/img/Bachir_signature/BACHIR_signature_${frameNumber}.svg`;
+                img.classList.add('svg-frame');
+                if (i !== 1) img.classList.add('hidden');
+                frameViewer.appendChild(img);
+            }
+
+            const frames = document.querySelectorAll('.svg-frame');
+            const scrollContainer = document.querySelector('.scroll-movie-container');
+            const scrollStart = scrollContainer.offsetTop;
+            const scrollEnd = scrollStart + scrollContainer.offsetHeight - window.innerHeight;
+
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+
+                const progress = Math.min(Math.max((scrollY - scrollStart) / (scrollEnd - scrollStart), 0), 1);
+                const frameIndex = Math.floor(progress * (totalFrames - 1));
+
+                frames.forEach((frame, i) => {
+                    frame.classList.toggle('appear', i === frameIndex);
+                });
+            });
+
+
+
+
+            //seperate senegal letters for explanation
+            const fourthSectionContainer = document.querySelector('.fourth-section-container')
+            const senegalContainer = document.querySelector('.senegal-container');
+            const senegal = document.querySelector('.senegal')
+            const senegalExplanation = document.querySelector('.senegal-explanation')
+
+            let initialPadding = 0;
+            let maxPadding = 0;
+                
+            //setting different padding based on viewport width
+            if(window.innerWidth >= 1440) {
+                maxPadding = 15; // rem
+            } else if (window.innerWidth >= 1080 && window.innerWidth < 1440)   {
+                maxPadding = 10; // rem
+            } else if (window.innerWidth >= 760 && window.innerWidth < 1080) {
+                maxPadding = 7; // rem
+            } else if (window.innerWidth < 760) {
+                maxPadding = 5; // rem
+            }
+            
+
+            function seperateSenegal() {
+
+                
+                function getOffsetTop(element) {
+                    let offset = 0;
+                    while (element) {
+                        offset += element.offsetTop;
+                        element = element.offsetParent;
+                    }
+                    return offset;
+                }
+                //setting start and end seperation letters animation
+                seperateSenegal.startSticky = getOffsetTop(fourthSectionContainer);
+                seperateSenegal.endSticky = getOffsetTop(senegalExplanation) - (window.innerWidth * 0.2);
+
+                
+                
+
+                if (window.scrollY >= seperateSenegal.startSticky) {
+                    let scrollRange = seperateSenegal.endSticky - seperateSenegal.startSticky;
+                    let progress = (window.scrollY - seperateSenegal.startSticky) / scrollRange;
+            
+                    // Clamp progress between 0 and 1
+                    progress = Math.max(0, Math.min(progress, 1));
+            
+                    const paddingSize = initialPadding + (progress * (maxPadding - initialPadding));
+                    
+                    senegalContainer.style.columnGap = `${paddingSize}rem`;
+                }
+            }
+            
+            window.addEventListener('scroll', seperateSenegal);
+            
+            
+
+            //make Sunugal explanation appear
+            function appearText()   {
+
+            const senegal = document.querySelector('.senegal');
+            const senegalRect = senegal.getBoundingClientRect();
+            const senegalTextSection = document.querySelector('.senegal-text-section');
+            const senegalTextSectionRect = senegalTextSection.getBoundingClientRect();
+
+                if(senegalRect.bottom === senegalTextSectionRect.bottom)    {
+                    const senegalTextExplanationContainer = document.querySelector('.senegal-text-explanation-container');
+                    senegalTextExplanationContainer.style.opacity = "1";
+                    senegalTextExplanationContainer.style.visibility = "visible";
+                }
+            }
+            
+
+            window.addEventListener('scroll', appearText);
+        }
+    }
+});
 
 
 
@@ -700,189 +911,6 @@ function loadPaintingPage(paintingName) {
 
 
 
-//presentation page
-
-if (document.body.classList.contains('presentation-page'))  {
-
-
-    const welcomeMessageContainer = document.querySelector('.welcome-message-container');
-    const firstSlide = document.querySelector('.exhibitions-slide');
-    const slideDiscoverArtistContainer = document.querySelector('.slides-discover-artist-container')
-
-    window.addEventListener('DOMContentLoaded', () =>  {
-        if(document.body.classList.contains('presentation.page'))    {
-            console.log('prensentation-page')
-        }
-    })
-
-    //resize padding slides container
-
-    function resizePadding()    {
-        const indentation = rootStyles.getPropertyValue('--width-indentation');
-        const maxWidthPx = rootStyles.getPropertyValue('--max-width');
-        
-        if((window.innerWidth * (parseInt(indentation) / 100)) >= parseInt(maxWidthPx))    {
-            slideDiscoverArtistContainer.style.padding = `0 ${(window.innerWidth - parseInt(maxWidthPx)) / 2}px`;
-        } else  {
-            slideDiscoverArtistContainer.style.padding = `0 ${(100 - parseInt(indentation)) / 2}vw`
-        }
-    }
-
-    const presentationImg = document.querySelector('.presentation-img')
-    const containerHeight = presentationImg.offsetHeight; // The height of the container
-    const maxScroll = containerHeight; // Scroll equivalent to the height of the container
-
-    // Define base variables
-    const maxBorderWidth = 4; // Maximum border width in rem (base unit)
-    const maxBorderRadius = 6; // Maximum border-radius in rem (base unit)
-
-    let startSticky = null;
-
-    function resizeIntroImg() {
-        const scrollPosition = window.scrollY;
-        const presentationImgRect = presentationImg.getBoundingClientRect();
-
-        // Step 1: Check if the bottom of the element has reached the bottom of the viewport
-        if (presentationImgRect.bottom <= window.innerHeight && startSticky === null) {
-            startSticky = scrollPosition; // Start the animation from this point
-        }
-
-        // Step 2: Calculate scroll progress (fraction of the element's height scrolled)
-        if (startSticky !== null) {
-            const scrolledDistance = scrollPosition - startSticky; // Distance scrolled since the bottom reached the viewport
-            const scrollFraction = Math.min(scrolledDistance / maxScroll, 1); // Ensure it doesn't exceed 1 (100%)
-
-            // Gradually increase and decrease border and border-radius based on scrollFraction
-            const borderWidth = scrollFraction * maxBorderWidth;  // Maximum border width of 5rem
-            const borderRadius = scrollFraction * maxBorderRadius; // Maximum border-radius of 6rem
-
-            // Apply the calculated styles
-            presentationImg.style.border = `${borderWidth}rem solid #fff`;
-            presentationImg.style.borderRadius = `${borderRadius}rem`;
-
-            // Step 3: Reset once we scroll back to the top
-            if (scrollPosition === 0) {
-                startSticky = null; // Reset the start position
-                presentationImg.style.border = '0rem solid #fff';
-                presentationImg.style.borderRadius = '0px';
-            }
-        }
-    }
-
-    window.addEventListener('resize', resizePadding);
-    window.addEventListener('DOMContentLoaded', resizePadding);
-    window.addEventListener('scroll', resizeIntroImg);
-      
-
-
-
-
-    const frameViewer = document.querySelector('.frame-viewer');
-    const totalFrames = 41;
-
-    // Dynamically create and append 40 image frames
-    for (let i = 0; i <= totalFrames; i++) {
-        const img = document.createElement('img');
-        const frameNumber = String(i).padStart(2, '0');
-        img.src = `/img/Bachir_signature/BACHIR_signature_${frameNumber}.svg`;
-        img.classList.add('svg-frame');
-        if (i !== 1) img.classList.add('hidden');
-        frameViewer.appendChild(img);
-    }
-
-    const frames = document.querySelectorAll('.svg-frame');
-    const scrollContainer = document.querySelector('.scroll-movie-container');
-    const scrollStart = scrollContainer.offsetTop;
-    const scrollEnd = scrollStart + scrollContainer.offsetHeight - window.innerHeight;
-
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-
-        const progress = Math.min(Math.max((scrollY - scrollStart) / (scrollEnd - scrollStart), 0), 1);
-        const frameIndex = Math.floor(progress * (totalFrames - 1));
-
-        frames.forEach((frame, i) => {
-            frame.classList.toggle('appear', i === frameIndex);
-        });
-    });
-
-
-
-
-    //seperate senegal letters for explanation
-    const fourthSectionContainer = document.querySelector('.fourth-section-container')
-    const senegalContainer = document.querySelector('.senegal-container');
-    const senegal = document.querySelector('.senegal')
-    const senegalExplanation = document.querySelector('.senegal-explanation')
-
-    let initialPadding = 0;
-    let maxPadding = 0;
-        
-    //setting different padding based on viewport width
-    if(window.innerWidth >= 1440) {
-        maxPadding = 15; // rem
-    } else if (window.innerWidth >= 1080 && window.innerWidth < 1440)   {
-        maxPadding = 10; // rem
-    } else if (window.innerWidth >= 760 && window.innerWidth < 1080) {
-        maxPadding = 7; // rem
-    } else if (window.innerWidth < 760) {
-        maxPadding = 5; // rem
-    }
-    
-
-    function seperateSenegal() {
-
-        
-        function getOffsetTop(element) {
-            let offset = 0;
-            while (element) {
-                offset += element.offsetTop;
-                element = element.offsetParent;
-            }
-            return offset;
-        }
-        //setting start and end seperation letters animation
-        seperateSenegal.startSticky = getOffsetTop(fourthSectionContainer);
-        seperateSenegal.endSticky = getOffsetTop(senegalExplanation) - (window.innerWidth * 0.2);
-
-        
-        
-
-        if (window.scrollY >= seperateSenegal.startSticky) {
-            let scrollRange = seperateSenegal.endSticky - seperateSenegal.startSticky;
-            let progress = (window.scrollY - seperateSenegal.startSticky) / scrollRange;
-    
-            // Clamp progress between 0 and 1
-            progress = Math.max(0, Math.min(progress, 1));
-    
-            const paddingSize = initialPadding + (progress * (maxPadding - initialPadding));
-            
-            senegalContainer.style.columnGap = `${paddingSize}rem`;
-        }
-    }
-    
-    window.addEventListener('scroll', seperateSenegal);
-    
-    
-
-    //make Sunugal explanation appear
-    function appearText()   {
-
-    const senegal = document.querySelector('.senegal');
-    const senegalRect = senegal.getBoundingClientRect();
-    const senegalTextSection = document.querySelector('.senegal-text-section');
-    const senegalTextSectionRect = senegalTextSection.getBoundingClientRect();
-
-        if(senegalRect.bottom === senegalTextSectionRect.bottom)    {
-            const senegalTextExplanationContainer = document.querySelector('.senegal-text-explanation-container');
-            senegalTextExplanationContainer.style.opacity = "1";
-            senegalTextExplanationContainer.style.visibility = "visible";
-        }
-    }
-    
-
-    window.addEventListener('scroll', appearText);
-}
 
 
 

@@ -3,10 +3,6 @@
     --body-color: 13, 13, 13;
 }
 
-body    {
-    background-color: rgb(var(--body-color));
-}
-
 /*skip to gallery button*/
 
 .skip-to-gallery-container    {
