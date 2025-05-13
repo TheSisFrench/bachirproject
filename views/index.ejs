@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= currentLanguage %>">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +20,10 @@
     </head>
 
     <body data-page-id="<%= typeof pageIdentifier !== 'undefined' ? pageIdentifier : '' %>">
+        
         <%- include('./partials/header') %>
-
+        <p>DEBUG: Title Value: <%- JSON.stringify(title) %></p>
+        <p>DEBUG: Title Type: <%= typeof title %></p>
         <%- include('./partials/' + bodyPartialName) %>
         
         <%- include('./partials/footer') %>
