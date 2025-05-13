@@ -17,8 +17,8 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
   res.render('index', {
     currentPage: 'home',
-    title: 'home',
-    bodyPartialName: 'home',
+    title: 'Bachir',
+    bodyPartialName: 'Home',
     pageIdentifier: 'home-page'
   });
 });

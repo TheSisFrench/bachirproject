@@ -10,6 +10,14 @@ body    {
     text-rendering: optimizeLegibility;
 }
 
+.home-page  {
+    background-color: rgb(45, 75, 85);
+}
+
+.gallery-page   {
+    background-color: rgb(13, 13, 13);
+}
+
 @font-face  {
     font-family: 'rokkit';
     src: url(/fonts/Rokkitt/Rokkitt-VariableFont_wght.ttf);

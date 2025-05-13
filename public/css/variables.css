@@ -40,8 +40,8 @@
     
     --color-white-hover: 130, 130, 130;
 
-    --body-color: 13, 13, 13;
-
+    --body-color-dark: 13, 13, 13;
+    --body-color-bright: 255, 255, 255;
 }
 
 
