@@ -10,7 +10,6 @@ const session = require('express-session'); // If using sessions for language
 // const cookieParser = require('cookie-parser'); // If using cookies
 
 const languageHandler = require('./middleware/languageHandler');
-const { getLocalizedText } = require('./helpers/i18nHelper'); // Import helper
 
 const IN_PRODUCTION = process.env.NODE_ENV === 'production';
 const sessionSecret = process.env.SESSION_SECRET;
