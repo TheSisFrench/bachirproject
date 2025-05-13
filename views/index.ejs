@@ -21,11 +21,13 @@
 
     <body data-page-id="<%= typeof pageIdentifier !== 'undefined' ? pageIdentifier : '' %>">
         
-        <%- include('./partials/header') %>
-        <p>DEBUG: Title Value: <%- JSON.stringify(title) %></p>
-        <p>DEBUG: Title Type: <%= typeof title %></p>
-        <%- include('./partials/' + bodyPartialName) %>
-        
+        <%- include('./partials/header', { currentLanguage: currentLanguage, queryParams: queryParams, currentPage: currentPage }) %>        <p>DEBUG: Title Value: <%- JSON.stringify(title) %></p>
+
+        <% if (bodyPartialName) { %>
+            <%- include('./partials/' + bodyPartialName, { greeting: greeting, description: description, heading: heading, title: title }) %>
+        <% } else { %>
+            <p>Error: No content partial specified.</p>
+        <% } %>        
         <%- include('./partials/footer') %>
 
         <script src="/index.js"></script>

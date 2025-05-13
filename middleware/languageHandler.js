@@ -1,4 +1,3 @@
-// middleware/languageHandler.js
 const parser = require('accept-language-parser');
 
 function languageHandler(req, res, next) {

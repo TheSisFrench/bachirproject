@@ -1,3 +1,4 @@
+<!--
 <div class="blur-effect"></div>
 <nav id="nav">
   <header class="nav-container">
@@ -98,3 +99,37 @@
     </div>
   </section>
 </nav>
+-->
+
+<header>
+  <nav>
+      <ul>
+          <li><a href="/?<%= new URLSearchParams({...queryParams, lang: currentLanguage}).toString() %>" class="<%= currentPage === 'home' ? 'active' : '' %>">
+              <% if(currentLanguage === 'fr') { %>Accueil<% } else { %>Home<% } %>
+          </a></li>
+          <li><a href="/gallery?<%= new URLSearchParams({...queryParams, lang: currentLanguage}).toString() %>" class="<%= currentPage === 'gallery' ? 'active' : '' %>">
+              <% if(currentLanguage === 'fr') { %>Galerie<% } else { %>Gallery<% } %>
+          </a></li>
+          <!-- Add other nav links similarly -->
+      </ul>
+      <div class="language-switcher">
+          <% const otherLang = currentLanguage === 'en' ? 'fr' : 'en'; %>
+          <% const otherLangText = currentLanguage === 'en' ? 'Français' : 'English'; %>
+          <%
+              // Create a new URLSearchParams object for the switcher link
+              // It starts with the current page's query parameters (queryParams from res.locals)
+              const switcherQuery = new URLSearchParams(queryParams);
+              // Set the 'lang' parameter to the 'otherLang'
+              switcherQuery.set('lang', otherLang);
+              // Get the string representation (e.g., "oldParam=value&lang=fr")
+              const switcherQueryString = switcherQuery.toString();
+          %>
+          <a href="?<%= switcherQueryString %>"><%= otherLangText %></a>
+      </div>
+  </nav>
+  <hr>
+  <!-- Display a heading if passed -->
+  <% if (typeof heading !== 'undefined') { %>
+      <h1><%= heading %></h1>
+  <% } %>
+</header>
