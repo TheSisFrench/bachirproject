@@ -58,10 +58,12 @@ app.use(languageHandler); // Now res.locals.currentLanguage and res.locals.query
 app.get('/', (req, res) => {
     const pageContent =  {
         fr: {
-            title: 'Bachir'
+            title: 'Bachir',
+            heading: 'Bachir',
         },
         en: {
-            title: 'Bachir'
+            title: 'Bachir',
+            heading: 'Bachir',
         }
     }
      // getLocalizedText will return either pageContent.en or pageContent.fr
@@ -69,6 +71,7 @@ app.get('/', (req, res) => {
 
     res.render('index', {
         title: i18n.title,
+        heading: 'Bachir',
         currentPage: 'home',
         bodyPartialName: 'home',
         pageIdentifier: 'home-page'
@@ -79,9 +82,11 @@ app.get('/gallery', (req, res) => {
     const pageContent = {
         fr: {
             title: 'Gallerie',
+            heading: 'Gallerie',
         },
         en: {
             title: 'Gallery',
+            heading: 'Gallery',
         }
     };
 
@@ -89,6 +94,7 @@ app.get('/gallery', (req, res) => {
 
     res.render('index',  {
         title: i18n.title,
+        heading: 'Gallery',
         currentPage: 'gallery',
         bodyPartialName: 'gallery',
         pageIdentifier: 'gallery-page'
@@ -96,19 +102,23 @@ app.get('/gallery', (req, res) => {
 }); 
 
 app.get('/gallery/new-collection', (req, res) =>    {
+    
     const pageContent = {
         fr: {
             title: "Nouvelle collection",
+            heading: 'Nouvelle collection',
         },
         en: {
-            title: "New collection"
+            title: "New collection",
+            heading: 'New collection',
         }
     };
 
     const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
     res.render('index', {
         title: i18n.title,
-        currentPage: 'gallery',
+        currentPage: 'new-collection',
+        heading: 'New collection',
         bodyPartialName: 'new-collection',
         pageIdentifier: 'new-collection-page'
     })
@@ -116,37 +126,63 @@ app.get('/gallery/new-collection', (req, res) =>    {
 
 //links to different collection of painting
 app.get('/gallery/black-collection', (req, res) =>  {
+    const pageContent =     {
+        fr: {
+            title: 'Collection noire',
+            heading: 'Collection noire',
+        },
+        en: {
+            title: 'Black collection',
+            heading: 'Black collection'
+        }
+    };
+    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
     res.render('index', {
         currentPage: 'gallery',
-        title: {
-            fr: "Collection noire",
-            en: "Black collection"
-        },
+        title: i18n.title,
+        heading: 'New collection',
         bodyPartialName: 'black-collection-page',
         pageIdentifier: 'black-collection-page'
     })
 });
 
 app.get('/gallery/mor-talla-collection', (req, res) =>  {
+    const pageContent =     {
+        fr: {
+            title: 'Collection Mor talla',
+            heading: 'Collection Mor talla',
+        },
+        en: {
+            title: 'Mor talla collection',
+            heading: 'Mor talla collection'
+        }
+    };
+    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
     res.render('index', {
         currentPage: 'gallery',
-        title: {
-            fr: "Collection Mor talla",
-            en: "Mor talla collection"
-        },
+        title: i18n.title,
+        heading: 'New collection',
         bodyPartialName: 'mor-talla-collection',
         pageIdentifier: 'mor-talla-collection-page'
-
-    })
+    });
 });
 
 app.get('/gallery/family', (req, res) =>    {
+    const pageContent =     {
+        fr: {
+            title: 'Collection famille',
+            heading: 'Collection famille',
+        },
+        en: {
+            title: 'Family collection',
+            heading: 'Family collection',
+        }
+    };
+    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
     res.render('index', {
         currentPage: 'gallery',
-        title: {
-            fr: "Collection famille",
-            en:'Family Collection'
-        },
+        title: i18n.title,
+        heading: 'New collection',
         bodyPartialName: 'family-collection',
         pageIdentifier: 'family-collection-page'
 
@@ -154,12 +190,22 @@ app.get('/gallery/family', (req, res) =>    {
 });
 
 app.get('/gallery/special-edition', (req, res) =>   {
+    const pageContent =     {
+        fr: {
+            title: 'Édition spéciale',
+            heading: 'Édition spéciale',
+
+        },
+        en: {
+            title: 'Special edition',
+            heading: 'Special edition',
+        }
+    };
+    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
     res.render('index', {
         currentPage: 'gallery',
-        title: {
-            fr: "Hors série",
-            en: "Special collection"
-        },
+        title: i18n.title,
+        heading: 'New collection',
         bodyPartialName: 'special-edition',
         pageIdentifier: 'special-edition-page'
 
@@ -167,12 +213,20 @@ app.get('/gallery/special-edition', (req, res) =>   {
 });
 
 app.get('/exhibitions', (req, res) =>   {
-    res.render('index', {
-        currentPage: 'exhibitions',
-        title: {
-            fr: "Expositions",
-            en: "Exhibitions"
+    const pageContent = {
+        fr: {
+            title: 'Expositions',
+            heading: 'Expositions',
         },
+        en: {
+            title: 'Exhibitions',
+            heading: 'Exhibitions',
+        }
+    };
+    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
+    res.render('index', {
+        title: i18n.title,
+        currentPage: 'exhibitions',
         bodyPartialName: 'exhibitions',
         pageIdentifier: 'exhibitions-page'
     })
@@ -182,9 +236,11 @@ app.get('/about', (req, res) => {
     const pageContent =     {
         fr: {
             title: 'À propos',
+            heading: 'À propos',
         },
         en: {
             title: 'About',
+            heading: 'About'
         }
     };
     const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
@@ -197,24 +253,40 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/contact', (req, res) =>   {
+    const pageContent =     {
+        fr: {
+            title: 'Contact',
+            heading: 'Contact',
+        },
+        en: {
+            title: 'Contact',
+            heading: 'Contact'
+        }
+    };
+    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
     res.render('index', {
         currentPage: 'contact',
-        title: {
-            fr: 'Contact',
-            en: "Contact"
-        },
+        title: i18n.title,
         bodyPartialName: 'contact',
         pageIdentifier: 'contact-page'
     })
 });
 
 app.get('/store', (req, res) => {
+    const pageContent =     {
+        fr: {
+            title: 'Boutique',
+            heading: 'Boutique',
+        },
+        en: {
+            title: 'Boutique',
+            heading: 'Boutique'
+        }
+    };
+    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
     res.render('index', {
         currentPage: 'store',
-        title: {
-            fr:"Boutique",
-            en: "Store"
-        },
+        title: i18n.title,
         bodyPartialName: 'store',
         pageIdentifier: 'store-page'
     })
