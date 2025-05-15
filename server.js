@@ -4,7 +4,6 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser'); // To parse form data
 
 const session = require('express-session'); // If using sessions for language
 // const cookieParser = require('cookie-parser'); // If using cookies
@@ -24,16 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');   // Set EJS as the view engine
 
-app.use(session({
-    secret: sessionSecret, // Use the variable here
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-        secure: IN_PRODUCTION,
-        httpOnly: true,
-        sameSite: 'lax',
-    }
-}));
 
 // Session middleware - MUST be before languageHandler if it uses session
 app.use(session({
