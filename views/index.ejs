@@ -24,7 +24,7 @@
         <%- include('./partials/header', { currentLanguage: currentLanguage, queryParams: queryParams, currentPage: currentPage }) %> 
 
         <% if (bodyPartialName) { %>
-            <%- include('./partials/' + bodyPartialName, { heading: heading, title: title }) %>
+            <%- include('./partials/' + bodyPartialName) %>
         <% } else { %>
             <p>Error: No content partial specified.</p>
         <% } %>  
