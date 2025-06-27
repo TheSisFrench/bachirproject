@@ -74,6 +74,7 @@ function pathLanguageHandler(req, res, next) {
         console.log(`     Final initialization of session lang to '${determinedLang}'.`);
     }
 
+        console.log(`PATH_HANDLER_DEBUG: Setting res.locals.currentLanguage to '${determinedLang}'`);
 
     // --- SET RES.LOCALS ---
     res.locals.currentLanguage = determinedLang;

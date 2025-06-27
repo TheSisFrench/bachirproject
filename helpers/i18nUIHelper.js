@@ -62,7 +62,11 @@ function i18nUiMiddleware(req, res, next) {
 
     // Define the 't' (translate) function and attach it to res.locals.
     // This makes 't' available as a global-like function in all EJS templates for this request.
+
+     console.log(`I18N_HELPER_DEBUG: Attaching 't' function to res.locals for language '${currentLang}'.`);
+     
     res.locals.t = function(key, options = {}) {
+
         let translation;
 
         // 1. Try to find the translation key in the current language's file.

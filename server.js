@@ -66,8 +66,8 @@ langRouter.use(i18nUiMiddleware);   // Uses currentLanguage to create res.locals
 // Handles "/en/" or "/fr/"
 langRouter.get('/', (req, res) => {
     res.render('index', {
-        title: res.locals.t('home_page_title'),
-        heading: res.locals.t('home_page_heading'),
+        title: res.locals.t('home-page-title'),
+        heading: res.locals.t('home-page-heading'),
         currentPage: 'home',
         bodyPartialName: 'home',
         pageIdentifier: 'home-page'
