@@ -3,32 +3,25 @@ require('dotenv').config(); // Loads environment variables from .env file
 const express = require('express');
 const path = require('path');
 const app = express();
-const nodemailer = require('nodemailer');
-
-const session = require('express-session'); // If using sessions for language
-// const cookieParser = require('cookie-parser'); // If using cookies
+const session = require('express-session');
+const parser = require('accept-language-parser'); // Needed for root redirect logic
 
 const IN_PRODUCTION = process.env.NODE_ENV === 'production';
 const sessionSecret = process.env.SESSION_SECRET;
 if (!sessionSecret) {
-    console.error('FATAL ERROR: SESSION_SECRET is not defined in the environment.');
-    console.error('For development, you can set it in a .env file.');
-    console.error('For production, set it in your deployment environment variables.');
-    process.exit(1); // Exit if the secret isn't set, as it's critical
+    console.error('FATAL ERROR: SESSION_SECRET is not defined...');
+    process.exit(1);
 }
 
-
 // --- Middleware Setup ---
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files first
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');   // Set EJS as the view engine
+app.set('view engine', 'ejs');
 
-
-// Session middleware - MUST be before languageHandler if it uses session
 app.use(session({
-    secret: sessionSecret || 'local_dev_fallback_secret', // Fallback only for dev if .env fails
+    secret: sessionSecret || 'local_dev_fallback_secret',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: true, // True to store session for language preference
     cookie: {
         secure: IN_PRODUCTION,
         httpOnly: true,
@@ -36,250 +29,161 @@ app.use(session({
     }
 }));
 
-const languageHandler = require('./middleware/languageHandler');
-const { getLocalizedText } = require('./helpers/i18nHelper'); // Adjust path if needed
+// Import your handlers and helpers
+const { i18nUiMiddleware } = require('./helpers/i18nUIHelper');
+const pathLanguageHandler = require('./middleware/pathLanguageHandler'); // Using the new handler
 
-// Custom Language Middleware
-app.use(languageHandler); // Now res.locals.currentLanguage and res.locals.queryParams are set
-
-
-// Route to render your EJS file
 app.get('/', (req, res) => {
-    const pageContent =  {
-        fr: {
-            title: 'Bachir',
-            heading: 'Bachir',
-        },
-        en: {
-            title: 'Bachir',
-            heading: 'Bachir',
-        }
+    let langToRedirect = 'en'; // Default language
+    if (req.session && req.session.lang && ['en', 'fr'].includes(req.session.lang)) {
+        langToRedirect = req.session.lang;
+    } else if (req.headers['accept-language']) {
+        try {
+            const browserPreferences = parser.parse(req.headers['accept-language']);
+            for (const pref of browserPreferences) {
+                if (['en', 'fr'].includes(pref.code.toLowerCase())) {
+                    langToRedirect = pref.code.toLowerCase();
+                    break;
+                }
+            }
+        } catch (e) { /* ignore and use default */ }
     }
-     // getLocalizedText will return either pageContent.en or pageContent.fr
-     const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
+    // Redirects to "/en/" or "/fr/"
+    res.redirect(302, `/${langToRedirect}/`);
+});
 
+
+// --- Language-Prefixed Router ---
+const langRouter = express.Router({ mergeParams: true });
+app.use('/:lang', langRouter);
+
+// Apply middleware to the router
+langRouter.use(pathLanguageHandler); // Sets res.locals.currentLanguage from path
+langRouter.use(i18nUiMiddleware);   // Uses currentLanguage to create res.locals.t
+
+// --- Define all your page routes INSIDE langRouter ---
+
+// Handles "/en/" or "/fr/"
+langRouter.get('/', (req, res) => {
     res.render('index', {
-        title: i18n.title,
-        heading: 'Bachir',
+        title: res.locals.t('home_page_title'),
+        heading: res.locals.t('home_page_heading'),
         currentPage: 'home',
         bodyPartialName: 'home',
         pageIdentifier: 'home-page'
     });
 });
 
-app.get('/gallery', (req, res) => {
-    const pageContent = {
-        fr: {
-            title: 'Gallerie',
-            heading: 'Gallerie',
-        },
-        en: {
-            title: 'Gallery',
-            heading: 'Gallery',
-        }
-    };
+// Handles "/en/gallery" or "/fr/gallery"
+langRouter.get('/gallery', (req, res) => {
+    const collectionSlugs = ["new-collection", "black-collection", "mor-talla-collection", "family", "special-edition"];
+    const collectionsForView = collectionSlugs.map(slug => ({
+        slug: slug,
+        title: res.locals.t(`collection_${slug}_title`, { defaultValue: slug }),
+        path: `${res.locals.basePathWithLang}/gallery/${slug}`
+    }));
 
-    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
-
-    res.render('index',  {
-        title: i18n.title,
-        heading: 'Gallery',
-        currentPage: 'gallery',
-        bodyPartialName: 'gallery',
-        pageIdentifier: 'gallery-page'
-    });
-}); 
-
-app.get('/gallery/new-collection', (req, res) =>    {
-    
-    const pageContent = {
-        fr: {
-            title: "Nouvelle collection",
-            heading: 'Nouvelle collection',
-        },
-        en: {
-            title: "New collection",
-            heading: 'New collection',
-        }
-    };
-
-    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
     res.render('index', {
-        title: i18n.title,
-        currentPage: 'new-collection',
-        heading: 'New collection',
-        bodyPartialName: 'new-collection',
-        pageIdentifier: 'new-collection-page'
-    })
-});
-
-//links to different collection of painting
-app.get('/gallery/black-collection', (req, res) =>  {
-    const pageContent =     {
-        fr: {
-            title: 'Collection noire',
-            heading: 'Collection noire',
-        },
-        en: {
-            title: 'Black collection',
-            heading: 'Black collection'
-        }
-    };
-    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
-    res.render('index', {
+        title: res.locals.t('gallery_overview_title'),
+        heading: res.locals.t('gallery_overview_heading'),
         currentPage: 'gallery',
-        title: i18n.title,
-        heading: 'New collection',
-        bodyPartialName: 'black-collection-page',
-        pageIdentifier: 'black-collection-page'
-    })
-});
-
-app.get('/gallery/mor-talla-collection', (req, res) =>  {
-    const pageContent =     {
-        fr: {
-            title: 'Collection Mor talla',
-            heading: 'Collection Mor talla',
-        },
-        en: {
-            title: 'Mor talla collection',
-            heading: 'Mor talla collection'
-        }
-    };
-    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
-    res.render('index', {
-        currentPage: 'gallery',
-        title: i18n.title,
-        heading: 'New collection',
-        bodyPartialName: 'mor-talla-collection',
-        pageIdentifier: 'mor-talla-collection-page'
+        bodyPartialName: 'gallery-overview',
+        collections: collectionsForView,
+        pageIdentifier: 'gallery-overview-page'
     });
 });
 
-app.get('/gallery/family', (req, res) =>    {
-    const pageContent =     {
-        fr: {
-            title: 'Collection famille',
-            heading: 'Collection famille',
-        },
-        en: {
-            title: 'Family collection',
-            heading: 'Family collection',
-        }
-    };
-    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
-    res.render('index', {
-        currentPage: 'gallery',
-        title: i18n.title,
-        heading: 'New collection',
-        bodyPartialName: 'family-collection',
-        pageIdentifier: 'family-collection-page'
+// Handles "/en/gallery/new-collection", "/fr/gallery/black-collection", etc.
+langRouter.get('/gallery/:collectionName', (req, res, next) => {
+    const { collectionName } = req.params;
+    const collectionTitle = res.locals.t(`collection_${collectionName}_title`, { defaultValue: null });
 
-    })
+    if (collectionTitle === null) {
+        console.warn(`Attempted to access non-existent collection: ${collectionName}`);
+        return next(); // Pass to 404 handler
+    }
+
+    res.render('index', {
+        title: collectionTitle,
+        heading: res.locals.t(`collection_${collectionName}_heading`, { defaultValue: collectionTitle }),
+        currentPage: `gallery-${collectionName}`,
+        bodyPartialName: res.locals.t(`collection_${collectionName}_ejsFile`),
+        pageIdentifier: res.locals.t(`collection_${collectionName}_page_identifier`),
+        description: res.locals.t(`collection_${collectionName}_description`, { defaultValue: '' })
+    });
 });
 
-app.get('/gallery/special-edition', (req, res) =>   {
-    const pageContent =     {
-        fr: {
-            title: 'Édition spéciale',
-            heading: 'Édition spéciale',
 
-        },
-        en: {
-            title: 'Special edition',
-            heading: 'Special edition',
-        }
-    };
-    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
+langRouter.get('/about', (req, res) => {
     res.render('index', {
-        currentPage: 'gallery',
-        title: i18n.title,
-        heading: 'New collection',
-        bodyPartialName: 'special-edition',
-        pageIdentifier: 'special-edition-page'
-
-    })
-});
-
-app.get('/exhibitions', (req, res) =>   {
-    const pageContent = {
-        fr: {
-            title: 'Expositions',
-            heading: 'Expositions',
-        },
-        en: {
-            title: 'Exhibitions',
-            heading: 'Exhibitions',
-        }
-    };
-    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
-    res.render('index', {
-        title: i18n.title,
-        currentPage: 'exhibitions',
-        bodyPartialName: 'exhibitions',
-        pageIdentifier: 'exhibitions-page'
-    })
-});
-
-app.get('/about', (req, res) => {
-    const pageContent =     {
-        fr: {
-            title: 'À propos',
-            heading: 'À propos',
-        },
-        en: {
-            title: 'About',
-            heading: 'About'
-        }
-    };
-    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
-    res.render('index', {
-        title: i18n.title,
+        title: res.locals.t('about_page_title'),
+        heading: res.locals.t('about_page_heading'),
         currentPage: 'about',
         bodyPartialName: 'about',
         pageIdentifier: 'about-page'
-    })
+    });
 });
 
-app.get('/contact', (req, res) =>   {
-    const pageContent =     {
-        fr: {
-            title: 'Contact',
-            heading: 'Contact',
-        },
-        en: {
-            title: 'Contact',
-            heading: 'Contact'
-        }
+langRouter.get('/contact', (req, res) => {
+    const pageContent = {
+        fr: { title: 'Contact', heading: 'Contact', bodyPartialName: 'contact' },
+        en: { title: 'Contact', heading: 'Contact', bodyPartialName: 'contact' }
     };
     const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
     res.render('index', {
         currentPage: 'contact',
         title: i18n.title,
-        bodyPartialName: 'contact',
+        heading: i18n.heading,
+        bodyPartialName: i18n.bodyPartialName,
         pageIdentifier: 'contact-page'
-    })
+    });
 });
 
-app.get('/store', (req, res) => {
-    const pageContent =     {
-        fr: {
-            title: 'Boutique',
-            heading: 'Boutique',
-        },
-        en: {
-            title: 'Boutique',
-            heading: 'Boutique'
-        }
+langRouter.get('/store', (req, res) => {
+    const pageContent = {
+        fr: { title: 'Boutique', heading: 'Boutique', bodyPartialName: 'store' },
+        en: { title: 'Store', heading: 'Store', bodyPartialName: 'store' }
     };
     const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
     res.render('index', {
         currentPage: 'store',
         title: i18n.title,
-        bodyPartialName: 'store',
+        heading: i18n.heading,
+        bodyPartialName: i18n.bodyPartialName,
         pageIdentifier: 'store-page'
-    })
+    });
 });
+
+
+// Mount the language-specific router.
+// This regex (en|fr) ensures only 'en' or 'fr' are matched as :lang.
+// Optional: Redirect /en to /en/ and /fr to /fr/ for canonical URLs (good for SEO)
+app.get('/:lang', (req, res, next) => {
+    // Check if the URL is exactly /en or /fr (no further path segments)
+    if (req.originalUrl === `/${req.params.lang}`) {
+        const queryString = Object.keys(req.query).length > 0 ? '?' + new URLSearchParams(req.query).toString() : '';
+        console.log(`Redirecting from /${req.params.lang} to /${req.params.lang}/${queryString}`);
+        return res.redirect(301, `/${req.params.lang}/${queryString}`); // 301 Permanent redirect
+    }
+    next(); // If it's like /en/foo, let langRouter handle it or eventually 404
+});
+
+
+// Basic 404 handler (should be last after all valid routes)
+app.use((req, res, next) => {
+    console.log(`404 Not Found: ${req.method} ${req.originalUrl}`);
+    // You might want to render a proper 404 page with language support too
+    res.status(404).send(`Sorry, page not found. Current language: ${res.locals.currentLanguage || 'unknown'}`);
+});
+
+// Basic error handler
+app.use((err, req, res, next) => {
+    console.error("Global Error Handler:", err.stack);
+    res.status(500).send('Something broke!');
+});
+
+
+
 
 const PORT = process.env.PORT || 3000;
 // server.js

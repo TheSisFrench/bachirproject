@@ -1,4 +1,4 @@
-<!--
+
 <div class="blur-effect"></div>
 <nav id="nav">
   <header class="nav-container">
@@ -11,44 +11,91 @@
 
     <div class="menu-container">
       <ul class="menu">
-        <li value="gallery" class="menu-selection <%= currentPage === 'gallery' ? 'active' : '' %>">
-          <a class="to-source" data-target="gallery" href="/gallery">Gallery</a>
+        <li value="gallery" class="menu-selection <%= currentPage === 'gallery'|| currentPage.startsWith('gallery-') ? 'active' : '' %>">
+            <a class="to-source" data-target="gallery" href="<%= basePathWithLang %>/gallery">
+                <% if(currentLanguage === 'fr') { %>Galerie<% } else { %>Gallery<% } %>
+            </a>
         </li>
         <li value="about" class="menu-selection <%= currentPage === 'about' ? 'active' : '' %>">
-          <a class="to-source" data-target="about" href="/about">About</a>
+            <a class="to-source" data-target="about" href="<%= basePathWithLang %>/about">
+                <% if(currentLanguage === 'fr') { %>À propos<% } else { %>About<% } %>
+            </a>
         </li>
         <li value="exhibitions" class="menu-selection <%= currentPage === 'exhibitions' ? 'active' : '' %>">
-          <a class="to-source" data-target="exhibitions" href="/exhibitions">Exhibitions</a>
+          <a class="to-source" data-target="exhibitions" href="<%= basePathWithLang %>/exhibitions">
+            <% if(currentLanguage === 'fr') { %>Expositions<% } else { %>Exhibitions<% } %>
+          </a>
         </li>
         <li value="contact" class="menu-selection <%= currentPage === 'contact' ? 'active' : '' %>">
-          <a class="to-source contact" data-target="contact" href="/contact">Contact</a>
+          <a class="to-source contact" data-target="contact" href="<%= basePathWithLang %>/contact">
+            <% if(currentLanguage === 'fr') { %>Contact<% } else { %>Contact<% } %>
+          </a>
         </li>
         <li value="store" class="menu-selection <%= currentPage === 'store' ? 'active' : '' %>">
-          <a class="to-source store" data-target="store" href="/store">Store</a>
+          <a class="to-source store" data-target="store" href="<%= basePathWithLang %>/store">
+            <% if(currentLanguage === 'fr') { %>Boutique<% } else { %>Store<% } %>
+          </a>
         </li>
       </ul>
     </div>
+    
+    <div class="language-switcher">
+    <% const otherLang = currentLanguage === 'en' ? 'fr' : 'en'; %>
+    <% const otherLangText = currentLanguage === 'en' ? 'Français' : 'English'; %>
+    <%
+        // These variables (currentLanguage, originalPathWithoutLang, queryParamsString)
+        // should be available from res.locals, set by your pathLanguageHandler.js
+
+        // Construct the new base path with the OTHER language
+        const newPath = `/${otherLang}${originalPathWithoutLang}`;
+
+        // Append the original query string (which is already a string like "?foo=bar" or "")
+        const newHref = `${newPath}${queryParamsString}`;
+    %>
+      <div class="language-switcher-button-container">
+          <!-- DEBUG: You can uncomment this to see the generated Href -->
+          <!-- <p style="font-size: 8px; color: red;">Href: <%= newHref %></p> -->
+          <a class="language-switcher-button" href="<%= newHref %>">
+              <%= otherLangText %>
+          </a>
+      </div>
+    </div>
+
+    <button class="hamburger-button" id="hamburgerButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg class="hamburger-icon" viewBox="0 0 100 80" width="30" height="30">
+        <rect class="line line1" width="100" height="15" rx="8"></rect>
+        <rect class="line line2" y="30" width="100" height="15" rx="8"></rect>
+        <rect class="line line3" y="60" width="100" height="15" rx="8"></rect>
+      </svg>
+    </button>
   </header>
 
   <section id="gallery" class="nav-section">
     <div class="selection-container">
       <ul class="painting-list">
         <li class="gallery-selection">
-            <a class="nav-menu-link-header" href="gallery/new-collection">Nouvelles collection</a>
+            <a class="nav-menu-link-header" href="gallery/new-collection">
+                <% if(currentLanguage === 'fr') { %>Nouvelle collection<% } else { %>New collection<% } %>
+            </a>
             <a class="nav-menu-link painting-link" href="/view-painting">Les dernières louas du maître</a>
             <a class="nav-menu-link painting-link" href="/view-painting">Les visiteurs</a>
             <a class="nav-menu-link painting-link" href="/view-painting">Perdure</a>
         </li>
 
         <li class="gallery-selection">
-          <a class="nav-menu-link-header" href="gallery/family">Famille</a>
+          <a class="nav-menu-link-header" href="gallery/family">
+            <% if(currentLanguage === 'fr') { %>Collection famille<% } else { %>Family collection<% } %>
+
+          </a>
           <a class="nav-menu-link painting-link" href="/view-painting">Lien générationnel</a>
           <a class="nav-menu-link painting-link" href="/view-painting">Photo de famille</a>
           <a class="nav-menu-link painting-link" href="/view-painting">Le petit Sidi</a>
         </li>
 
         <li class="gallery-selection">
-          <a class="nav-menu-link-header" href="gallery/special-edition">Hors série</a>
+          <a class="nav-menu-link-header" href="gallery/special-edition">
+            <% if(currentLanguage === 'fr') { %>Hors série<% } else { %>Special edition<% } %>
+          </a>
           <a class="nav-menu-link painting-link" href="/view-painting">Samba Alar</a>
           <a class="nav-menu-link painting-link" href="/view-painting">Jamonoy Nuit Blanche</a>
         </li>
@@ -62,7 +109,9 @@
         </li>
 
         <li class="gallery-selection">
-          <a class="nav-menu-link-header" href="gallery/black-collection">Noire</a>
+          <a class="nav-menu-link-header" href="gallery/black-collection">
+            <% if(currentLanguage === 'fr') { %>Collection noire<% } else { %>Black collection<% } %>
+          </a>
           <a class="nav-menu-link painting-link" href="/view-painting">Le fauteuil</a>
         </li>
         
@@ -74,13 +123,19 @@
     <div class="selection-container">
       <ul>
         <li class="presentation about-selection">
-          <a class="nav-menu-link" href="/about#presentation">Présentation</a>
+          <a class="nav-menu-link" href="/about#presentation">
+            <% if(currentLanguage === 'fr') { %>Présentation<% } else { %>Presentation<% } %>
+          </a>
         </li>
         <li class="vision about-selection">
-          <a class="nav-menu-link" href="/about#vision">La vision</a>
+          <a class="nav-menu-link" href="/about#vision">
+            <% if(currentLanguage === 'fr') { %>La vision<% } else { %>The vision<% } %>
+          </a>
         </li>
         <li class="realisations about-selection">
-          <a class="nav-menu-link" href="/about#achievements">Réalisations</a>
+          <a class="nav-menu-link" href="/about#achievements">
+            <% if(currentLanguage === 'fr') { %>Réalisations<% } else { %>Achievements<% } %>
+          </a>
         </li>
       </ul>
     </div>
@@ -90,46 +145,21 @@
     <div class="selection-container">
       <ul>
         <li class="past exhibitions-selection">
-          <a class="nav-menu-link" href="/exhibitions#past-exhibitions">Précédentes expositions</a>
+          <a class="nav-menu-link" href="/exhibitions#past-exhibitions">
+            <% if(currentLanguage === 'fr') { %>Précédentes expositions<% } else { %>Previous exhibitions<% } %>
+        </a>
         </li>
         <li class="upcoming exhibitions-selection">
-          <a class="nav-menu-link" href="/exhibitions#new-exhibitions">Nouvelles expositions</a>
+          <a class="nav-menu-link" href="/exhibitions#new-exhibitions">
+            <% if(currentLanguage === 'fr') { %>Nouvelles expositions<% } else { %>New exhibitions<% } %>
+          </a>
         </li>
       </ul>
     </div>
   </section>
 </nav>
--->
 
-<header>
-  <nav>
-      <ul>
-          <li><a href="/?<%= new URLSearchParams({...queryParams, lang: currentLanguage}).toString() %>" class="<%= currentPage === 'home' ? 'active' : '' %>">
-              <% if(currentLanguage === 'fr') { %>Accueil<% } else { %>Home<% } %>
-          </a></li>
-          <li><a href="/gallery?<%= new URLSearchParams({...queryParams, lang: currentLanguage}).toString() %>" class="<%= currentPage === 'gallery' ? 'active' : '' %>">
-              <% if(currentLanguage === 'fr') { %>Galerie<% } else { %>Gallery<% } %>
-          </a></li>
-          <!-- Add other nav links similarly -->
-      </ul>
-      <div class="language-switcher">
-          <% const otherLang = currentLanguage === 'en' ? 'fr' : 'en'; %>
-          <% const otherLangText = currentLanguage === 'en' ? 'Français' : 'English'; %>
-          <%
-              // Create a new URLSearchParams object for the switcher link
-              // It starts with the current page's query parameters (queryParams from res.locals)
-              const switcherQuery = new URLSearchParams(queryParams);
-              // Set the 'lang' parameter to the 'otherLang'
-              switcherQuery.set('lang', otherLang);
-              // Get the string representation (e.g., "oldParam=value&lang=fr")
-              const switcherQueryString = switcherQuery.toString();
-          %>
-          <a href="?<%= switcherQueryString %>"><%= otherLangText %></a>
-      </div>
-  </nav>
-  <hr>
-  <!-- Display a heading if passed -->
-  <% if (typeof heading !== 'undefined') { %>
-      <h1><%= heading %></h1>
-  <% } %>
-</header>
+
+
+
+      
