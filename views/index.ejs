@@ -20,14 +20,14 @@
     </head>
 
     <body data-page-id="<%= typeof pageIdentifier !== 'undefined' ? pageIdentifier : '' %>">
-        
-        <%- include('./partials/header', { 
-            currentPage: currentPage,
-            currentLanguage: currentLanguage,
-            basePathWithLang: basePathWithLang,
-            originalPathWithoutLang: originalPathWithoutLang,
-            queryParamsString: queryParamsString
-        }) %>
+    
+    <%- include('./partials/header', { 
+        currentPage: currentPage,
+        currentLanguage: currentLanguage,
+        basePathWithLang: basePathWithLang,
+        originalPathWithoutLang: originalPathWithoutLang,
+        queryParamsString: queryParamsString
+    }) %> 
         <% if (bodyPartialName) { %>
             <%- include('./partials/' + bodyPartialName) %>
         <% } else { %>

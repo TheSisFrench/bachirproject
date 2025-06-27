@@ -116,40 +116,40 @@ langRouter.get('/gallery/:collectionName', (req, res, next) => {
 
 langRouter.get('/about', (req, res) => {
     res.render('index', {
-        title: res.locals.t('about_page_title'),
-        heading: res.locals.t('about_page_heading'),
+        title: res.locals.t('about-page-title'),
+        heading: res.locals.t('about-page-heading'),
         currentPage: 'about',
         bodyPartialName: 'about',
         pageIdentifier: 'about-page'
     });
 });
 
-langRouter.get('/contact', (req, res) => {
-    const pageContent = {
-        fr: { title: 'Contact', heading: 'Contact', bodyPartialName: 'contact' },
-        en: { title: 'Contact', heading: 'Contact', bodyPartialName: 'contact' }
-    };
-    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
+langRouter.get('/exhibitions', (req, res) => {
     res.render('index', {
-        currentPage: 'contact',
-        title: i18n.title,
-        heading: i18n.heading,
-        bodyPartialName: i18n.bodyPartialName,
+        title: res.locals.t('exhibitions-page.title'),
+        heading: res.locals.t('exhibitions-page-heading'),
+        currentPage: "exhibitions",
+        bodyPartialName: "exhibitions",
+        pageIdentifier: "exhibitions-page"
+    })
+})
+
+langRouter.get('/contact', (req, res) => {
+    res.render('index', {
+        title: res.locals.t('contact-page-title'),
+        heading: res.locals.t('contact-page-heading'),
+        currentPage: "contact",
+        bodyPartialName: 'contact',
         pageIdentifier: 'contact-page'
     });
 });
 
 langRouter.get('/store', (req, res) => {
-    const pageContent = {
-        fr: { title: 'Boutique', heading: 'Boutique', bodyPartialName: 'store' },
-        en: { title: 'Store', heading: 'Store', bodyPartialName: 'store' }
-    };
-    const i18n = getLocalizedText(pageContent, res.locals.currentLanguage);
     res.render('index', {
+        title: res.locals.t('store-page-title'),
+        heading: res.locals.t('store-page-heading'),
         currentPage: 'store',
-        title: i18n.title,
-        heading: i18n.heading,
-        bodyPartialName: i18n.bodyPartialName,
+        bodyPartialName: 'store',
         pageIdentifier: 'store-page'
     });
 });

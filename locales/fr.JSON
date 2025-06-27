@@ -1,4 +1,19 @@
 {
+    "web-section-gallery": "Galerie",
+
+    "web-section-about": "À propos",
+    "web-section-about-presentation": "Présentation",
+    "web-section-about-the-vision": "la vision",
+    "web-section-about-realisations": "Réalisations",
+
+    "web-section-exhibitions": "Expositions",
+    "web-section-exhibitions-new-exhibitions": "Nouvelles expositions",
+    "web-section-exhibitions-past-exhibitions": "Anciennes expositions", 
+
+    "web-section-contact": "Contact",
+    "web-section-store": "Boutique",
+
+
     "home-page-title": "Bachirproject",
     "home-page-heading": "Il n'y a aucune limite à notre créativité",
     "home-page-main-button": "Découvrir les oeuvres",
@@ -7,6 +22,27 @@
     "gallery_page_title": "Galerie",
     "gallery_skip_button": "Galerie",
     "gallery_skip_tooltip": "Sauter à la gallerie",
+
+    "gallery-new-collection": "Nouvelle collection",
+    "gallery-family-collection": "Collection famille",
+    "gallery-special-edition": "Hors série",
+    "gallery-mor-talla-collection": "Mor talla",
+    "gallery-black-collection": "Collection noire",
+
+    "the-last-master's-laws": "Les derniàres louas du maître",
+    "the-visitors": "Les visiteurs",
+    "endures": "Perdure",
+    "generational-link": "Lien générationnel",
+    "family-picture": "Photo de famille",
+    "little-sidi": "Le petit Sidi",
+    "samba-alar": "Samba Alar",
+    "jamonoy-white-night": "Jamonoy nuit blanche",
+    "mor-talla-and-wooden-sticks": "Mor Talla et les bouts de bois",
+    "the-eye-catcher": "Le tape à l'oeil",
+    "law-of-the-strongest": "La loi du plus fort",
+    "for-bi-gathering": "For Bi le rammassage",
+    "armchair": "Le fauteuil",
+
     "gallery_main_heading_dalal": "dalal jàmm!",
     "gallery_main_heading_discover": "Découvrez l'immensité du projet",
     "gallery_portfolio_heading": "Dans ce portfolio",
@@ -37,5 +73,9 @@
     "exhibitions_previous_link": "Précédentes expositions",
     "exhibitions_new_link": "Nouvelles expositions",
     "language_switcher_fr": "Français",
-    "language_switcher_en": "English"
+    "language_switcher_en": "English",
+
+    "footer-heading": "Contacter l'artiste",
+    "send-message-button-message": "Envoyer"
+
 }

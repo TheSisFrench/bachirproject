@@ -13,27 +13,27 @@
       <ul class="menu">
         <li value="gallery" class="menu-selection <%= currentPage === 'gallery'|| currentPage.startsWith('gallery-') ? 'active' : '' %>">
             <a class="to-source" data-target="gallery" href="<%= basePathWithLang %>/gallery">
-                <% if(currentLanguage === 'fr') { %>Galerie<% } else { %>Gallery<% } %>
+                <%= t('web-section-gallery') %>
             </a>
         </li>
         <li value="about" class="menu-selection <%= currentPage === 'about' ? 'active' : '' %>">
             <a class="to-source" data-target="about" href="<%= basePathWithLang %>/about">
-                <% if(currentLanguage === 'fr') { %>À propos<% } else { %>About<% } %>
+                <%= t('web-section-about') %>
             </a>
         </li>
         <li value="exhibitions" class="menu-selection <%= currentPage === 'exhibitions' ? 'active' : '' %>">
           <a class="to-source" data-target="exhibitions" href="<%= basePathWithLang %>/exhibitions">
-            <% if(currentLanguage === 'fr') { %>Expositions<% } else { %>Exhibitions<% } %>
+            <%= t('web-section-exhibitions') %>
           </a>
         </li>
         <li value="contact" class="menu-selection <%= currentPage === 'contact' ? 'active' : '' %>">
           <a class="to-source contact" data-target="contact" href="<%= basePathWithLang %>/contact">
-            <% if(currentLanguage === 'fr') { %>Contact<% } else { %>Contact<% } %>
+            <%= t('web-section-contact') %>
           </a>
         </li>
         <li value="store" class="menu-selection <%= currentPage === 'store' ? 'active' : '' %>">
           <a class="to-source store" data-target="store" href="<%= basePathWithLang %>/store">
-            <% if(currentLanguage === 'fr') { %>Boutique<% } else { %>Store<% } %>
+            <%= t('web-section-store') %>
           </a>
         </li>
       </ul>
@@ -52,13 +52,11 @@
         // Append the original query string (which is already a string like "?foo=bar" or "")
         const newHref = `${newPath}${queryParamsString}`;
     %>
-      <div class="language-switcher-button-container">
-          <!-- DEBUG: You can uncomment this to see the generated Href -->
-          <!-- <p style="font-size: 8px; color: red;">Href: <%= newHref %></p> -->
-          <a class="language-switcher-button" href="<%= newHref %>">
-              <%= otherLangText %>
-          </a>
-      </div>
+      <a class="language-switcher-button-container" href="<%= newHref %>">
+        <p class="language-switcher-button">
+            <%= otherLangText %>
+        </p>
+      </a>
     </div>
 
     <button class="hamburger-button" id="hamburgerButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -75,44 +73,47 @@
       <ul class="painting-list">
         <li class="gallery-selection">
             <a class="nav-menu-link-header" href="gallery/new-collection">
-                <% if(currentLanguage === 'fr') { %>Nouvelle collection<% } else { %>New collection<% } %>
+              <%= t('gallery-new-collection') %>
             </a>
-            <a class="nav-menu-link painting-link" href="/view-painting">Les dernières louas du maître</a>
-            <a class="nav-menu-link painting-link" href="/view-painting">Les visiteurs</a>
-            <a class="nav-menu-link painting-link" href="/view-painting">Perdure</a>
+            <a class="nav-menu-link painting-link" href="/view-painting"><%= t('the-last-master's-laws) %></a>
+            <a class="nav-menu-link painting-link" href="/view-painting"><%= t('the-visitors') %></a>
+            <a class="nav-menu-link painting-link" href="/view-painting"><%= t('endures') %></a>
         </li>
 
         <li class="gallery-selection">
           <a class="nav-menu-link-header" href="gallery/family">
-            <% if(currentLanguage === 'fr') { %>Collection famille<% } else { %>Family collection<% } %>
-
+            <%= t('gallery-family-collection') %>
           </a>
-          <a class="nav-menu-link painting-link" href="/view-painting">Lien générationnel</a>
-          <a class="nav-menu-link painting-link" href="/view-painting">Photo de famille</a>
-          <a class="nav-menu-link painting-link" href="/view-painting">Le petit Sidi</a>
+          <a class="nav-menu-link painting-link" href="/view-painting"><%= t('generational-link') %></a>
+          <a class="nav-menu-link painting-link" href="/view-painting"><%= t('family-picture') %></a>
+          <a class="nav-menu-link painting-link" href="/view-painting"><%= t('little-sidi') %></a>
         </li>
 
         <li class="gallery-selection">
           <a class="nav-menu-link-header" href="gallery/special-edition">
-            <% if(currentLanguage === 'fr') { %>Hors série<% } else { %>Special edition<% } %>
+            <%= t('gallery-special-edition') %>
           </a>
-          <a class="nav-menu-link painting-link" href="/view-painting">Samba Alar</a>
-          <a class="nav-menu-link painting-link" href="/view-painting">Jamonoy Nuit Blanche</a>
+          <a class="nav-menu-link painting-link" href="/view-painting"><%= t('samba-alar') %></a>
+          <a class="nav-menu-link painting-link" href="/view-painting"><%= t('jamonoy-white-night') %></a>
         </li>
 
         <li class="gallery-selection">
-          <a class="nav-menu-link-header" href="gallery/mor-talla">Mor talla</a>
-          <a class="nav-menu-link painting-link" href="/view-painting">Mor Talla et les bouts de bois</a>
-          <a class="nav-menu-link painting-link" href="/view-painting">Le tape à l'œil</a>
-          <a class="nav-menu-link painting-link" href="/view-painting">La loi du plus fort</a>
-          <a class="nav-menu-link painting-link" href="/view-painting">For bi le ramassage</a>
+          <a class="nav-menu-link-header" href="gallery/mor-talla">
+            <%= t('gallery-mor-talla-collection') %>
+          </a>
+          <a class="nav-menu-link painting-link" href="/view-painting"><%= t('mor-talla-and-wooden-sticks') %></a>
+          <a class="nav-menu-link painting-link" href="/view-painting"><%= t('the-eye-catche') %></a>
+          <a class="nav-menu-link painting-link" href="/view-painting"><%= t('law-of-the-strongest') %></a>
+          <a class="nav-menu-link painting-link" href="/view-painting"><%= t('for-bi-gathering') %></a>
         </li>
 
         <li class="gallery-selection">
           <a class="nav-menu-link-header" href="gallery/black-collection">
-            <% if(currentLanguage === 'fr') { %>Collection noire<% } else { %>Black collection<% } %>
+            <%= t('gallery-black-collection') %>
           </a>
-          <a class="nav-menu-link painting-link" href="/view-painting">Le fauteuil</a>
+          <a class="nav-menu-link painting-link" href="/view-painting">
+            <%= t('armchair') %>
+          </a>
         </li>
         
       </ul>

@@ -240,29 +240,31 @@ main    {
     cursor: pointer;
 }
 
-.language-switcher.active   {
-    background-color: rgba(240, 193, 70, 0.7);
-}
-
 .language-switcher-button-container {
+    background-color: rgb(var(--button-background-color));
+    color: rgb(var(--button-text-color));
     padding: 0.7rem;
-    border: 2px solid #f0c146;
+    border: 1px solid rgb(var(--button-border-color));
     transition: all 0.2s ease;
 }
 
 .language-switcher-button-container:hover {
-    border-color: #000;
-    background-color: #f0c146;
-    .language-switcher-button   {
-        color: #000;
-    }
+    border-color: rgb(var(--button-border-color-hover));
+    background-color: rgb(var(--button-background-color-hover));
+    color: rgb(var(--button-text-color-hover));
+}
+
+.language-switcher-button:active    {
+    background-color: rgb(var(--button-background-color-active));
+    border: 1px solid rgb(var(--button-border-color-active));
+    color: rgb(var(--button-text-color-active));
 }
 
 .language-switcher-button   {
     font-size: 0.8rem;
     text-decoration: none;
-    color: #f0c146;
 }
+
 
 .hamburger-button   {
     display: none;

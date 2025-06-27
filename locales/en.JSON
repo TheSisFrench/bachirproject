@@ -1,12 +1,41 @@
 {
+    "web-section-gallery": "Gallery",
+    "web-section-about": "About",
+    "web-section-exhibitions": "Exhibitions",
+    "web-section-contact": "Contact",
+    "web-section-store": "Store",
+
     "home-page-title": "Bachirproject",
     "home-page-heading": "There is no limit to our creativity",
     "home-page-main-button": "Discover the works",
 
     
-    "gallery_page_title": "Gallery",
+    "gallery-page-title": "Gallery",
     "gallery_skip_button": "Gallery",
     "gallery_skip_tooltip": "Skip to gallery",
+
+    "gallery-new-collection": "New collection",
+    "gallery-family-collection": "Family collection",
+    "gallery-special-edition": "Special edition",
+    "gallery-mor-talla-edition": "Mor talla",
+    "gallery-black-collection": "Black-collection",
+
+    "the-last-master's-laws": "The last master's laws",
+    "the-visitors": "The visitors",
+    "endures": "Endures",
+    "generational-link": "Generational link",
+    "family-picture": "Family picture",
+    "little-sidi": "Little Sidi",
+    "samba-alar": "Samba Alar",
+    "Jamonoy-white-night": "Jamonoy white night",
+    "mor-talla-and-wooden-sticks": "Mor Talla and wooden sticks",
+    "the-eye-catcher": "The eye catcher",
+    "law-of-the-strongest": "Law of the strongest",
+    "for-bi-gathring": "For Bi gathring",
+    "armchair": "Armchair",
+
+
+
     "gallery_main_heading_dalal": "dalal jàmm!",
     "gallery_main_heading_discover": "Discover the vastness of the project",
     "gallery_portfolio_heading": "In this portfolio",
@@ -36,6 +65,10 @@
     "about_achievements_link": "Achievements",
     "exhibitions_previous_link": "Previous exhibitions",
     "exhibitions_new_link": "New exhibitions",
-    "language_switcher_fr": "Français",
-    "language_switcher_en": "English"
+
+    "language-switcher-fr": "Français",
+    "language-switcher-en": "English",
+
+    "footer-heading": "Contact the artist",
+    "send-message-button-message": "Send"
 }

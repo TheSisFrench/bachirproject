@@ -13,7 +13,9 @@
         <section class="contact-footer">
 
             <div class="contact-footer-container">
-                <h1 class="contact-footer-header">Contacter l'Artiste</h1>
+                <h1 class="contact-footer-header">
+                    <%= t('footer-heading') %>
+                </h1>
 
                 <div class="contact-footer-padding-indentation">
                     <div class="enter-name-container">
@@ -27,7 +29,9 @@
                 
                 <div class="send-message-button-container">
                     <button class="send-message-button" id="sendEmailBtn" type="button">
-                        <p class="send-message">Envoyer</p>
+                        <p class="send-message">
+                            <%= t('send-message-button-message') %>
+                        </p>
                     </button>
                 </div>
             </div>            
@@ -42,57 +46,87 @@
                     <ul class="website-sections">
                         <li class="menu-selection-footer">
                             <div>
-                                <a class="menu-selection-footer-link" href="/gallery">Gallery</a>
+                                <a class="menu-selection-footer-link" href="/gallery">
+                                    <%= t('web-section-gallery') %>
+                                </a>
                             </div>
                             <div>
-                                <a class="menu-selection-footer-sublink" href="/new-collection">Nouvelle collection</a>
+                                <a class="menu-selection-footer-sublink" href="/new-collection">
+                                    <%= t('gallery-new-collection') %>
+                                </a>
                             </div>
                             <div>
-                                <a class="menu-selection-footer-sublink" href="/family">Famille</a>
+                                <a class="menu-selection-footer-sublink" href="/family">
+                                    <%= t('gallery-family-collection') %>
+                                </a>
                             </div>
                             <div>
-                                <a class="menu-selection-footer-sublink" href="/special-edition">Hors série</a>
+                                <a class="menu-selection-footer-sublink" href="/special-edition">
+                                    <%= t('gallery-special-edition') %>
+                                </a>
                             </div>
                             <div>
-                                <a class="menu-selection-footer-sublink" href="/mor-talla">Mor talla</a>
+                                <a class="menu-selection-footer-sublink" href="/mor-talla">
+                                    <%= t('gallery-mor-talla') %>
+                                </a>
                             </div>
                             <div>
-                                <a class="menu-selection-footer-sublink" href="black-collection">Noire</a>
-                            </div>
-                        </li>
-                        <li class="menu-selection-footer">
-                            <div>
-                                <a class="menu-selection-footer-link" href="/about">About</a>
-                            </div>
-                            <div>
-                                <a class="menu-selection-footer-sublink" href="/about#presentation">Presentation</a>
-                            </div>
-                            <div>
-                                <a class="menu-selection-footer-sublink" href="/about#vision">La vision</a>
-                            </div>
-                            <div>
-                                <a class="menu-selection-footer-sublink" href="/about#achievements">Réalisation</a>
+                                <a class="menu-selection-footer-sublink" href="black-collection">
+                                    <%= t('gallery-black-collection') %>
+                                </a>
                             </div>
                         </li>
                         <li class="menu-selection-footer">
                             <div>
-                                <a class="menu-selection-footer-link" href="/exhibitions">Exhibitions</a>
+                                <a class="menu-selection-footer-link" href="/about">
+                                    <%= t('web-section-about') %>
+                                </a>
                             </div>
                             <div>
-                                <a class="menu-selection-footer-sublink" href="/exhibitions#past-exhibitions">Précédentes expositions</a>
+                                <a class="menu-selection-footer-sublink" href="/about#presentation">
+                                    <%= t('web-section-about-presentation') %>
+                                </a>
                             </div>
                             <div>
-                                <a class="menu-selection-footer-sublink" href="/exhibitions#new-exhibitions">Nouvelles expositions</a>
+                                <a class="menu-selection-footer-sublink" href="/about#vision">
+                                    <%= t('web-section-about-the-vision') %>
+                                </a>
+                            </div>
+                            <div>
+                                <a class="menu-selection-footer-sublink" href="/about#achievements">
+                                    <%= t('web-section-about-realisations') %>
+                                </a>
                             </div>
                         </li>
                         <li class="menu-selection-footer">
                             <div>
-                                <a class="menu-selection-footer-link" href="/contact">Contact</a>
+                                <a class="menu-selection-footer-link" href="/exhibitions">
+                                    <%= web-section-exhibitions %>
+                                </a>
+                            </div>
+                            <div>
+                                <a class="menu-selection-footer-sublink" href="/exhibitions#past-exhibitions">
+                                    <%= t('web-section-exhibitions-new-exhibitions') %>
+                                </a>
+                            </div>
+                            <div>
+                                <a class="menu-selection-footer-sublink" href="/exhibitions#new-exhibitions">
+                                    <%= t('web-section-exhibitions-past-exhibitions') %>
+                                </a>
                             </div>
                         </li>
                         <li class="menu-selection-footer">
                             <div>
-                                <a class="menu-selection-footer-link" href="/store">Store</a>
+                                <a class="menu-selection-footer-link" href="/contact">
+                                    <%= t('web-section-contact') %>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="menu-selection-footer">
+                            <div>
+                                <a class="menu-selection-footer-link" href="/store">
+                                    <%= t('web-section-store') %>
+                                </a>
                             </div>
                         </li>
                     </ul>

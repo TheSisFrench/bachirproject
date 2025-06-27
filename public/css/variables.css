@@ -24,6 +24,7 @@
     --p-padding: 0.5rem 0 0.5rem 0;
     --button-padding: 1rem;
 
+    --margin-title: 2rem 0;
     --margin-box: 5rem;
     --margin-out: 10rem;
 
@@ -42,6 +43,15 @@
 
     --body-color-dark: 13, 13, 13;
     --body-color-bright: 255, 255, 255;
+
+    --button-background-color: 0, 0, 0;
+    --button-border-color: 240, 193, 70;
+    --button-text-color: 240, 193, 70;
+    --button-background-color-hover: 240, 193, 70;
+    --button-border-color-hover: 0, 0, 0;
+    --button-text-color-hover: 0, 0, 0;
+    --button-background-color-active: 240, 193, 70, 0.8;
+    --button-text-color-active: 0, 0, 0, 0.8;
 }
 
 
