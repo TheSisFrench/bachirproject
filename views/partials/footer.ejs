@@ -5,7 +5,9 @@
         <svg class="up-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 14L12 8L18 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>                
-        <span class="return-up-button-tooltip">Haut de page</span>
+        <span class="return-up-button-tooltip">
+            <%= t('return_up_button_tooltip') %>
+        </span>
     </a>
 
     <div class="footer-container">
@@ -14,7 +16,7 @@
 
             <div class="contact-footer-container">
                 <h1 class="contact-footer-header">
-                    <%= t('footer-heading') %>
+                    <%= t('footer_heading') %>
                 </h1>
 
                 <div class="contact-footer-padding-indentation">
@@ -30,7 +32,7 @@
                 <div class="send-message-button-container">
                     <button class="send-message-button" id="sendEmailBtn" type="button">
                         <p class="send-message">
-                            <%= t('send-message-button-message') %>
+                            <%= t('send_message_button_message') %>
                         </p>
                     </button>
                 </div>
@@ -47,85 +49,85 @@
                         <li class="menu-selection-footer">
                             <div>
                                 <a class="menu-selection-footer-link" href="/gallery">
-                                    <%= t('web-section-gallery') %>
+                                    <%= t('web_section_gallery') %>
                                 </a>
                             </div>
                             <div>
                                 <a class="menu-selection-footer-sublink" href="/new-collection">
-                                    <%= t('gallery-new-collection') %>
+                                    <%= t('gallery_new_collection') %>
                                 </a>
                             </div>
                             <div>
                                 <a class="menu-selection-footer-sublink" href="/family">
-                                    <%= t('gallery-family-collection') %>
+                                    <%= t('gallery_family_collection') %>
                                 </a>
                             </div>
                             <div>
                                 <a class="menu-selection-footer-sublink" href="/special-edition">
-                                    <%= t('gallery-special-edition') %>
+                                    <%= t('gallery_special_edition') %>
                                 </a>
                             </div>
                             <div>
                                 <a class="menu-selection-footer-sublink" href="/mor-talla">
-                                    <%= t('gallery-mor-talla') %>
+                                    <%= t('gallery_mor_talla') %>
                                 </a>
                             </div>
                             <div>
                                 <a class="menu-selection-footer-sublink" href="black-collection">
-                                    <%= t('gallery-black-collection') %>
+                                    <%= t('gallery_black_collection') %>
                                 </a>
                             </div>
                         </li>
                         <li class="menu-selection-footer">
                             <div>
                                 <a class="menu-selection-footer-link" href="/about">
-                                    <%= t('web-section-about') %>
+                                    <%= t('web_section_about') %>
                                 </a>
                             </div>
                             <div>
                                 <a class="menu-selection-footer-sublink" href="/about#presentation">
-                                    <%= t('web-section-about-presentation') %>
+                                    <%= t('web_section_about_presentation') %>
                                 </a>
                             </div>
                             <div>
                                 <a class="menu-selection-footer-sublink" href="/about#vision">
-                                    <%= t('web-section-about-the-vision') %>
+                                    <%= t('web_section_about_the_vision') %>
                                 </a>
                             </div>
                             <div>
                                 <a class="menu-selection-footer-sublink" href="/about#achievements">
-                                    <%= t('web-section-about-realisations') %>
+                                    <%= t('web_section_about_realisations') %>
                                 </a>
                             </div>
                         </li>
                         <li class="menu-selection-footer">
                             <div>
                                 <a class="menu-selection-footer-link" href="/exhibitions">
-                                    <%= web-section-exhibitions %>
+                                    <%= t('web_section_exhibitions') %>
                                 </a>
                             </div>
                             <div>
                                 <a class="menu-selection-footer-sublink" href="/exhibitions#past-exhibitions">
-                                    <%= t('web-section-exhibitions-new-exhibitions') %>
+                                    <%= t('web_section_exhibitions_new_exhibitions') %>
                                 </a>
                             </div>
                             <div>
                                 <a class="menu-selection-footer-sublink" href="/exhibitions#new-exhibitions">
-                                    <%= t('web-section-exhibitions-past-exhibitions') %>
+                                    <%= t('web_section_exhibitions_past_exhibitions') %>
                                 </a>
                             </div>
                         </li>
                         <li class="menu-selection-footer">
                             <div>
                                 <a class="menu-selection-footer-link" href="/contact">
-                                    <%= t('web-section-contact') %>
+                                    <%= t('web_section_contact') %>
                                 </a>
                             </div>
                         </li>
                         <li class="menu-selection-footer">
                             <div>
                                 <a class="menu-selection-footer-link" href="/store">
-                                    <%= t('web-section-store') %>
+                                    <%= t('web_section_store') %>
                                 </a>
                             </div>
                         </li>
@@ -137,7 +139,9 @@
                         <img class="x media-icon" src="/img/icon_X.svg">
                     </div>  
                     <div class="credits">
-                        <div class="copyrights">Copyright &#64;2025 BachirProject.com - All rights reserved.</div>
+                        <div class="copyrights">
+                            <%= t('Copyright') %>
+                        </div>
                     </div>  
                 </div>
             </div>

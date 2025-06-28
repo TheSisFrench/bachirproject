@@ -1,54 +1,54 @@
 {
-    "web-section-gallery": "Galerie",
+    "web_section_gallery": "Galerie",
 
-    "web-section-about": "À propos",
-    "web-section-about-presentation": "Présentation",
-    "web-section-about-the-vision": "la vision",
-    "web-section-about-realisations": "Réalisations",
+    "web_section_about": "À propos",
+    "web_section_about_presentation": "Présentation",
+    "web_section_about_the_vision": "la vision",
+    "web_section_about_realisations": "Réalisations",
 
-    "web-section-exhibitions": "Expositions",
-    "web-section-exhibitions-new-exhibitions": "Nouvelles expositions",
-    "web-section-exhibitions-past-exhibitions": "Anciennes expositions", 
+    "web_section_exhibitions": "Expositions",
+    "web_section_exhibitions_new_exhibitions": "Nouvelles expositions",
+    "web_section_exhibitions_past_exhibitions": "Anciennes expositions",
 
-    "web-section-contact": "Contact",
-    "web-section-store": "Boutique",
+    "web_section_contact": "Contact",
+    "web_section_store": "Boutique",
 
 
-    "home-page-title": "Bachirproject",
-    "home-page-heading": "Il n'y a aucune limite à notre créativité",
-    "home-page-main-button": "Découvrir les oeuvres",
+    "home_page_title": "Bachirproject",
+    "home_page_heading": "Il n'y a aucune limite à notre créativité",
+    "home_page_main_button": "Découvrir les oeuvres",
 
     
     "gallery_page_title": "Galerie",
     "gallery_skip_button": "Galerie",
     "gallery_skip_tooltip": "Sauter à la gallerie",
 
-    "gallery-new-collection": "Nouvelle collection",
-    "gallery-family-collection": "Collection famille",
-    "gallery-special-edition": "Hors série",
-    "gallery-mor-talla-collection": "Mor talla",
-    "gallery-black-collection": "Collection noire",
+    "gallery_new_collection": "Nouvelle collection",
+    "gallery_family_collection": "Collection famille",
+    "gallery_special_edition": "Hors série",
+    "gallery_mor_talla_collection": "Mor talla",
+    "gallery_black_collection": "Collection noire",
 
-    "the-last-master's-laws": "Les derniàres louas du maître",
-    "the-visitors": "Les visiteurs",
+    "the_last_master's_laws": "Les derniàres louas du maître",
+    "the_visitors": "Les visiteurs",
     "endures": "Perdure",
-    "generational-link": "Lien générationnel",
-    "family-picture": "Photo de famille",
-    "little-sidi": "Le petit Sidi",
-    "samba-alar": "Samba Alar",
-    "jamonoy-white-night": "Jamonoy nuit blanche",
-    "mor-talla-and-wooden-sticks": "Mor Talla et les bouts de bois",
-    "the-eye-catcher": "Le tape à l'oeil",
-    "law-of-the-strongest": "La loi du plus fort",
-    "for-bi-gathering": "For Bi le rammassage",
+    "generational_link": "Lien générationnel",
+    "family_picture": "Photo de famille",
+    "little_sidi": "Le petit Sidi",
+    "samba_alar": "Samba Alar",
+    "jamonoy_white_night": "Jamonoy nuit blanche",
+    "mor_talla_and_wooden_sticks": "Mor Talla et les bouts de bois",
+    "the_eye_catcher": "Le tape à l'oeil",
+    "law_of_the_strongest": "La loi du plus fort",
+    "for_bi_gathering": "For Bi le rammassage",
     "armchair": "Le fauteuil",
 
     "gallery_main_heading_dalal": "dalal jàmm!",
     "gallery_main_heading_discover": "Découvrez l'immensité du projet",
     "gallery_portfolio_heading": "Dans ce portfolio",
-    "gallery_portfolio_p1": "Chaque oeuvre est unique, un travail qui aligne le talent de l'artiste au monde sous-marin. La proposition d'un futur incertain, une vision sur la dégénérescence de l'humain, une préocupation que souligne son art.",
+    "gallery_portfolio_p1": "Chaque oeuvre est unique, un travail qui aligne le talent de l'artiste au monde sous_marin. La proposition d'un futur incertain, une vision sur la dégénérescence de l'humain, une préocupation que souligne son art.",
     "gallery_dive_in_heading": "Plonger",
-    "gallery_dive_in_p1": "Ces peintures forment ensemble le prolongement de sa pensée, elles coexistent et produisent ensemble le project d'El-Bachir.",
+    "gallery_dive_in_p1": "Ces peintures forment ensemble le prolongement de sa pensée, elles coexistent et produisent ensemble le project d'El_Bachir.",
     "gallery_dive_in_p2": "Nos nageoires réaparaissent, notre souffle se coupe, notre corps trouve l'oxygène de l'eau.",
     "newest_collection_link_text": "Collection la plus récente",
     "family_collection_link_text": "Collection famille",
@@ -72,10 +72,14 @@
     "about_achievements_link": "Réalisations",
     "exhibitions_previous_link": "Précédentes expositions",
     "exhibitions_new_link": "Nouvelles expositions",
+
     "language_switcher_fr": "Français",
     "language_switcher_en": "English",
 
-    "footer-heading": "Contacter l'artiste",
-    "send-message-button-message": "Envoyer"
+    "footer_heading": "Contacter l'artiste",
+    "send_message_button_message": "Envoyer",
+    "return_up_button_tooltip": "Retour haut de page",
 
+
+    "copyright": "Copyright &#64;2025 BachirProject.com - Tous droits réservés"
 }
