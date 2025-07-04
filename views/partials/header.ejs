@@ -2,7 +2,7 @@
 <nav id="nav">
   <header class="nav-container">
     <div class="nav-logo-container">
-      <!-- Corrected logo link to go to localized homepage -->
+      <!-- Logo link points to the localized homepage, e.g., /en/ or /fr/ -->
       <a id="nav-logo" href="<%= basePathWithLang %>/">
         <p class="bachir">BACHIR</p>
         <p class="project">EL-BACHIR PROJECT</p>
@@ -11,7 +11,7 @@
 
     <div class="menu-container">
       <ul class="menu">
-        <!-- CORRECTED 'active' class logic -->
+        <!-- Main navigation links. The "active" class logic is safer now. -->
         <li value="gallery" class="menu-selection <%= (currentPage === 'gallery' || (currentPage && currentPage.startsWith('gallery-'))) ? 'active' : '' %>">
             <a class="to-source" data-target="gallery" href="<%= basePathWithLang %>/gallery">
                 <%= t('web_section_gallery') %>
@@ -47,11 +47,11 @@
             const newPath = `/${otherLang}${originalPathWithoutLang}`;
             const newHref = `${newPath}${queryParamsString}`;
         %>
-        <a class="language-switcher-button-container" href="<%= newHref %>">
-            <div class="language-switcher-button">
+        <div class="language-switcher-button-container">
+            <a class="language-switcher-button" href="<%= newHref %>">
                 <%= otherLangText %>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 
     <button class="hamburger-button" id="hamburgerButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -63,35 +63,42 @@
     </button>
   </header>
 
-  <!-- CORRECTED: All sub-navigation links now use basePathWithLang -->
+  <!-- DYNAMIC GALLERY DROPDOWN SECTION -->
   <section id="gallery" class="nav-section">
     <div class="selection-container">
       <ul class="painting-list">
-        <li class="gallery-selection">
-            <a class="nav-menu-link-header" href="<%= basePathWithLang %>/gallery/new-collection">
-              <%= t('gallery-new-collection') %>
-            </a>
-            <a class="nav-menu-link painting-link" href="<%= basePathWithLang %>/view-painting/the-last-master-laws"><%= t('the_last_masters_laws') %></a>
-            <a class="nav-menu-link painting-link" href="<%= basePathWithLang %>/view-painting/the-visitors"><%= t('the_visitors') %></a>
-            <a class="nav-menu-link painting-link" href="<%= basePathWithLang %>/view-painting/endures"><%= t('endures') %></a>
-        </li>
-        <li class="gallery-selection">
-          <a class="nav-menu-link-header" href="<%= basePathWithLang %>/gallery/family">
-            <%= t('gallery-family-collection') %>
-          </a>
-          <a class="nav-menu-link painting-link" href="<%= basePathWithLang %>/view-painting/generational-link"><%= t('generational_link') %></a>
-          <a class="nav-menu-link painting-link" href="<%= basePathWithLang %>/view-painting/family-picture"><%= t('family_picture') %></a>
-          <a class="nav-menu-link painting-link" href="<%= basePathWithLang %>/view-painting/little-sidi"><%= t('little_sidi') %></a>
-        </li>
-        <!-- ... Fix other gallery links similarly ... -->
+        <%# Check if the navigation object and its collections array exist %>
+        <% if (navigation && navigation.collections && navigation.collections.length > 0) { %>
+          <%# Loop through each collection object from res.locals.navigation.collections %>
+          <% navigation.collections.forEach(collection => { %>
+            <li class="gallery-selection">
+              <!-- Create the link for the collection itself -->
+              <a class="nav-menu-link-header" href="<%= collection.path %>">
+                  <%= collection.title %>
+              </a>
+              <%# Now, loop through the paintings within this collection %>
+              <% if (collection.paintings && collection.paintings.length > 0) { %>
+                <% collection.paintings.forEach(painting => { %>
+                  <a class="nav-menu-link painting-link" href="<%= painting.path %>">
+                    <%= painting.title %>
+                  </a>
+                <% }); %>
+              <% } %>
+            </li>
+          <% }); %>
+        <% } else { %>
+            <li class="gallery-selection">
+              <span class="nav-menu-link-header"><%= t('no_collections_available', { defaultValue: 'No collections available' }) %></span>
+            </li>
+        <% } %>
       </ul>
     </div>
   </section>
 
+  <!-- ABOUT DROPDOWN SECTION (Can also be made dynamic if needed) -->
   <section id="about" class="nav-section">
     <div class="selection-container">
       <ul>
-        <!-- CORRECTED: Syntax fixed and links use basePathWithLang -->
         <li class="presentation about-selection">
           <a class="nav-menu-link" href="<%= basePathWithLang %>/about#presentation">
             <%= t('web_section_about_presentation') %>
@@ -111,6 +118,7 @@
     </div>
   </section>
 
+  <!-- EXHIBITIONS DROPDOWN SECTION (Can also be made dynamic) -->
   <section id="exhibitions" class="nav-section">
     <div class="selection-container">
       <ul>

@@ -32,6 +32,7 @@ app.use(session({
 // Import your handlers and helpers
 const { i18nUiMiddleware } = require('./helpers/i18nUIHelper');
 const pathLanguageHandler = require('./middleware/pathLanguageHandler'); // Using the new handler
+const contentHandler = require('./middleware/contentHandler');
 
 app.get('/', (req, res) => {
     let langToRedirect = 'en'; // Default language
@@ -60,14 +61,15 @@ app.use('/:lang', langRouter);
 // Apply middleware to the router
 langRouter.use(pathLanguageHandler); // Sets res.locals.currentLanguage from path
 langRouter.use(i18nUiMiddleware);   // Uses currentLanguage to create res.locals.t
+langRouter.use(contentHandler);
 
 // --- Define all your page routes INSIDE langRouter ---
 
 // Handles "/en/" or "/fr/"
 langRouter.get('/', (req, res) => {
     res.render('index', {
-        title: res.locals.t('home-page-title'),
-        heading: res.locals.t('home-page-heading'),
+        title: res.locals.t('home_page_title'),
+        heading: res.locals.t('home_page_heading'),
         currentPage: 'home',
         bodyPartialName: 'home',
         pageIdentifier: 'home-page'
@@ -76,40 +78,36 @@ langRouter.get('/', (req, res) => {
 
 // Handles "/en/gallery" or "/fr/gallery"
 langRouter.get('/gallery', (req, res) => {
-    const collectionSlugs = ["new-collection", "black-collection", "mor-talla-collection", "family", "special-edition"];
-    const collectionsForView = collectionSlugs.map(slug => ({
-        slug: slug,
-        title: res.locals.t(`collection_${slug}_title`, { defaultValue: slug }),
-        path: `${res.locals.basePathWithLang}/gallery/${slug}`
-    }));
 
     res.render('index', {
         title: res.locals.t('gallery_overview_title'),
         heading: res.locals.t('gallery_overview_heading'),
         currentPage: 'gallery',
         bodyPartialName: 'gallery-overview',
-        collections: collectionsForView,
         pageIdentifier: 'gallery-overview-page'
     });
 });
 
-// Handles "/en/gallery/new-collection", "/fr/gallery/black-collection", etc.
 langRouter.get('/gallery/:collectionName', (req, res, next) => {
     const { collectionName } = req.params;
-    const collectionTitle = res.locals.t(`collection_${collectionName}_title`, { defaultValue: null });
 
-    if (collectionTitle === null) {
-        console.warn(`Attempted to access non-existent collection: ${collectionName}`);
+    // Find the collection in the pre-prepared navigation data
+    const collection = res.locals.navigation.collections.find(c => c.slug === collectionName);
+
+    if (!collection) {
+        console.warn(`Collection not found in prepared data: ${collectionName}`);
         return next(); // Pass to 404 handler
     }
 
     res.render('index', {
-        title: collectionTitle,
-        heading: res.locals.t(`collection_${collectionName}_heading`, { defaultValue: collectionTitle }),
+        title: collection.title, // Use the pre-translated title
+        heading: collection.title,
         currentPage: `gallery-${collectionName}`,
+        // Get the EJS file name from the t() function as before, or add it to siteContent.js data
         bodyPartialName: res.locals.t(`collection_${collectionName}_ejsFile`),
-        pageIdentifier: res.locals.t(`collection_${collectionName}_page_identifier`),
-        description: res.locals.t(`collection_${collectionName}_description`, { defaultValue: '' })
+        pageIdentifier: `${collectionName}-page`,
+        // Pass the entire collection object (which includes paintings) to the template
+        collection: collection
     });
 });
 
