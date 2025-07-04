@@ -11,17 +11,17 @@ const galleryCollectionsData = {
             paintings:  [
                 {
                     id: "the-last-masters-laws",
-                    titleKey: "the_last_masters_laws",
+                    titleKey: "painting_the_last_masters_laws",
                     imageClass: "les-dernieres-louas-du-maitre",
                 },
                 {
                     id: "the-visitors",
-                    titleKey: "the_visitors",
+                    titleKey: "painting_the_visitors",
                     imageClass: "les-visiteurs"
                 },
                 {
                     id: "endures",
-                    titleKey: "endures",
+                    titleKey: "painting_endures",
                     imageClass: "perdure"
                 },
             ]
@@ -33,17 +33,17 @@ const galleryCollectionsData = {
             paintings: [
                 {
                     id: "generational-link",
-                    titleKey: "generational_link",
+                    titleKey: "painting_generational_link",
                     imageClass: "lien-generationnel"
                 },
                 {
                     id: "family-picture",
-                    titleKey: "family_picture",
+                    titleKey: "painting_family_picture",
                     imageClass: "photo-de-famille"
                 },
                 {
                     id: "little-sidi",
-                    titleKey: "little-sidi",
+                    titleKey: "painting_little-sidi",
                     imageClass: "le-petit-sidi"
                 },
             ] 
@@ -55,34 +55,34 @@ const galleryCollectionsData = {
             paintings:  [
                 {
                     id: "samba-alar",
-                    titleKey: "samba_alar",
+                    titleKey: "painting_samba_alar",
                     imageClass: "samba-alar"
                 },
                 {
                     id: "jamonoy-white-night",
-                    titleKey: "jamonoy_white_night",
+                    titleKey: "painting_jamonoy_white_night",
                     imageClass: "jamonoy-nuit-blanche"
                 }
             ]
         },
         "mor-talla-collection": {
 
-            titleKey: 'collection_mor_talla-collection', 
+            titleKey: 'collection_mor_talla_collection', 
             ejsFile: 'mor-talla',
             paintings: [
                 {
                     id: "mor-talla-and-wooden-sticks",
-                    titleKey: "mor_talla_and_wooden_sticks",
+                    titleKey: "painting_mor_talla_and_wooden_sticks",
                     imageClass: "mor-talla-et-les-bouts-de-bois"
                 },
                 {
                     id: "the-eye-catcher",
-                    titleKey: "the_eye_catcher",
+                    titleKey: "painting_the_eye_catcher",
                     imageClass: "le-tape-a-loeil"
                 },
                 {
                     id: "law-of-the-strongest",
-                    titleKey: "law_of_the_strongest",
+                    titleKey: "painting_law_of_the_strongest",
                     imageClass: "la-loi-du-plus-fort"
                 }
             ]
@@ -95,12 +95,12 @@ const galleryCollectionsData = {
             paintings: [
                 {
                     id: "for-bi-gathering",
-                    titleKey: "for_bi_gathring",
+                    titleKey: "painting_for_bi_gathering",
                     imageClass: "for-bi-le-ramassage"
                 },
                 {
                     id: "armchair",
-                    titleKey: "armchair",
+                    titleKey: "painting_armchair",
                     imageClass: "le-fauteuil"
                 }
             ]
