@@ -42,17 +42,16 @@
     
     <div class="language-switcher">
         <% const otherLang = currentLanguage === 'en' ? 'fr' : 'en'; %>
-        <!-- CORRECTED: Using t() for switcher text -->
         <% const otherLangText = t(currentLanguage === 'en' ? 'language_switcher_fr' : 'language_switcher_en'); %>
         <%
             const newPath = `/${otherLang}${originalPathWithoutLang}`;
             const newHref = `${newPath}${queryParamsString}`;
         %>
-        <div class="language-switcher-button-container">
-            <a class="language-switcher-button" href="<%= newHref %>">
+        <a class="language-switcher-button-container" href="<%= newHref %>">
+            <div class="language-switcher-button">
                 <%= otherLangText %>
-            </a>
-        </div>
+            </div>
+        </a>
     </div>
 
     <button class="hamburger-button" id="hamburgerButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">

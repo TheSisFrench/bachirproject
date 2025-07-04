@@ -21,7 +21,7 @@
 
     <body data-page-id="<%= typeof pageIdentifier !== 'undefined' ? pageIdentifier : '' %>">
 
-        <%- include('.partials/header') %>
+        <%- include('./partials/header') %>
         <% if (bodyPartialName) { %>
             <%- include('./partials/' + bodyPartialName, {
             }) %>

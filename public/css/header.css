@@ -246,6 +246,7 @@ main    {
     padding: 0.7rem;
     border: 1px solid rgb(var(--button-border-color));
     transition: all 0.2s ease;
+    text-decoration: none;
 }
 
 .language-switcher-button-container:hover {
@@ -254,13 +255,17 @@ main    {
     color: rgb(var(--button-text-color-hover));
 }
 
-.language-switcher-button:active    {
+.language-switcher-button-container:active    {
     background-color: rgb(var(--button-background-color-active));
-    border: 1px solid rgb(var(--button-border-color-active));
-    color: rgb(var(--button-text-color-active));
+    border-color: rgb(var(--button-border-color-active));
+
+    .language-switcher-button   {
+        color: var(--button-text-color-active);
+    }
 }
 
 .language-switcher-button   {
+    color: var(--button-text-color);
     font-size: 0.8rem;
     text-decoration: none;
 }

@@ -9,16 +9,19 @@
     "web_section_exhibitions_past_exhibitions": "Anciennes expositions",
     "web_section_contact": "Contact",
     "web_section_store": "Boutique",
+
     "home_page_title": "Bachirproject",
     "home_page_heading": "Il n'y a aucune limite à notre créativité",
     "home_page_button": "Découvrir les oeuvres",
+
     "gallery_page_title": "Galerie",
     "gallery_skip_button": "Galerie",
     "gallery_skip_tooltip": "Sauter à la gallerie",
-    "gallery-new-collection": "Nouvelle collection",
-    "gallery-family-collection": "Collection famille",
-    "gallery-special-edition": "Hors série",
-    "gallery-mor-talla-collection": "Mor Talla",
+
+    "gallery_new_collection": "Nouvelle collection",
+    "gallery_family_collection": "Collection famille",
+    "gallery_special_edition": "Hors série",
+    "gallery_mor_talla_collection": "Mor Talla",
     "gallery_black_collection": "Collection noire",
     "the_last_masters_laws": "Les derniàres louas du maître",
     "the_visitors": "Les visiteurs",
@@ -67,5 +70,5 @@
     "footer_heading": "Contacter l'artiste",
     "send_message_button_message": "Envoyer",
     "return_up_button_tooltip": "Retour haut de page",
-    "copyright": "Copyright @2025 BachirProject.com - Tous droits réservés"
+    "copyright": "Copyright @2025 BachirProject.com _ Tous droits réservés"
 }

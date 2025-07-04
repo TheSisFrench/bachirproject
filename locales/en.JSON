@@ -4,17 +4,20 @@
     "web_section_exhibitions": "Exhibitions",
     "web_section_contact": "Contact",
     "web_section_store": "Store",
+
     "home_page_title": "Bachirproject",
     "home_page_heading": "There is no limit to our creativity",
     "home_page_button": "Discover the works",
+
     "gallery_page_title": "Gallery",
     "gallery_skip_button": "Gallery",
     "gallery_skip_tooltip": "Skip to gallery",
-    "gallery_new-collection": "New collection",
-    "gallery-family-collection": "Family collection",
-    "gallery-special-edition": "Special edition",
+
+    "gallery_new_collection": "New collection",
+    "gallery_family_collection": "Family collection",
+    "gallery_special_edition": "Special edition",
     "gallery_mor_talla_edition": "Mor talla",
-    "gallery-mor-talla-collection": "Mor talla",
+    "gallery_mor_talla_collection": "Mor talla",
     "gallery_black_collection": "Black collection",
     "the_last_masters_laws": "The last master's laws",
     "the_visitors": "The visitors",
@@ -68,5 +71,5 @@
     "footer_heading": "Contact the artist",
     "send_message_button_message": "Send",
     "return_up_button_tooltip": "Return up",
-    "copyright": "Copyright @2025 BachirProject.com - All rights reserved"
+    "copyright": "Copyright @2025 BachirProject.com _ All rights reserved"
 }
