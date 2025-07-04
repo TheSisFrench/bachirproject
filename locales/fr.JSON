@@ -1,35 +1,26 @@
 {
     "web_section_gallery": "Galerie",
-
     "web_section_about": "À propos",
     "web_section_about_presentation": "Présentation",
     "web_section_about_the_vision": "la vision",
     "web_section_about_realisations": "Réalisations",
-
     "web_section_exhibitions": "Expositions",
     "web_section_exhibitions_new_exhibitions": "Nouvelles expositions",
     "web_section_exhibitions_past_exhibitions": "Anciennes expositions",
-
     "web_section_contact": "Contact",
     "web_section_store": "Boutique",
-
-
     "home_page_title": "Bachirproject",
     "home_page_heading": "Il n'y a aucune limite à notre créativité",
-    "home_page_main_button": "Découvrir les oeuvres",
-
-    
+    "home_page_button": "Découvrir les oeuvres",
     "gallery_page_title": "Galerie",
     "gallery_skip_button": "Galerie",
     "gallery_skip_tooltip": "Sauter à la gallerie",
-
-    "gallery_new_collection": "Nouvelle collection",
-    "gallery_family_collection": "Collection famille",
-    "gallery_special_edition": "Hors série",
-    "gallery_mor_talla_collection": "Mor talla",
+    "gallery-new-collection": "Nouvelle collection",
+    "gallery-family-collection": "Collection famille",
+    "gallery-special-edition": "Hors série",
+    "gallery-mor-talla-collection": "Mor Talla",
     "gallery_black_collection": "Collection noire",
-
-    "the_last_master's_laws": "Les derniàres louas du maître",
+    "the_last_masters_laws": "Les derniàres louas du maître",
     "the_visitors": "Les visiteurs",
     "endures": "Perdure",
     "generational_link": "Lien générationnel",
@@ -42,7 +33,6 @@
     "law_of_the_strongest": "La loi du plus fort",
     "for_bi_gathering": "For Bi le rammassage",
     "armchair": "Le fauteuil",
-
     "gallery_main_heading_dalal": "dalal jàmm!",
     "gallery_main_heading_discover": "Découvrez l'immensité du projet",
     "gallery_portfolio_heading": "Dans ce portfolio",
@@ -50,7 +40,7 @@
     "gallery_dive_in_heading": "Plonger",
     "gallery_dive_in_p1": "Ces peintures forment ensemble le prolongement de sa pensée, elles coexistent et produisent ensemble le project d'El_Bachir.",
     "gallery_dive_in_p2": "Nos nageoires réaparaissent, notre souffle se coupe, notre corps trouve l'oxygène de l'eau.",
-    "newest_collection_link_text": "Collection la plus récente",
+    "newest_collection_link_text": "Collection la plus recente",
     "family_collection_link_text": "Collection famille",
     "special_edition_link_text": "Hors série",
     "mor_talla_collection_link_text": "Collection Mor Talla",
@@ -72,14 +62,10 @@
     "about_achievements_link": "Réalisations",
     "exhibitions_previous_link": "Précédentes expositions",
     "exhibitions_new_link": "Nouvelles expositions",
-
     "language_switcher_fr": "Français",
     "language_switcher_en": "English",
-
     "footer_heading": "Contacter l'artiste",
     "send_message_button_message": "Envoyer",
     "return_up_button_tooltip": "Retour haut de page",
-
-
-    "copyright": "Copyright &#64;2025 BachirProject.com - Tous droits réservés"
+    "copyright": "Copyright @2025 BachirProject.com - Tous droits réservés"
 }

@@ -4,38 +4,31 @@
     "web_section_exhibitions": "Exhibitions",
     "web_section_contact": "Contact",
     "web_section_store": "Store",
-
     "home_page_title": "Bachirproject",
     "home_page_heading": "There is no limit to our creativity",
-    "home_page_main_button": "Discover the works",
-
-    
+    "home_page_button": "Discover the works",
     "gallery_page_title": "Gallery",
     "gallery_skip_button": "Gallery",
     "gallery_skip_tooltip": "Skip to gallery",
-
-    "gallery_new_collection": "New collection",
-    "gallery_family_collection": "Family collection",
-    "gallery_special_edition": "Special edition",
+    "gallery_new-collection": "New collection",
+    "gallery-family-collection": "Family collection",
+    "gallery-special-edition": "Special edition",
     "gallery_mor_talla_edition": "Mor talla",
-    "gallery_black_collection": "Black_collection",
-
-    "the_last_master's_laws": "The last master's laws",
+    "gallery-mor-talla-collection": "Mor talla",
+    "gallery_black_collection": "Black collection",
+    "the_last_masters_laws": "The last master's laws",
     "the_visitors": "The visitors",
     "endures": "Endures",
     "generational_link": "Generational link",
     "family_picture": "Family picture",
     "little_sidi": "Little Sidi",
     "samba_alar": "Samba Alar",
-    "Jamonoy_white_night": "Jamonoy white night",
+    "jamonoy_white_night": "Jamonoy white night",
     "mor_talla_and_wooden_sticks": "Mor Talla and wooden sticks",
     "the_eye_catcher": "The eye catcher",
     "law_of_the_strongest": "Law of the strongest",
-    "for_bi_gathring": "For Bi gathring",
+    "for_bi_gathering": "For Bi gathering",
     "armchair": "Armchair",
-
-
-
     "gallery_main_heading_dalal": "dalal jàmm!",
     "gallery_main_heading_discover": "Discover the vastness of the project",
     "gallery_portfolio_heading": "In this portfolio",
@@ -60,18 +53,20 @@
     "header_special_edition": "Special edition",
     "header_mor_talla_collection": "Mor Talla",
     "header_black_collection": "Black collection",
+    "web_section_about_presentation": "Presentation",
     "about_presentation_link": "Presentation",
     "about_vision_link": "The vision",
+    "web_section_about_the_vision": "The vision",
     "about_achievements_link": "Achievements",
+    "web_section_about_realisations": "Achievements",
     "exhibitions_previous_link": "Previous exhibitions",
+    "web_section_exhibitions_past_exhibitions": "Previous exhibitions",
     "exhibitions_new_link": "New exhibitions",
-
+    "web_section_exhibitions_new_exhibitions": "New exhibitions",
     "language_switcher_fr": "Français",
     "language_switcher_en": "English",
-
     "footer_heading": "Contact the artist",
     "send_message_button_message": "Send",
     "return_up_button_tooltip": "Return up",
-
-    "copyright": "Copyright &#64;2025 BachirProject.com - All rights reserved"
+    "copyright": "Copyright @2025 BachirProject.com - All rights reserved"
 }
