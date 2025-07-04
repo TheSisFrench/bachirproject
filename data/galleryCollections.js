@@ -1,7 +1,7 @@
 
 
 const galleryCollectionsData = {
-    collectionSlugs: ["new-collection", "family", "special-edition", "mor-talla-collection", "black-collection"],
+    collectionSlugs: ["new-collection", "family-collection", "special-edition", "mor-talla-collection", "black-collection"],
     
     collections: {
         "new-collection": { // This key should match the URL parameter

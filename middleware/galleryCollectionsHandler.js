@@ -1,4 +1,4 @@
-const siteContent = require('../data/galleryCollections');
+const galleryCollections = require('../data/galleryCollections');
 
 function contentHandler(req, res, next) {
     console.log("--- Content Handler: Preparing site-wide data ---");
@@ -15,8 +15,8 @@ function contentHandler(req, res, next) {
     };
 
     // Loop through the defined order of collection slugs
-    siteContent.collectionSlugs.forEach(slug => {
-        const collectionData = siteContent.collections[slug];
+    galleryCollections.collectionSlugs.forEach(slug => {
+        const collectionData = galleryCollections.collections[slug];
         if (collectionData) {
             // Translate the paintings for this collection
             const translatedPaintings = collectionData.paintings.map(painting => ({

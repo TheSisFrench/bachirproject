@@ -32,7 +32,7 @@ app.use(session({
 // Import your handlers and helpers
 const { i18nUiMiddleware } = require('./helpers/i18nUIHelper');
 const pathLanguageHandler = require('./middleware/pathLanguageHandler'); // Using the new handler
-const contentHandler = require('./middleware/contentHandler');
+const contentHandler = require('./middleware/galleryCollectionsHandler');
 
 app.get('/', (req, res) => {
     let langToRedirect = 'en'; // Default language
@@ -103,7 +103,7 @@ langRouter.get('/gallery/:collectionName', (req, res, next) => {
         title: collection.title, // Use the pre-translated title
         heading: collection.title,
         currentPage: `gallery-${collectionName}`,
-        // Get the EJS file name from the t() function as before, or add it to siteContent.js data
+        // Get the EJS file name from the t() function as before, or add it to galleryCollections.js data
         bodyPartialName: res.locals.t(`collection_${collectionName}_ejsFile`),
         pageIdentifier: `${collectionName}-page`,
         // Pass the entire collection object (which includes paintings) to the template
