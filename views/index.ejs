@@ -19,18 +19,41 @@
         <title><%= title %></title>
     </head>
 
-    <body data-page-id="<%= typeof pageIdentifier !== 'undefined' ? pageIdentifier : '' %>">
+    <!-- views/index.ejs (More Explicit Version) -->
 
-        <%- include('./partials/header') %>
-        <% if (bodyPartialName) { %>
-            <%- include('./partials/' + bodyPartialName, {
-            }) %>
-        <% } else { %>
-            <p>Error: No content partial specified.</p>
-        <% } %>  
+    <body>
+        <%# Explicitly pass all data the header needs %>
+        <%- include('./partials/header', {
+            currentPage: currentPage,
+            currentLanguage: currentLanguage,
+            basePathWithLang: basePathWithLang,
+            originalPathWithoutLang: originalPathWithoutLang,
+            queryParamsString: queryParamsString,
+            t: t, // Pass the 't' function
+            navigation: navigation // Pass the navigation object
+        }) %>
 
-        <%- include('./partials/footer') %>
+        <main>
+            <h1><%= heading %></h1>
+            <% if (bodyPartialName) { %>
+                <%# Explicitly pass all data the body partial might need %>
+                <%- include('./partials/' + bodyPartialName, {
+                    heading: heading,
+                    collections: (typeof collections !== 'undefined' ? collections : []),
+                    collection: (typeof collection !== 'undefined' ? collection : null),
+                    t: t,
+                    navigation: navigation,
+                    currentLanguage: currentLanguage
+                }) %>
+            <% } else { %>
+                <p>Error: No content partial specified.</p>
+            <% } %>
+        </main>
+
+        <%# Footer also needs access to navigation data and 't' %>
+        <%- include('./partials/footer', { t: t, navigation: navigation, basePathWithLang: basePathWithLang }) %>
 
         <script src="/index.js"></script>
     </body>
+
 </html>
