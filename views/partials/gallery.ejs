@@ -3,8 +3,8 @@
 
     <button class="skip-to-gallery-container">
         <a class="skip-to-gallery-button" href="#second-section">
-            <span class="skip-to-gallery">Gallery</span>
-            <span class="skip-to-gallery-tooltip">Sauter à la gallerie</span>
+            <span class="skip-to-gallery"><%= t('gallery_skip_button') %></span>
+            <span class="skip-to-gallery-tooltip"><%= t('gallery_skip_tooltip') %></span>
         </a>
     </button>
 
@@ -18,16 +18,16 @@
 
             <div class="portfolio-description-container">
                 <div class="text-gallery-header-center-r1">
-                    <h3 class="portfolio-description">dalal jàmm!</h3>
-                    <h1 class="portfolio-description">Découvrez l'immensité du projet</h1>
+                    <h3 class="portfolio-description"><%= t('gallery_main_heading_dalal') %></h3>
+                    <h1 class="portfolio-description"><%= t('gallery_main_heading_discover') %></h1>
                 </div>
                 
                 <div class="text-gallery-header-center-r2">
-                    <h2 class="portfolio-description">Dans ce portfolio</h2>
-                    <p class="portfolio-description">Chaque oeuvre est unique, un travail qui aligne le talent de l'artiste au monde sous-marin. La proposition d'un futur incertain, une vision sur la dégénérescence de l'humain, une préocupation que souligne son art.</p>
-                    <h3 class="portfolio-description">Plonger</h2>
-                    <p class="portfolio-description">Ces peintures forment ensemble le prolongement de sa pensée, elles coexistent et produisent ensemble le project d'El-Bachir.</p>
-                    <p class="portfolio-description">Nos nageoires réaparaissent, notre souffle se coupe, notre corps trouve l'oxygène de l'eau.</p>
+                    <h2 class="portfolio-description"><%= t('gallery_portfolio_heading') %></h2>
+                    <p class="portfolio-description"><%= t('gallery_portfolio_p1') %></p>
+                    <h3 class="portfolio-description"><%= t('gallery_dive_in_heading') %></h2>
+                    <p class="portfolio-description"><%= t('gallery_dive_in_p1') %></p>
+                    <p class="portfolio-description"><%= t('gallery_dive_in_p2') %></p>
                 </div>
             </div>
 
@@ -39,234 +39,37 @@
 
 
             <!--newest paintings no collection -->
-            <div class="series fifth-collection">
-                <div class="series-name-container">
-                    <a class="series-name" href="gallery/new-collection"><%= t('gallery_new_collection') %></a>
-                </div>
 
-
-                <div class="portfolio-container">
-                    <div class="painting-selection selection4">
-                        <img class="painting-items les-dernieres-louas-du-maitre">
-                    </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name"><%= t('the_last_masters_laws')%></p>
+            <% if (navigation && navigation.collections && navigation.collections.length > 0) { %>
+                <% navigation.collections.forEach(collection => { %>
+                    <div class="series">
+                        <div class="series-name-container">
+                            <a class="series-name" href="/gallery/<% collection %>"><%= t(collection) %></a>
                         </div>
-                        <a class="discover-painting selection4"><%= t('gallery_discover_button') %></a>
-                    </div>
 
-                </div>
 
-                <div class="portfolio-container">
-                    <div class="painting-selection selection1">
-                        <img class="painting-items">
-                    </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name"><%= t('the_visitors')%></p>
-                        </div>
-                        <a class="discover-painting selection1">Découvrir</a>
-
-                    </div>
-                </div>
-
-                <div class="portfolio-container">
-                    <div class="painting-selection selection1">
-                        <img class="painting-items">
+                        <% collections.paintings.forEach(painting => { %>
+                            <div class="portfolio-container">
+                                <div class="painting-selection">
+                                    <img class="painting-items <% painting %>">
+                                </div>
+                                <div class="painting-name-container">
+                                    <div class="painting-description-section">
+                                        <p class="painting-name"><% painting %></p>
+                                    </div>
+                                    <a class="discover-painting"><%= t('gallery_discover_button') %></a>
+                                </div>
+                            </div> 
+                        <% }); %>
                         
                     </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name">Perdure</p>
-                        </div>
-                        
-                        <a class="discover-painting selection1">Découvrir</a>
-
-                    </div>
-                </div>
-            </div>
-
-
-            <!--collection family-->
-            <div class="series third-collection">
-                <div class="series-name-container">
-                    <a class="series-name" href="gallery/family">Family collection</a>
-                </div>
-
-                <div class="portfolio-container">
-                    <div class="painting-selection selection3">
-                        <img class="painting-items lien-generationnel">
-                        
-                    </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name">Lien générationnel</p>
-                        </div>
-                        
-                        <a class="discover-painting selection3">Découvrir</a>
-
-                    </div>
-                </div>
-
-                
-
-                <div class="portfolio-container">
-                    <div class="painting-selection">
-                        <img class="painting-items">
-                        
-                    </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name">Photo de famille</p>
-                        </div>
-                        
-                        <a class="discover-painting">Découvrir</a>
-
-                    </div>
-                </div>
-
-                <div class="portfolio-container">
-                    <div class="painting-selection ">
-                        <img class="painting-items le-petit-sidi">
-                        
-                    </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name">Le petit Sidi</p>
-                        </div>
-                        <a class="discover-painting">Découvrir</a>
-                    </div>
-
-                </div>
-            </div>
-
-            <!--collection to be named-->
-            <div class="series fourth-collection">
-                <div class="series-name-container">
-                    <a class="series-name" href="gallery/special-edition">Hors série</a>
-                </div>
-                    
-
-
-                <div class="portfolio-container">
-                    <div class="painting-selection selection7">
-                        <img class="painting-items jamonoy-nuit-blanche">
-                        
-                    </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name">Jamonoy nuit blanche</p>
-                        </div>
-                        <a class="discover-painting selection7">Découvrir</a>
-
-                    </div>
-                </div>
-
-
-                <div class="portfolio-container">
-                    <div class="painting-selection selection4">
-                        <img class="painting-items samba-alar">
-                        
-                    </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name">Samba Alar</p>
-                        </div>
-                        <a class="discover-painting selection4">Découvrir</a>
-
-                    </div>
-                </div>
-            </div>
-        
-
-            <!--shark head collection-->
-            <div class="series second-collection">
-                <div class="series-name-container">
-                    <a class="series-name" href="/mor-talla">Mor talla collection</a>
-                </div>
-                    
-
-                <div class="portfolio-container">
-                    <div class="painting-selection selection1">
-                        <img class="painting-items mor-talla-et-les-bouts-de-bois">
-                        
-                    </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name">Mor Talla et les bouts de bois</p>
-                        </div>
-                        
-                        <a class="discover-painting selection1">Découvrir</a>
-
-                    </div>
-                </div>
-
-                <div class="portfolio-container">
-                    <div class="painting-selection ">
-                        <img class="painting-items le-tape-a-loeil">
-                        
-                    </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name">Le tape à l'oeil</p>
-                        </div>
-                        <a class="discover-painting">Découvrir</a>
-
-                    </div>
-                </div>
-
-                <div class="portfolio-container">
-                    <div class="painting-selection">
-                        <img class="painting-items la-loi-du-plus-fort">
-                        
-                    </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name">La loi du plus fort</p>
-                        </div>
-                        
-                        <a class="discover-painting ">Découvrir</a>
-
-                    </div>
-                </div>
-
-                <div class="portfolio-container">
-                    <div class="painting-selection">
-                        <img class="painting-items">
-                        
-                    </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name">For bi le ramassage</p>
-                        </div>
-                        <a class="discover-painting">Découvrir</a>
-
-                    </div>
-                </div>
-            </div>
-
-            
-            <!--black collection-->
-            <div class="series first-collection">
-                <div class="series-name-container">
-                    <a class="series-name" href="/black-collection">Black collection (Senegal)</a>
-                </div>
-
-                <div class="portfolio-container">
-                    <div class="painting-selection selection1">
-                        <img class="painting-items ">
-                        
-                    </div>
-                    <div class="painting-name-container">
-                        <div class="painting-description-section">
-                            <p class="painting-name">Le fauteuil</p>
-                        </div>
-                        <a class="discover-painting selection1">Découvrir</a>
-
-                    </div>
-                </div>
-            </div>
+                <% }); %>
+            <% } else { %>
+                <li class="gallery-selection">
+                    <span class="nav-menu-link-header"><%= t('no_collections_available', { defaultValue: 'No collections available' }) %></span>
+                </li>
+            <% } %>
+         
 
         </div>
     </section>
