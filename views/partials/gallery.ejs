@@ -1,6 +1,5 @@
-<%# This file is assumed to be your 'gallery-overview.ejs' partial %>
+<%# This file is views/partials/gallery-overview.ejs %>
 <main>
-
     <button class="skip-to-gallery-container">
         <a class="skip-to-gallery-button" href="#second-section">
             <span class="skip-to-gallery"><%= t('gallery_skip_button') %></span>
@@ -12,7 +11,7 @@
         <div class="gallery-header">
             <div class="page-title-container">
                 <h1 class="page-title-gallery">
-                    <%= heading %> <%# 'heading' is passed from server.js %>
+                    <%= heading %>
                 </h1>
             </div>
             <div class="portfolio-description-container">
@@ -33,41 +32,34 @@
 
     <section id="second-section">
         <div class="portfolio">
-            <%# Check if the navigation object and its collections array exist %>
             <% if (navigation && navigation.collections && navigation.collections.length > 0) { %>
-                
-                <%# Loop through each 'collection' object from res.locals.navigation %>
                 <% navigation.collections.forEach(collection => { %>
-                    
-                    <!-- This 'series' div represents one entire collection block -->
                     <div class="series">
                         <div class="series-name-container">
-                            <!-- Link to the specific collection page -->
+                            <!-- Link to the specific collection page, using the pre-translated title -->
                             <a class="series-name" href="<%= collection.path %>">
-                                <%= collection.title %> <%# Use the pre-translated title %>
+                                <%= collection.title %>
                             </a>
                         </div>
 
-                        <%# Now, loop through the paintings WITHIN this specific collection %>
                         <% if (collection.paintings && collection.paintings.length > 0) { %>
                             <% collection.paintings.forEach(painting => { %>
-                                
                                 <div class="portfolio-container">
                                     <div class="painting-selection">
-                                        <%# You need to define how to get the image class. Let's assume it's from the painting id %>
+                                        <!-- The 'alt' text should be the painting's translated title -->
                                         <img class="painting-items painting-<%= painting.id %>" alt="<%= painting.title %>">
                                     </div>
                                     <div class="painting-name-container">
                                         <div class="painting-description-section">
+                                            <!-- The painting's name is its pre-translated title -->
                                             <p class="painting-name"><%= painting.title %></p>
                                         </div>
-                                        <!-- The link should go to the specific painting's page -->
+                                        <!-- The link now correctly points to the specific painting's URL -->
                                         <a href="<%= painting.path %>" class="discover-painting">
                                             <%= t('discover_button') %>
                                         </a>
                                     </div>
                                 </div> 
-                                
                             <% }); %>
                         <% } %>
                     </div>

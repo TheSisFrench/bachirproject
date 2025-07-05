@@ -100,22 +100,28 @@ langRouter.get('/gallery/:collectionName', (req, res, next) => {
     }
 
     res.render('index', {
-        title: collection.title, // Use the pre-translated title
-        heading: collection.title,
+        title: collection.titleKey, // Use the pre-translated title
+        heading: collection.titleKey,
         currentPage: `gallery-${collectionName}`,
         // Get the EJS file name from the t() function as before, or add it to galleryCollections.js data
-        bodyPartialName: res.locals.t(`collection_${collectionName}_ejsFile`),
+        bodyPartialName: res.locals.t(`collection_${collectionName}`),
         pageIdentifier: `${collectionName}-page`,
         // Pass the entire collection object (which includes paintings) to the template
         collection: collection
     });
 });
 
+langRouter.get('/painting-overview', (req, res) =>  {
+    res.render('index', {
+        title: res.locals.t('')
+    })
+})
+
 
 langRouter.get('/about', (req, res) => {
     res.render('index', {
-        title: res.locals.t('about-page-title'),
-        heading: res.locals.t('about-page-heading'),
+        title: res.locals.t('about_page_title'),
+        heading: res.locals.t('about_page_heading'),
         currentPage: 'about',
         bodyPartialName: 'about',
         pageIdentifier: 'about-page'
@@ -124,8 +130,8 @@ langRouter.get('/about', (req, res) => {
 
 langRouter.get('/exhibitions', (req, res) => {
     res.render('index', {
-        title: res.locals.t('exhibitions-page.title'),
-        heading: res.locals.t('exhibitions-page-heading'),
+        title: res.locals.t('exhibitions_page_title'),
+        heading: res.locals.t('exhibitions_page_heading'),
         currentPage: "exhibitions",
         bodyPartialName: "exhibitions",
         pageIdentifier: "exhibitions-page"
@@ -134,8 +140,8 @@ langRouter.get('/exhibitions', (req, res) => {
 
 langRouter.get('/contact', (req, res) => {
     res.render('index', {
-        title: res.locals.t('contact-page-title'),
-        heading: res.locals.t('contact-page-heading'),
+        title: res.locals.t('contact_page_title'),
+        heading: res.locals.t('contact_page_heading'),
         currentPage: "contact",
         bodyPartialName: 'contact',
         pageIdentifier: 'contact-page'
@@ -144,8 +150,8 @@ langRouter.get('/contact', (req, res) => {
 
 langRouter.get('/store', (req, res) => {
     res.render('index', {
-        title: res.locals.t('store-page-title'),
-        heading: res.locals.t('store-page-heading'),
+        title: res.locals.t('store_page_title'),
+        heading: res.locals.t('store_page_heading'),
         currentPage: 'store',
         bodyPartialName: 'store',
         pageIdentifier: 'store-page'
