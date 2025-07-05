@@ -1,4 +1,4 @@
-
+<%# This file is assumed to be your 'gallery-overview.ejs' partial %>
 <main>
 
     <button class="skip-to-gallery-container">
@@ -12,66 +12,69 @@
         <div class="gallery-header">
             <div class="page-title-container">
                 <h1 class="page-title-gallery">
-                    <%= heading %>
+                    <%= heading %> <%# 'heading' is passed from server.js %>
                 </h1>
             </div>
-
             <div class="portfolio-description-container">
                 <div class="text-gallery-header-center-r1">
                     <h3 class="portfolio-description"><%= t('gallery_main_heading_dalal') %></h3>
                     <h1 class="portfolio-description"><%= t('gallery_main_heading_discover') %></h1>
                 </div>
-                
                 <div class="text-gallery-header-center-r2">
                     <h2 class="portfolio-description"><%= t('gallery_portfolio_heading') %></h2>
                     <p class="portfolio-description"><%= t('gallery_portfolio_p1') %></p>
-                    <h3 class="portfolio-description"><%= t('gallery_dive_in_heading') %></h2>
+                    <h3 class="portfolio-description"><%= t('gallery_dive_in_heading') %></h3>
                     <p class="portfolio-description"><%= t('gallery_dive_in_p1') %></p>
                     <p class="portfolio-description"><%= t('gallery_dive_in_p2') %></p>
                 </div>
             </div>
-
         </div>
     </section>
 
     <section id="second-section">
         <div class="portfolio">
-
-
-            <!--newest paintings no collection -->
-
+            <%# Check if the navigation object and its collections array exist %>
             <% if (navigation && navigation.collections && navigation.collections.length > 0) { %>
+                
+                <%# Loop through each 'collection' object from res.locals.navigation %>
                 <% navigation.collections.forEach(collection => { %>
+                    
+                    <!-- This 'series' div represents one entire collection block -->
                     <div class="series">
                         <div class="series-name-container">
-                            <a class="series-name" href="/gallery/<% collection %>"><%= t(collection) %></a>
+                            <!-- Link to the specific collection page -->
+                            <a class="series-name" href="<%= collection.path %>">
+                                <%= collection.title %> <%# Use the pre-translated title %>
+                            </a>
                         </div>
 
-
-                        <% collections.paintings.forEach(painting => { %>
-                            <div class="portfolio-container">
-                                <div class="painting-selection">
-                                    <img class="painting-items <% painting %>">
-                                </div>
-                                <div class="painting-name-container">
-                                    <div class="painting-description-section">
-                                        <p class="painting-name"><% painting %></p>
+                        <%# Now, loop through the paintings WITHIN this specific collection %>
+                        <% if (collection.paintings && collection.paintings.length > 0) { %>
+                            <% collection.paintings.forEach(painting => { %>
+                                
+                                <div class="portfolio-container">
+                                    <div class="painting-selection">
+                                        <%# You need to define how to get the image class. Let's assume it's from the painting id %>
+                                        <img class="painting-items painting-<%= painting.id %>" alt="<%= painting.title %>">
                                     </div>
-                                    <a class="discover-painting"><%= t('gallery_discover_button') %></a>
-                                </div>
-                            </div> 
-                        <% }); %>
-                        
+                                    <div class="painting-name-container">
+                                        <div class="painting-description-section">
+                                            <p class="painting-name"><%= painting.title %></p>
+                                        </div>
+                                        <!-- The link should go to the specific painting's page -->
+                                        <a href="<%= painting.path %>" class="discover-painting">
+                                            <%= t('discover_button') %>
+                                        </a>
+                                    </div>
+                                </div> 
+                                
+                            <% }); %>
+                        <% } %>
                     </div>
                 <% }); %>
             <% } else { %>
-                <li class="gallery-selection">
-                    <span class="nav-menu-link-header"><%= t('no_collections_available', { defaultValue: 'No collections available' }) %></span>
-                </li>
+                <p><%= t('no_collections_available', { defaultValue: 'No collections available' }) %></p>
             <% } %>
-         
-
         </div>
     </section>
 </main>
-
