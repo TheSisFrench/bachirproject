@@ -46,7 +46,7 @@
                                 <div class="portfolio-container">
                                     <div class="painting-selection">
                                         <!-- The 'alt' text should be the painting's translated title -->
-                                        <img class="painting-items <%= painting.id %>" alt="<%= painting.title %>" src="/img/<% painting %>">
+                                        <img class="painting-items <%= painting.id %>" alt="<%= painting.title %>" src="/img/<% painting.fileName %>.svg">
                                     </div>
                                     <div class="painting-name-container">
                                         <div class="painting-description-section">
@@ -55,7 +55,7 @@
                                         </div>
                                         <!-- The link now correctly points to the specific painting's URL -->
                                         <a href="<%= painting.path %>" class="discover-painting">
-                                            <%= t('discover_button') %>
+                                            <%= t('gallery_discover_button') %>
                                         </a>
                                     </div>
                                 </div> 

@@ -15,6 +15,8 @@ if (!sessionSecret) {
 
 // --- Middleware Setup ---
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files first
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -111,9 +113,30 @@ langRouter.get('/gallery/:collectionName', (req, res, next) => {
     });
 });
 
-langRouter.get('/painting-overview', (req, res) =>  {
+langRouter.get('/painting-overview/:paintingId', (req, res, next) =>  {
+    const { paintingId } = req.params;
+    let foundPainting = null;
+
+    // Search through all collections to find the painting
+    if (res.locals.navigation && res.locals.navigation.collections) {
+        for (const collection of res.locals.navigation.collections) {
+            foundPainting = collection.paintings.find(p => p.id === paintingId);
+            if (foundPainting) break;
+        }
+    }
+
+    if (!foundPainting) {
+        console.warn(`Painting with id '${paintingId}' not found.`);
+        return next(); // 404
+    }
+
     res.render('index', {
-        title: res.locals.t('')
+        title: foundPainting.title,
+        heading: foundPainting.heading,
+        currentPage: 'view-painting',
+        bodyPartialName: 'view-painting',
+        painting: foundPainting,
+        pageIdentifier: `painting-${paintingId}`
     })
 })
 
