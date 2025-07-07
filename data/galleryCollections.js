@@ -43,7 +43,7 @@ const galleryCollectionsData = {
                 },
                 {
                     id: "little-sidi",
-                    titleKey: "painting_little-sidi",
+                    titleKey: "painting_little_sidi",
                     imageClass: "le-petit-sidi"
                 },
             ] 

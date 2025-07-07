@@ -34,7 +34,6 @@
         }) %>
 
         
-        <h1><%= heading %></h1>
         <% if (bodyPartialName) { %>
             <%# Explicitly pass all data the body partial might need %>
             <%- include('./partials/' + bodyPartialName, {
@@ -48,7 +47,7 @@
         <% } else { %>
             <p>Error: No content partial specified.</p>
         <% } %>
-        
+
 
         <%# Footer also needs access to navigation data and 't' %>
         <%- include('./partials/footer', { t: t, navigation: navigation, basePathWithLang: basePathWithLang }) %>
