@@ -33,22 +33,22 @@
             navigation: navigation // Pass the navigation object
         }) %>
 
-        <main>
-            <h1><%= heading %></h1>
-            <% if (bodyPartialName) { %>
-                <%# Explicitly pass all data the body partial might need %>
-                <%- include('./partials/' + bodyPartialName, {
-                    heading: heading,
-                    collections: (typeof collections !== 'undefined' ? collections : []),
-                    collection: (typeof collection !== 'undefined' ? collection : null),
-                    t: t,
-                    navigation: navigation,
-                    currentLanguage: currentLanguage
-                }) %>
-            <% } else { %>
-                <p>Error: No content partial specified.</p>
-            <% } %>
-        </main>
+        
+        <h1><%= heading %></h1>
+        <% if (bodyPartialName) { %>
+            <%# Explicitly pass all data the body partial might need %>
+            <%- include('./partials/' + bodyPartialName, {
+                heading: heading,
+                collections: (typeof collections !== 'undefined' ? collections : []),
+                collection: (typeof collection !== 'undefined' ? collection : null),
+                t: t,
+                navigation: navigation,
+                currentLanguage: currentLanguage
+            }) %>
+        <% } else { %>
+            <p>Error: No content partial specified.</p>
+        <% } %>
+        
 
         <%# Footer also needs access to navigation data and 't' %>
         <%- include('./partials/footer', { t: t, navigation: navigation, basePathWithLang: basePathWithLang }) %>

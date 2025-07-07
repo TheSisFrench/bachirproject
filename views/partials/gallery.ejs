@@ -1,4 +1,3 @@
-<%# This file is views/partials/gallery-overview.ejs %>
 <main>
     <button class="skip-to-gallery-container">
         <a class="skip-to-gallery-button" href="#second-section">
@@ -47,7 +46,7 @@
                                 <div class="portfolio-container">
                                     <div class="painting-selection">
                                         <!-- The 'alt' text should be the painting's translated title -->
-                                        <img class="painting-items painting-<%= painting.id %>" alt="<%= painting.title %>">
+                                        <img class="painting-items <%= painting.id %>" alt="<%= painting.title %>" src="/img/<% painting %>">
                                     </div>
                                     <div class="painting-name-container">
                                         <div class="painting-description-section">

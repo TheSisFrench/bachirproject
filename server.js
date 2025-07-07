@@ -83,7 +83,7 @@ langRouter.get('/gallery', (req, res) => {
         title: res.locals.t('gallery_overview_title'),
         heading: res.locals.t('gallery_overview_heading'),
         currentPage: 'gallery',
-        bodyPartialName: 'gallery-overview',
+        bodyPartialName: 'gallery',
         pageIdentifier: 'gallery-overview-page'
     });
 });

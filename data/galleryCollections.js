@@ -5,7 +5,7 @@ const galleryCollectionsData = {
     
     collections: {
         "new-collection": { // This key should match the URL parameter
-
+            
             titleKey: "collection_new_collection", 
             ejsFile: 'new-collection',
             paintings:  [
