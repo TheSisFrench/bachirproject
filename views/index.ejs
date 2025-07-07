@@ -21,7 +21,7 @@
 
     <!-- views/index.ejs (More Explicit Version) -->
 
-    <body>
+    <body data-page-id="<%= typeof pageIdentifier !== 'undefined' ? pageIdentifier : '' %>">
         <%# Explicitly pass all data the header needs %>
         <%- include('./partials/header', {
             currentPage: currentPage,
