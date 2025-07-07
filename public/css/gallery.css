@@ -333,6 +333,32 @@
     cursor: pointer;
 }
 
+.acquire-painting-button {
+    margin: 0 auto;
+    height: fit-content;
+    width: fit-content;
+    color: rgb(var(--button-text-color));
+    background-color: rgb(var(--button-background-color));
+    border: 1px solid rgb(var(--button-border-color));
+    font-size: 0.9rem;
+    font-weight: normal;
+    padding: var(--button-padding);
+    transition: all 0.3s ease;
+}
+
+.acquire-painting-button:hover  {
+    color: rgb(var(--button-text-color-hover));
+    border-color: rgb(var(--button-border-color-hover));
+    background-color: rgb(var(--button-background-color-hover));
+    cursor: pointer;
+}
+
+.acquire-painting-button:active {
+    color: rgb(var(--button-text-color-active));
+    background-color: rgb(var(--button-background-color-active));
+    border-color: rgb(var(--button-border-color-active));
+    cursor: pointer;
+}
 
 @media (max-width: 400px) {
     .portfolio  {

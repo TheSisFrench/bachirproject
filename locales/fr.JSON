@@ -19,6 +19,7 @@
     "gallery_skip_button": "Galerie",
     "gallery_skip_tooltip": "Sauter à la gallerie",
     "gallery_discover_button": "Découvrir",
+    "gallery_acquire_button": "Acquérir",
 
     "collection_new_collection": "Nouvelle collection",
     "collection_family_collection": "Collection famille",
@@ -27,7 +28,7 @@
     "collection_black_collection": "Collection noire",
 
 
-    "painting_the_last_masters_laws": "Les derniàres louas du maître",
+    "painting_the_last_masters_laws": "Les dernières louas du maître",
     "painting_the_visitors": "Les visiteurs",
     "painting_endures": "Perdure",
     "painting_generational_link": "Lien générationnel",
@@ -46,7 +47,7 @@
     "gallery_portfolio_heading": "Dans ce portfolio",
     "gallery_portfolio_p1": "Chaque oeuvre est unique, un travail qui aligne le talent de l'artiste au monde sous_marin. La proposition d'un futur incertain, une vision sur la dégénérescence de l'humain, une préocupation que souligne son art.",
     "gallery_dive_in_heading": "Plonger",
-    "gallery_dive_in_p1": "Ces peintures forment ensemble le prolongement de sa pensée, elles coexistent et produisent ensemble le project d'El_Bachir.",
+    "gallery_dive_in_p1": "Ces peintures forment ensemble le prolongement de sa pensée, elles coexistent et produisent ensemble le project d'El Bachir.",
     "gallery_dive_in_p2": "Nos nageoires réaparaissent, notre souffle se coupe, notre corps trouve l'oxygène de l'eau.",
 
     "discover_button": "Découvrir les oeuvres",

@@ -77,7 +77,9 @@
             <li class="gallery-selection">
               <!-- Create the link for the collection itself -->
               <a class="nav-menu-link-header" href="<%= collection.path %>">
-                  <%= collection.title %>
+                  <p class="header-collection-name">
+                    <%= collection.title %>
+                  </p>
               </a>
               <%# Now, loop through the paintings within this collection %>
               <% if (collection.paintings && collection.paintings.length > 0) { %>

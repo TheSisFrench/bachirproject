@@ -178,25 +178,16 @@ main    {
 
 
 .nav-menu-link-header   {
-    height: 1.5rem;
+    height: 1rem;
+    width: 100%;
+    position: relative;
+    text-align: left;
     display: inline-block;
     font-weight: 500;
     text-decoration: none;
-    color: #000;
-}
-
-
-
-
-
-.nav-menu-link-header    {
-    height: 1.5rem;
-    font-weight: 500;
-    text-decoration: none;
-    position: relative;
-    width: 100%;
     color: #fff;
-    text-align: left;
+    margin: 0.5rem 0;
+
 }
 
 .nav-menu-link-header::before    {

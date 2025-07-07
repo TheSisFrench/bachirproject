@@ -19,6 +19,7 @@
     "gallery_skip_button": "Gallery",
     "gallery_skip_tooltip": "Skip to gallery",
     "gallery_discover_button": "Discover",
+    "gallery_acquire_button": "Acquire",
 
     "collection_new_collection": "New collection",
     "collection_family_collection": "Family collection",
@@ -45,10 +46,11 @@
     "gallery_portfolio_heading": "In this portfolio",
     "gallery_portfolio_p1": "Each work is unique, a work that aligns the artist's talent with the underwater world. The proposal of an uncertain future, a vision of human degeneration, a concern that his art highlights.",
     "gallery_dive_in_heading": "Dive in",
-    "gallery_dive_in_p1": "These paintings together form the extension of his thought; they coexist and together produce El_Bachir's project.",
+    "gallery_dive_in_p1": "These paintings together form the extension of his thought; they coexist and together produce El Bachir's project.",
     "gallery_dive_in_p2": "Our fins reappear, our breath is cut short, our body finds the oxygen of water.",
 
     "discover_button_text": "Discover the works",
+
     "no_limit_creativity": "There is no limit to our creativity",
 
     
