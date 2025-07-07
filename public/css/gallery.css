@@ -304,19 +304,28 @@
     font-weight: 200;
 }
 
+.gallery-buttons-container  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
-
-.discover-painting  {
-    margin: 0 auto;
+.discover-painting,
+.acquire-painting-button  {
+    margin: 0 1rem;
     height: fit-content;
     width: fit-content;
-    color: rgb(var(--button-text-color));
-    background-color: rgb(var(--button-background-color));
-    border: 1px solid rgb(var(--button-border-color));
     font-size: 0.9rem;
     font-weight: normal;
     padding: var(--button-padding);
     transition: all 0.3s ease;
+}
+
+.discover-painting  {
+    color: rgb(var(--button-text-color));
+    background-color: rgb(var(--button-background-color));
+    border: 1px solid rgb(var(--button-border-color));
 }
 
 .discover-painting:hover    {
@@ -333,32 +342,26 @@
     cursor: pointer;
 }
 
-.acquire-painting-button {
-    margin: 0 auto;
-    height: fit-content;
-    width: fit-content;
-    color: rgb(var(--button-text-color));
-    background-color: rgb(var(--button-background-color));
-    border: 1px solid rgb(var(--button-border-color));
-    font-size: 0.9rem;
-    font-weight: normal;
-    padding: var(--button-padding);
-    transition: all 0.3s ease;
+.acquire-painting-button    {
+    background-color: var(--button-background-color-invert);
+    color: var(--button-text-color-invert);
+    border-color: var(--button-border-color-invert);
 }
 
 .acquire-painting-button:hover  {
-    color: rgb(var(--button-text-color-hover));
-    border-color: rgb(var(--button-border-color-hover));
-    background-color: rgb(var(--button-background-color-hover));
+    color: rgb(var(--button-text-color-hover-invert));
+    border-color: rgb(var(--button-border-color-hover-invert));
+    background-color: rgb(var(--button-background-color-hover-invert));
     cursor: pointer;
 }
 
 .acquire-painting-button:active {
-    color: rgb(var(--button-text-color-active));
-    background-color: rgb(var(--button-background-color-active));
-    border-color: rgb(var(--button-border-color-active));
+    color: rgb(var(--button-text-color-active-invert));
+    background-color: rgb(var(--button-background-color-active-invert));
+    border-color: rgb(var(--button-border-color-active-invert));
     cursor: pointer;
 }
+
 
 @media (max-width: 400px) {
     .portfolio  {

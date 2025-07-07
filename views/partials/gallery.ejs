@@ -58,12 +58,15 @@
                                             <p class="painting-name"><%= painting.title %></p>
                                         </div>
                                         <!-- The link now correctly points to the specific painting's URL -->
-                                        <a href="<%= painting.path %>" class="discover-painting">
-                                            <%= t('gallery_discover_button') %>
-                                        </a>
-                                        <a class="acquire-painting-button" href="/store/<%= painting %>">
-                                            <%= t('gallery_acquire_button') %>
-                                        </a>
+                                         <div class="gallery-buttons-container">
+                                            <a href="<%= painting.path %>" class="discover-painting">
+                                                <%= t('gallery_discover_button') %>
+                                            </a>
+                                            <a class="acquire-painting-button" href="/store/<%= painting %>">
+                                                <%= t('gallery_acquire_button') %>
+                                            </a>
+                                         </div>
+                                        
                                     </div>
                                 </div> 
                             <% }); %>
