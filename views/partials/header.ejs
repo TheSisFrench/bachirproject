@@ -9,7 +9,7 @@
       </a>
     </div>
 
-    <div class="menu-con stainer">
+    <div class="menu-container">
       <ul class="menu">
         <!-- Main navigation links. The "active" class logic is safer now. -->
         <li value="gallery" class="menu-selection <%= (currentPage === 'gallery' || (currentPage && currentPage.startsWith('gallery-'))) ? 'active' : '' %>">
@@ -40,6 +40,7 @@
       </ul>
     </div>
     
+    <!--laptop language-switcher-->
     <div class="language-switcher">
         <% const otherLang = currentLanguage === 'en' ? 'fr' : 'en'; %>
         <% const otherLangText = t(currentLanguage === 'en' ? 'language_switcher_fr' : 'language_switcher_en'); %>
@@ -54,6 +55,7 @@
           </a>
     </div>
 
+    <!--mobile hamburger menu (initially hidden)-->
     <button class="hamburger-button" id="hamburgerButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
       <svg class="hamburger-icon" viewBox="0 0 100 80" width="30" height="30">
         <rect class="line line1" width="100" height="15" rx="8"></rect>
