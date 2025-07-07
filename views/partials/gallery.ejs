@@ -46,7 +46,11 @@
                                 <div class="portfolio-container">
                                     <div class="painting-selection">
                                         <!-- The 'alt' text should be the painting's translated title -->
-                                        <img class="painting-items <%= painting.id %>" alt="<%= painting.title %>" src="/img/<% painting.fileName %>.svg">
+                                        <img 
+                                            class="painting-items <%= painting.id %>" 
+                                            alt="<%= painting.title %>" 
+                                            src="/img/<%= painting.fileName %>"
+                                        >
                                     </div>
                                     <div class="painting-name-container">
                                         <div class="painting-description-section">

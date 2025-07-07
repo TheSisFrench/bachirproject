@@ -13,7 +13,8 @@ function contentHandler(req, res, next) {
                 const translatedPaintings = (collectionData.paintings || []).map(painting => ({
                     id: painting.id,
                     title: t(painting.titleKey, { defaultValue: painting.id }),
-                    path: `${basePathWithLang}/view-painting/${painting.id}`
+                    path: `${basePathWithLang}/view-painting/${painting.id}`,
+                    fileName: painting.fileName
                 }));
                 navigationData.collections.push({
                     slug: slug,
