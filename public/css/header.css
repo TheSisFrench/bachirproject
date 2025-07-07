@@ -270,23 +270,70 @@ main    {
     text-decoration: none;
 }
 
-
+/*HAMBURGER MENU AND STYLING*/
 .hamburger-button   {
+    z-index: 1000;
     display: none;
     fill: #f0c146;
     grid-column: 3;
     margin-left: 3rem;
 }
 
+.hamburger-button:focus {
+  outline: none;
+}
+/* For accessibility, add a focus style for keyboard users */
+.hamburger-button:focus-visible {
+  outline: 2px solid blue; /* Or your site's focus color */
+  outline-offset: 2px;
+}
+
 .hamburger-button:hover {
     cursor: pointer;
 }
+
+/*HAMBURGER ANIMATION BUTTON*/
+.hamburger-icon .line {
+  fill: #333; /* Color of the lines (e.g., dark grey) */
+  
+  /* This is the magic for the animation! */
+  transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+
+  /* This ensures rotations happen from the center of each line */
+  transform-origin: center;
+}
+
+/* --- The "X" Animation --- */
+/* These styles apply ONLY when the button has the 'is-active' class */
+
+/* 1. Rotate the top line down and 45 degrees */
+.hamburger-button.is-active .hamburger-icon .line1 {
+  /* We move the line down by 30 units (the distance to the middle line's start)
+     and then rotate it. You might need to tweak the translateY value slightly
+     for perfect alignment. */
+  transform: translateY(30px) rotate(45deg);
+}
+
+/* 2. Make the middle line completely disappear */
+.hamburger-button.is-active .hamburger-icon .line2 {
+  opacity: 0;
+}
+
+/* 3. Rotate the bottom line up and -45 degrees */
+.hamburger-button.is-active .hamburger-icon .line3 {
+  /* We move the line up by 30 units and rotate it the opposite way. */
+  transform: translateY(-30px) rotate(-45deg);
+}
+
+
+
 
 
 
 @media (max-width: 760px)   {
     .menu-container,
-    .language-switcher {
+    .language-switcher
+    {
         display: none;
     }
 
@@ -302,7 +349,7 @@ main    {
     }
 
     .nav-logo-container {
-        grid-column: 2;
+        grid-column: 1;
         margin: auto;
         align-items: center;
         justify-content: center;

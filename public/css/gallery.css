@@ -310,9 +310,9 @@
     margin: 0 auto;
     height: fit-content;
     width: fit-content;
-    color: #f0c146;
-    background-color: #000;
-    border: 2px solid #f0c146;
+    color: rgb(var(--button-text-color));
+    background-color: rgb(var(--button-background-color));
+    border: 1px solid rgb(var(--button-border-color));
     font-size: 0.9rem;
     font-weight: normal;
     padding: var(--button-padding);
@@ -320,9 +320,16 @@
 }
 
 .discover-painting:hover    {
-    color: black;
-    border: 2px solid #000;
-    background-color: #f0c146;
+    color: rgb(var(--button-text-color-hover));
+    border-color: rgb(var(--button-border-color-hover));
+    background-color: rgb(var(--button-background-color-hover));
+    cursor: pointer;
+}
+
+.discover-painting-active   {
+    color: rgb(var(--button-text-color-active));
+    background-color: rgb(var(--button-background-color-active));
+    border-color: rgb(var(--button-border-color-active));
     cursor: pointer;
 }
 
