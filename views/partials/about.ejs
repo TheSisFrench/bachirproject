@@ -3,41 +3,34 @@
     <header class="about-main-header">
         <div class="about-title-container">
             <div class="about-title">
-                <span class="about-sub-title">Jokkoo ak art bi Bachir</span>
-                <span class="about-page-title">Bienvenue dans l'Univers d'El-Bachir</span>
+                <span class="about-sub-title"><%= t('about_page_sub_main_heading') %></span>
+                <span class="about-page-title"><%= t('about_page_main_heading') %></span>
             </div>
-            <!--
-            <div class="presentation-img">
-                <div class="blur-presentation-img"></div>
-            </div>
-        -->
         </div>
     </header>
 
     
 
-    <section class="first-section">
-        <div class="first-section-container">
-            <div class="welcome-message-container">
-                <h2 class="discover-artist">Découvrir l'artiste</h2>
+    <section class="about-first-section">
+        <div class="about-first-section-container" id="presentation">
+
+            <div class="origin-inspiration-container">
+                <div class="about-origin-section-container">
+                    <h3><span class="bold"><%= t('about_page_origins_heading') %></span></h3>
+                    <p class="presentation-text"><span class="bold">El Bachir</span> <%= t('about_page_origins_text') %> <span class="bold"><%= t('about_page_origins_text_bold') %></span></p> 
+
+                    <br/>
+
+                    <p class="presentation-text"><%= t('about_page_origins_text_sequel') %></p>
+                </div>
+
+                <div class="about-inspiration-section-container">
+                    <h3><span class="bold"><%= t('about_page_inspirations_heading') %></span></h3>
+                    <p class="presentation-text"><%= t('about_page_inspiration_text') %> <span class="bold"><%= t('about_page_inspiration_text_bold') %></span> <%= t('about_page_inspiration_text_sequel') %></p> 
+                </div>  
             </div>
-            <div class="intro-description-container">
-                <div class="presentation-text-section">
-                    <h3><span class="bold">Origines</span></h3>
-                    <p class="presentation-text"><span class="bold">El Bachir</span> est un artiste Sénégalais qui au travers des années a entretenu un style et une technique unique, qui sont toujours plus <span class="bold">dévoués à sacraliser la place de l'art dans notre quotidien contemporain.</span></p> 
-
-                    <h3><span class="bold">Inspiration</span></h3>
-                    <p class="presentation-text">Innovant en remettant en perspective la place de l'humain au sein de notre société, comment celui-ci évoluera dans les prochains siècles. Autrement dit, <span class="bold">remettre en doute les perspectives de notre avenir</span>, un rapport étroit entre évolution et régression.</p> 
-
-                </div>
-
-                <div class="presentation-text-section">
-                    
-                </div>
-                <div class="presentation-text-section2">
-                    <p class="presentation-text">À son arrivée à Montréal, il établit son atelier au centre Clark où il encre les traits de son style actuel. Une redéfinition personnelle et de son art.</p>
-                </div>
-            </div>
+            
+            
         </div>
     </section>
 

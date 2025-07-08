@@ -55,12 +55,23 @@
 
 
     "about_page_title": "About",
+    "about_page_main_heading": "Welcome to El-Bachir universe",
+    "about_page_sub_main_heading": "Jokkoo ak art bi Bachir",
+    "about_page_origins_heading": "Origins",
+    "about_page_origins_text": "is an artist from Senegal who throughout the years developed and maintaine a unique style and technique",
+    "about_page_origins_text_bold": "devoted to sacralize the presence of art in our contemporary world.",
+    "about_page_origins_text_sequel": "Upon his arrival in Montreal, he established his studio at the Clark Center, where he defined the features of his current style—a redefinition of both himself and his art.",
+    "about_page_inspirations_heading": "Inspiration",
+    "about_page_inspiration_text": "He innovates by challenging the place of humans in our society and exploring how they will evolve in the centuries to come. In other words,",
+    "about_page_inspiration_text_bold": "to challenge the prospects of our future.",
+    "about_page_inspiration_text_sequel": "a close interplay between evolution and regression.",
 
     "exhibitions_page_title": "Exhibitions",
 
     "contact_page_title": "Contact",
 
-    "store_page_title": "Store",    
+    "store_page_title": "Store",
+
     "language_switcher_fr": "Français",
     "language_switcher_en": "English",
     "footer_heading": "Contact the artist",
