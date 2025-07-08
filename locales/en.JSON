@@ -53,7 +53,14 @@
 
     "no_limit_creativity": "There is no limit to our creativity",
 
-    
+
+    "about_page_title": "About",
+
+    "exhibitions_page_title": "Exhibitions",
+
+    "contact_page_title": "Contact",
+
+    "store_page_title": "Store",    
     "language_switcher_fr": "Français",
     "language_switcher_en": "English",
     "footer_heading": "Contact the artist",

@@ -81,14 +81,19 @@
                     <%= collection.title %>
                   </p>
               </a>
-              <%# Now, loop through the paintings within this collection %>
-              <% if (collection.paintings && collection.paintings.length > 0) { %>
-                <% collection.paintings.forEach(painting => { %>
-                  <a class="nav-menu-link painting-link" href="<%= painting.path %>">
-                    <%= painting.title %>
-                  </a>
-                <% }); %>
-              <% } %>
+
+              <!--create the paintings links-->
+              <div class="paintings-links">
+                  <%# Now, loop through the paintings within this collection %>
+                  <% if (collection.paintings && collection.paintings.length > 0) { %>
+                    <% collection.paintings.forEach(painting => { %>
+                      <a class="nav-menu-link painting-link" href="<%= painting.path %>">
+                        <%= painting.title %>
+                      </a>
+                    <% }); %>
+                  <% } %>
+              </div>
+              
             </li>
           <% }); %>
         <% } else { %>
@@ -105,17 +110,17 @@
     <div class="selection-container">
       <ul>
         <li class="presentation about-selection">
-          <a class="nav-menu-link" href="<%= basePathWithLang %>/about#presentation">
+          <a class="nav-menu-link web-link" href="<%= basePathWithLang %>/about#presentation">
             <%= t('web_section_about_presentation') %>
           </a>
         </li>
         <li class="vision about-selection">
-          <a class="nav-menu-link" href="<%= basePathWithLang %>/about#vision">
+          <a class="nav-menu-link web-link" href="<%= basePathWithLang %>/about#vision">
             <%= t('web_section_about_the_vision') %>
           </a>
         </li>
         <li class="realisations about-selection">
-          <a class="nav-menu-link" href="<%= basePathWithLang %>/about#achievements">
+          <a class="nav-menu-link web-link" href="<%= basePathWithLang %>/about#achievements">
             <%= t('web_section_about_realizations') %>
           </a>
         </li>
@@ -128,12 +133,12 @@
     <div class="selection-container">
       <ul>
         <li class="past exhibitions-selection">
-          <a class="nav-menu-link" href="<%= basePathWithLang %>/exhibitions#past-exhibitions">
+          <a class="nav-menu-link web-link" href="<%= basePathWithLang %>/exhibitions#past-exhibitions">
             <%= t('web_section_exhibitions_past_exhibitions') %>
           </a>
         </li>
         <li class="upcoming exhibitions-selection">
-          <a class="nav-menu-link" href="<%= basePathWithLang %>/exhibitions#new-exhibitions">
+          <a class="nav-menu-link web-link" href="<%= basePathWithLang %>/exhibitions#new-exhibitions">
             <%= t('web_section_exhibitions_new_exhibitions') %>
           </a>
         </li>

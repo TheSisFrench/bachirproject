@@ -166,13 +166,14 @@ main    {
 .gallery-selection,
 .about-selection,
 .exhibitions-selection  {
-    margin: 0 0.7rem;
+    margin: 1rem 0.7rem;
 }
 
 .gallery-selection  {
     text-align: left;
     display: flex;
     flex-direction: column;
+    grid-gap: 0.5rem;
 }
 
 
@@ -185,8 +186,7 @@ main    {
     display: flex;
     font-weight: 500;
     text-decoration: none;
-    color: #fff;
-    padding: 0.5rem 0;
+    color: #f0c146;
     align-items: center;
     justify-content: left;
 }
@@ -194,11 +194,11 @@ main    {
 .nav-menu-link-header::before    {
     content: '';
     position: absolute;
-    bottom: 0.75rem;
+    bottom: 0.5rem;
     ;vector-effect: 0;
     width: 0;
     height: 1px;
-    background-color: #fff;
+    background-color: #f0c146;
     transition: width 0.3s ease;
 }
 
@@ -207,10 +207,15 @@ main    {
 }
 
 .header-collection-name {
-    padding: 0.3rem 0;
     height: 1rem;
 }
 
+.paintings-links    {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
 
 .nav-menu-link  {
     display: inline-block;
@@ -222,6 +227,10 @@ main    {
 
 .painting-link  {
     height: 1.2rem;
+}
+
+.web-link   {
+    padding: 0.3rem;
 }
 
 .language-switcher  {
