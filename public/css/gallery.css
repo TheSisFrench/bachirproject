@@ -336,29 +336,29 @@
 }
 
 .discover-painting-active   {
-    color: rgb(var(--button-text-color-active));
-    background-color: rgb(var(--button-background-color-active));
-    border-color: rgb(var(--button-border-color-active));
+    color: rgba(var(--button-text-color-active));
+    background-color: rgba(var(--button-background-color-active));
+    border-color: rgba(var(--button-border-color-active));
     cursor: pointer;
 }
 
 .acquire-painting-button    {
-    background-color: var(--button-background-color-invert);
-    color: var(--button-text-color-invert);
-    border-color: var(--button-border-color-invert);
+    background-color: rgb(var(--button-background-color-invert));
+    color: rgb(var(--button-text-color-invert));
+    border-color: rgb(var(--button-border-color-invert));
 }
 
 .acquire-painting-button:hover  {
     color: rgb(var(--button-text-color-hover-invert));
-    border-color: rgb(var(--button-border-color-hover-invert));
+    border-color: rgb(var(--button-background-color-invert));
     background-color: rgb(var(--button-background-color-hover-invert));
     cursor: pointer;
 }
 
 .acquire-painting-button:active {
-    color: rgb(var(--button-text-color-active-invert));
-    background-color: rgb(var(--button-background-color-active-invert));
-    border-color: rgb(var(--button-border-color-active-invert));
+    color: rgba(var(--button-text-color-active-invert));
+    background-color: rgba(var(--button-background-color-active-invert));
+    border-color: rgba(var(--button-border-color-active-invert));
     cursor: pointer;
 }
 

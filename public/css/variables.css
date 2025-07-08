@@ -57,12 +57,11 @@
     --button-text-color-invert: 0, 0, 0;
     --button-background-color-invert: 240, 193, 70;
     --button-border-color-invert: 0, 0, 0;
-
     --button-background-color-hover-invert: 0, 0, 0;
     --button-border-color-hover-invert: 240, 193, 70;
     --button-text-color-hover-invert: 240, 193, 70;
-    --button-background-color-active: 0, 0, 0, 0.8;
-    --button-text-color-active: 240, 193, 70, 0.8;
+    --button-background-color-active-invert: 0, 0, 0, 0.8;
+    --button-text-color-active-invert: 240, 193, 70, 0.8;
     --button-border-color-active-invert: 240, 193, 70, 0.8;
 }
 

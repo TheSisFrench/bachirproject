@@ -3,7 +3,7 @@
   <!-- The inline SVG element -->
   <!-- viewBox="0 0 100 100" sets up a coordinate system from 0 to 100 -->
   <!-- width/height 100% and preserveAspectRatio="none" ensure it covers the viewport -->
-  <svg class="reveal-svg" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="reveal-svg" id="introAnimationSvg" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <!-- Define the mask -->
       <mask id="paintSweepMask">
@@ -66,24 +66,6 @@
 
   </svg>        
   
-  <!--
-  <div class="">
-
-    <div class="slideshow-container">
-      <div class="slide active">Slide 1 Content</div>
-
-      <div class="slide">Slide 2 Content</div>
-
-      <div class="slide">Slide 3 Content</div>
-
-      <div class="slide">Slide 4 Content</div>
-
-      <div class="slide">Slide 5 Content</div>
-  </div>
-
-  </div>
-  
--->
 
   <div class="home-container">
     <img class="home-container-background-img" src="/img/les_visiteurs.png">
@@ -91,11 +73,11 @@
       <p class="home-heading">
         <%= t('home_page_heading') %>
       </p>
-      <button class="explore-gallery-button" type="button">
+      <a class="explore-gallery-button" type="button" href="<%= basePathWithLang %>/gallery">
         <p class="explore-gallery-button-text">
           <%= t('home_page_button') %>
         </p>
-      </button>
+      </a>
     </div>
   </div>
 
