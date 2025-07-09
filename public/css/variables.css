@@ -42,13 +42,16 @@
     --max-width: 1700px;
 
     /* main colors */
-    --color-dark: 13, 13, 13;
+    --color-black: 13, 13, 13;
+    --color-dark: 29, 29, 29;
     --color-bright: 240, 193, 70;
     
     --color-white-hover: 130, 130, 130;
-
-    --body-color-dark: 13, 13, 13;
+    
+    --body-color-black: 13, 13, 13;
+    --body-color-dark: 29, 29, 29;
     --body-color-bright: 255, 255, 255;
+    --body-color-main-color: 240, 193, 70;
 
     --text-color-main-color: 240, 193, 70;
     --text-color-bright: 255, 255, 255;

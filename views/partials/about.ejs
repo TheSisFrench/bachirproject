@@ -69,34 +69,34 @@
         </div>
     </section>
 
-    <section class="about-fourth-section">
+    <section class="about-fourth-section" id="achievements">
         <div class="about-fourth-section-container">
             <div class="realizations-heading-container">
                 <p class="realizations-heading">
-                    <%= t('about_page_realizations_heading') %>
+                    <%= t('about_page_achievements_heading') %>
                 </p>
             </div>
             <div class="realizations-list">
-                <div class="realization-container">
-                    <h3 class="realization">
-                        <%= t('about_page_realizations-first-realization') %>
-                    </h3>
-                    <p class="realization-description">
-                        <%= t('about_page_realizations_first_realization_description') %>
-                    </p>
+                <div class="realizations-list-container">
+                    <div class="realization-container">
+                        <h3 class="realization">
+                            <%= t('about_page_achievements-first-achievement') %>
+                        </h3>
+                        <p class="realization-description">
+                            <%= t('about_page_achievements_first_achievement_description') %>
+                        </p>
+                    </div>
+                    
+                    <div class="realization-container">
+                        <h3 class="realization">
+                            <%= t('about_page_achievements_second_achievement') %>
+                        </h3>
+                        <p class="realization-description">
+                            <%= t('about_page_achievements_second_achievement_description') %>
+                        </p>
+                    </div>
                 </div>
-                
-                <div class="realization-container">
-                    <h3 class="realization">
-                        <%= t('about_page_realizations_second_realization') %>
-                    </h3>
-                    <p class="realization-description">
-                        <%= t('about_page_realizations_second_realization_description') %>
-                    </p>
-                </div>
-                
             </div>
-            
         </div>
     </section>
 
@@ -109,10 +109,14 @@
                     
                     
                     <a class="slide donation-slide" href="/donation">
-                        <span>Faire un don</span>
+                        <span>
+                            <%= t('web_section_donation') %>
+                        </span>
                     </a>
                     <a class="slide store-slide" href="/store">
-                        <span>Boutique</span>
+                        <span>
+                            <%= t('web_section_store') %>
+                        </span>
                     </a>                          
                 </div>
             </div>

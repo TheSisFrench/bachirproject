@@ -3,12 +3,13 @@
     "web_section_about": "About",
     "web_section_about_presentation": "Presentation",
     "web_section_about_the_vision": "The vision",
-    "web_section_about_realizations": "Realizations",
+    "web_section_about_achievements": "achievements",
     "web_section_exhibitions": "Exhibitions",
     "web_section_exhibitions_new_exhibitions": "New exhibitions",
     "web_section_exhibitions_past_exhibitions": "Past exhibitions",
     "web_section_contact": "Contact",
     "web_section_store": "Store",
+    "web_section_donation": "Make a donation",
 
     "home_page_title": "Bachirproject",
     "home_page_heading": "There is no limit to our creativity",
@@ -69,11 +70,11 @@
     "about_page_sunuugaal_second_section": "Canoe",
     "about_page_bachir_world_begin": "Bachir a créé une histoire d’un peuple qui avait une pirogue en commun avec lequelle il partait à la chasse tous les jours pour la pêche était fleurissante, c’était bien, jusqu’au jour où, par mauvaise conduite du capitaine décida de partager le butin en pleine mer. En se chamaillant le butin, en se disputant, le bateau a chaviré, on est entré dans le monde de d’El-Bachir",
 
-    "about_page_realizations_heading": "Realizations",
-    "about_page_realizations_first_realization": "National school of fine arts Dakar (Senegal)",
-    "about_page_realizations_first_realization_description": "He graduated from the National School of Fine Arts in Dakar, a pivotal time where he defined his signature style and found his creative voice.",
-    "about_page_realizations_second_realization": "Residency, Clark Centre (Canada)",
-    "about_page_realizations_second_realization_description": "Immigration is a powerful agent of change, and for Bachir, it fundamentally reshaped his art. The experience provided new inspirations that altered the course of his work and painting style. By keeping a connection to his Senegalese culture, Bachir integrates his new Canadian reality into his paintings.",
+    "about_page_achievements_heading": "Achievements",
+    "about_page_achievements_first_achievement": "National school of fine arts Dakar (Senegal)",
+    "about_page_achievements_first_achievement_description": "He graduated from the National School of Fine Arts in Dakar, a pivotal time where he defined his signature style and found his creative voice.",
+    "about_page_achievements_second_achievement": "Residency, Clark Centre (Canada)",
+    "about_page_achievements_second_achievement_description": "Immigration is a powerful agent of change, and for Bachir, it fundamentally reshaped his art. The experience provided new inspirations that altered the course of his work and painting style. By keeping a connection to his Senegalese culture, Bachir integrates his new Canadian reality into his paintings.",
 
     "exhibitions_page_title": "Exhibitions",
 
