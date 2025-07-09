@@ -18,6 +18,12 @@
     --h3-font-size: 2rem;
     --font-size: 1.2rem;
 
+    --font-weight-title: 600;
+    --font-weight-sub-title: 500;
+    --font-weight-text: 300;
+    --font-weight-bold: 500;
+
+
     --h1-padding: 3rem 0rem 2rem 0;
     --h2-padding: 2rem 0 1.5rem 0;
     --h3-padding: 2rem 0 1rem 0;
@@ -43,6 +49,11 @@
 
     --body-color-dark: 13, 13, 13;
     --body-color-bright: 255, 255, 255;
+
+    --text-color-main-color: 240, 193, 70;
+    --text-color-bright: 255, 255, 255;
+    --text-color-bright-blackened: 105, 105, 105;
+    --text-color-dark: 0, 0, 0;
 
     --button-background-color: 0, 0, 0;
     --button-border-color: 240, 193, 70;
