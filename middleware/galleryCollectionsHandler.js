@@ -14,13 +14,17 @@ function contentHandler(req, res, next) {
                     id: painting.id,
                     title: t(painting.titleKey, { defaultValue: painting.id }),
                     path: `${basePathWithLang}/view-painting/${painting.id}`,
-                    fileName: painting.fileName
+                    fileName: painting.fileName,
+                    description: painting.description,
+                    medium: painting.medium,
                 }));
                 navigationData.collections.push({
                     slug: slug,
                     title: t(collectionData.titleKey, { defaultValue: slug }), // Uses titleKey
                     path: `${basePathWithLang}/gallery/${slug}`,
-                    paintings: translatedPaintings
+                    paintings: translatedPaintings,
+                    description: t(collectionData.description, {defaultValue: description}),
+                    medium: t(collectionData.medium, {defaultValue: medium})
                 });
             }
         });
