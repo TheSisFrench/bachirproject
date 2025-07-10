@@ -118,7 +118,7 @@ a   {
 /* The full-screen overlay */
 .lightbox-overlay {
   position: fixed; /* Stay in place even when scrolling */
-  z-index: 10000;  /* On top of everything */
+  z-index: 100000;  /* On top of everything */
   left: 0;
   top: 0;
   width: 100%;
@@ -190,7 +190,7 @@ a   {
 
 /* Add a pointer cursor to images that can be zoomed */
 .zoomable {
-  cursor: pointer;
+  cursor: zoom-in;
   transition: transform 0.3s ease;
 }
 
