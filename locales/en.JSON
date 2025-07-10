@@ -28,6 +28,12 @@
     "collection_mor_talla_collection": "Mor talla",
     "collection_black_collection": "Black collection",
 
+    "painting_soliloquy_of_a_shipwreck": "Soliloquy of a shipwreck description",
+    "painting_soliloquy_of_a_shipwreck_description": "",
+    "painting_soliloquy_of_a_shipwreck_year": "2025",
+    "painting_soliloquy_of_a_shipwreck_medium": "",
+    "painting_soliloquy_of_a_shipwreck_dimensions": "",
+    
     "painting_the_last_masters_laws": "The Last Praises of the Master",
     "painting_the_last_masters_laws_description": "That evening, Baye Cheikh ordered the confiscation of all public opinion! With furrowed brows, he mounted his horse, masking his anguish with a knightly demeanor, and dictated his final praises...",
     "painting_the_last_masters_laws_year": "2024",
@@ -105,7 +111,49 @@
     "painting_armchair_year": "2021",
     "painting_armchair_medium": "Medium: Collage, knife, acrylic on canvas",
     "painting_armchair_dimensions": "80 X 96 (cm)",
-    
+
+    "painting_privation": "Privation",
+    "painting_privation_description": "",
+    "painting_privation_year": "2020",
+    "painting_privation_medium": "Technique: Acrylic on canvas, mixed media",
+    "painting_privation_dimensions": "110 X 150 (cm)",
+
+    "painting_on_the_plate": "On the Plate",
+    "painting_on_the_plate_description": "",
+    "painting_on_the_plate_year": "2020",
+    "painting_on_the_plate_medium": "Technique: Acrylic on canvas, mixed media",
+    "painting_on_the_plate_dimensions": "90 X 120 (cm)",
+
+    "painting_marionnettes": "Puppets",
+    "painting_marionnettes_description": "",
+    "painting_marionnettes_year": "2020",
+    "painting_marionnettes_medium": "Technique: Acrylic on canvas, mixed media",
+    "painting_marionnettes_dimensions": "110 X 150 (cm)",
+
+    "painting_soup-kitchen": "Soup Kitchen",
+    "painting_soup-kitchen_description": "",
+    "painting_soup-kitchen_year": "2020",
+    "painting_soup-kitchen_medium": "Technique: Acrylic on canvas, mixed media",
+    "painting_soup-kitchen_dimensions": "100 X 100 (cm)",
+
+    "painting_passengers": "The Passengers",
+    "painting_passengers_description": "",
+    "painting_passengers_year": "2020",
+    "painting_passengers_medium": "Technique: Acrylic on canvas, mixed media",
+    "painting_passengers_dimensions": "80 X 100 (cm)",
+
+    "painting_virus_manipulators": "The Virus Manipulators",
+    "painting_virus_manipulators_description": "",
+    "painting_virus_manipulators_year": "2020",
+    "painting_virus_manipulators_medium": "Technique: Acrylic on canvas, mixed media",
+    "painting_virus_manipulators_dimensions": "90 X 120 (cm)",
+
+    "painting_the_system": "The System",
+    "painting_the_system_description": "",
+    "painting_the_system_year": "2020",
+    "painting_the_system_medium": "Technique: Acrylic on canvas, mixed media",
+    "painting_the_system_dimensions": "120 X 150 (cm)",
+        
     
     "gallery_main_heading_dalal": "dalal jàmm!",
     "gallery_main_heading_discover": "Discover the vastness of the project",
