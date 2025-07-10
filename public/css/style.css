@@ -190,11 +190,11 @@ a   {
 
 /* Add a pointer cursor to images that can be zoomed */
 .zoomable {
-  cursor: zoom-in;
   transition: transform 0.3s ease;
 }
 
 /* Optional: a subtle zoom effect on hover for the small images */
 .zoomable:hover {
-  transform: scale(1.03);
+    cursor: zoom-in;
+    transform: scale(1.03);
 }
