@@ -54,15 +54,13 @@
                                     </div>
                                     <div class="painting-name-container">
                                         <div class="painting-description-section">
-                                            <!-- The painting's name is its pre-translated title -->
                                             <p class="painting-name"><%= painting.title %></p>
                                         </div>
-                                        <!-- The link now correctly points to the specific painting's URL -->
                                          <div class="gallery-buttons-container">
                                             <a href="<%= painting.path %>" class="discover-painting">
                                                 <%= t('gallery_discover_button') %>
                                             </a>
-                                            <a class="acquire-painting-button" href="/store/<%= painting %>">
+                                            <a class="acquire-painting-button" href="<%= basePathWithLang %>/store?item=<%= painting.id %>">
                                                 <%= t('gallery_acquire_button') %>
                                             </a>
                                          </div>
