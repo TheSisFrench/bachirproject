@@ -47,9 +47,11 @@
                                     <div class="painting-selection">
                                         <!-- The 'alt' text should be the painting's translated title -->
                                         <img 
-                                            class="painting-items <%= painting.id %>" 
+                                            class="painting-items zoomable"
                                             alt="<%= painting.title %>" 
                                             src="/img/<%= painting.fileName %>"
+                                            data-title="<%= painting.title %>"
+                                            data-description="<%= painting.description %>"
                                         >
                                     </div>
                                     <div class="painting-name-container">
