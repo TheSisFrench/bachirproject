@@ -176,7 +176,7 @@ const galleryCollectionsData = {
                 {
                     id: "on-the-plate",
                     titleKey: "painting_on_the_plate",
-                    fileName: "sur_le_plat,svg",
+                    fileName: "sur_le_plat.svg",
                     description: "painting_on_the_plate_description",
                     year: "painting_on_the_plate_year",
                     medium: "painting_on_the_plate_medium",
@@ -212,7 +212,7 @@ const galleryCollectionsData = {
                 {
                     id: "virus-manipulators",
                     titleKey: "painting_virus_manipulators",
-                    fileName: "les_manipulateurs_du_virus",
+                    fileName: "les_manipulateurs_du_virus.svg",
                     description: "painting_virus_manipulators_description",
                     year: "painting_virus_manipulators_year",
                     medium: "painting_virus_manipulators_medium",
@@ -221,7 +221,7 @@ const galleryCollectionsData = {
                 {
                     id: "the-system",
                     titleKey: "painting_the_system",
-                    fileName: "le_system.svg",
+                    fileName: "le_systeme.svg",
                     description: "painting_the_system_description",
                     year: "painting_the_system_year",
                     medium: "painting_the_system_medium",

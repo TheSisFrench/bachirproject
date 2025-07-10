@@ -297,12 +297,6 @@
     padding: var(--p-padding);
 }
 
-.painting-description  {
-    text-align: left;
-    color: #fff;
-    font-size: var(--font-size);
-    font-weight: var(--font-weight-text);
-}
 
 .gallery-buttons-container  {
     display: flex;
